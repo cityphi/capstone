@@ -1,0 +1,146 @@
+\begin{thenomenclature} 
+
+ \nomgroup{Symbols}
+
+  \item [{$E_p$}]\begingroup Modulus of elasticity of considered plastic hub or boss [$N/mm^2$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_R$}]\begingroup Keel to assembly arm connector reaction, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_T$}]\begingroup Thruster force, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_g$}]\begingroup Force of gravity, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{GR}$}]\begingroup Reaction force of gondola, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{K1}$}]\begingroup Keel reaction force 1, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{K2}$}]\begingroup Keel reaction force 2, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{LA}$}]\begingroup Linear actuator force, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{NB}$}]\begingroup Normal force applied to bearing, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{RSF}$}]\begingroup Force of snap fit bearing [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{\alpha}$}]\begingroup Force on fastener $\alpha$ (hinge to gondola), [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{\beta}$}]\begingroup Force on fastener $\beta$ (hinge to gondola), [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{a}$}]\begingroup Force on fastener a (hinge to gondola), [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{bolt}$}]\begingroup Bolt pretension force, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{brake}$}]\begingroup Normal braking force keel reaction, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{b}$}]\begingroup Force on fastener b (hinge to gondola), [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{c1}$}]\begingroup Connector moment couple force 1, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{c2}$}]\begingroup Connector moment couple force 2, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{ffric}$}]\begingroup Friction force acting on friction wheel, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{nfric}$}]\begingroup Normal force acting on friction wheel, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{s1}$}]\begingroup Force on friction wheel motor fastener 1 , [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{s2}$}]\begingroup Force on friction wheel motor fastener 2 , [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$F_{spring}$}]\begingroup Force applied by hinge spring, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$H_{keel}$}]\begingroup Height of the bearing arm contact point on the keel, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$L_G$}]\begingroup Width of gondola, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$L_a$}]\begingroup Length from pivot point of hinge to fastener a , [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$L_b$}]\begingroup Length from pivot point of hinge to fastener b , [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$L_m$}]\begingroup Length from side of gondola to gondola drive motor hinge, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$L_s$}]\begingroup Length from fastener to fastener of gondola motor to hinge, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$L_{SF}$}]\begingroup Length to snap fit bearing, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$L_{ac}$}]\begingroup Length from centerline of gondola to fastener a, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$L_{bc}$}]\begingroup Length from centerline of gondola to fastener b, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$L_{cm}$}]\begingroup Length from gondola wall to center of mass of gondola, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$L_{contact}$}]\begingroup Length from contact to contact of bearings on keel, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$L_{drive}$}]\begingroup Length of gondola hinge to friction wheel contact, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$L_{hs}$}]\begingroup Distance from the pivot of the hinge to the gondola motor fastener, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$L_{hw}$}]\begingroup Distance from the gondola motor fastener to the contact point of the friction wheel, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$L_{rx}$}]\begingroup Friction wheel motors shaft length, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$M_1$}]\begingroup Reaction moment on bearing arm, [$Nm$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$M_R$}]\begingroup Connector moment reaction, [$Nm$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$R$}]\begingroup Reaction force, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$S_{compressive}$}]\begingroup Compressive strength of gondola material, [$Pa$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$T_w$}]\begingroup Friction wheel motor torque, [$Nm$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$T_{spring}$}]\begingroup Torque of hinge spring, [$Nm$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$W_A$}]\begingroup Weight of thruster assembly arm, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$W_E$}]\begingroup Weight of thruster enclosure, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$W_T$}]\begingroup Weight of thruster, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$W_c$}]\begingroup Weight of connection piece, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$W_{LA}$}]\begingroup Weight of linear actuator, [$N$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$\eta$}]\begingroup Safety Factor\nomeqref {0}
+		\nompageref{iii}
+  \item [{$\mu$}]\begingroup Coefficient of friction\nomeqref {0}
+		\nompageref{iii}
+  \item [{$\sigma '$}]\begingroup Von Mises Stress, [$Pa$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$\sigma _{washer}$}]\begingroup Compressive force of washer, [$Pa$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$\sigma _{x}$}]\begingroup Principle stress, [$Pa$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$\sigma_a$}]\begingroup Hoop stress, [$N/mm^2$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$\sigma_s$}]\begingroup Allowable design stress for plastic, $N/mm^2$\nomeqref {0}
+		\nompageref{iii}
+  \item [{$a_{airship}$}]\begingroup Acceleration of airship, [$m/s$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$a_{gondola1}$}]\begingroup Acceleration of Gondola 1 , [$m/s^2$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$a_{gondola2}$}]\begingroup Acceleration of Gondola 2 , [$m/s^2$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$c$}]\begingroup Distance from neutral axis to stress location, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$d_i$}]\begingroup Interference diameter, [$mm$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$d_s$}]\begingroup Hub outer diameter, [$mm$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$d_s$}]\begingroup Shaft diameter, [$mm$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$i_a$}]\begingroup Allowable interference, [$mm$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$m_{airship}$}]\begingroup Mass of airship, [$kg$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$m_{gondola1}$}]\begingroup Mass of Gondola 1, [$kg$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$m_{gondola2}$}]\begingroup Mass of Gondola 2, [$kg$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$r_{fw}$}]\begingroup Radius of friction wheel, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$w_{armx}$}]\begingroup Width of the bearing arm in the x direction, [$m$]\nomeqref {0}
+		\nompageref{iii}
+  \item [{$w_{army}$}]\begingroup Width of the bearing arm in the y direction, [$m$]\nomeqref {0}
+		\nompageref{iii}
+
+\end{thenomenclature}

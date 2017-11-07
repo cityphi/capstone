@@ -11,8 +11,8 @@
 \usepackage{caption}
 \usepackage{multicol}
 \usepackage{nomencl}
-
-\makenomenclature
+\usepackage{lmodern}
+\usepackage{subfiles}
 
 % WRAP CITATIONS
 \usepackage{breakcites}
@@ -89,7 +89,7 @@ Alex Pennell - 7334789\\[0.5cm]
 {\large October 30, 2017}\\[0.5cm] % Change to Due Date of report
 
 %	LOGO SECTION
-\includegraphics[width=0.8\textwidth]{boys.PNG}\\[0.5cm]
+\includegraphics[width=0.8\textwidth]{img/general/boys.PNG}\\[0.5cm]
 
 % 	SPONSOR SECTION
 \large \emph{Sponsor:} Dr. Eric Lanteigne
@@ -115,7 +115,8 @@ Alex Pennell - 7334789\\[0.5cm]
 %#####################################################################
 %	NOMENCLATURE
 %#####################################################################
-
+  \makenomenclature
+  
   \nomenclature[]{$E_p$}{Modulus of elasticity of considered plastic hub or boss [$N/mm^2$]}
   \nomenclature[]{$\sigma_s$}{Allowable design stress for plastic, $N/mm^2$}
   \nomenclature[]{$\sigma_a$}{Hoop stress, [$N/mm^2$]}
@@ -235,13 +236,8 @@ The propellers will be in the X-Y plane, in line with the centre of volume. This
 \pagebreak
 
 %#####################################################################
-%	APPENDICES
+%	APPENDIX
 %#####################################################################
-
-%Thruster 
-
-\section*{Appendix}
-\appendix
-\section{Thrust Force}
+\subfile{./tex/appendix.tex}
 
 \end{document}
