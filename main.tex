@@ -1,9 +1,10 @@
-\documentclass[12pt]{article}
+\documentclass[]{book}
 \usepackage{indentfirst}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{pdfpages}
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage[colorinlistoftodos]{todonotes}
@@ -13,13 +14,33 @@
 \usepackage{nomencl}
 \usepackage{lmodern}
 \usepackage{subfiles}
+\usepackage{setspace}
+\usepackage[toc,page]{appendix}
+\usepackage{apptools}
+\usepackage{titlesec}
+\usepackage{emptypage}
+\usepackage{afterpage}
+
+
+%% CHAPTER TITLE FORMATTING
+\titleformat{\chapter}[display]   
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\huge}   
+\titlespacing*{\chapter}{0pt}{-40pt}{20pt}
+\titleformat{\chapter}[hang] 
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter:}{1em}{} 
+
+%APPENDIX FORMATTING
+\AtAppendix{\titleformat{\chapter}[block]{\centering\huge\bfseries}{\appendixname~\thechapter:}{0.333em}{}%
+	\titlespacing*{\chapter}{0pt}{-20pt}{20pt}}
+
+\raggedbottom %wont scale to end of page
 
 % WRAP CITATIONS
 \usepackage{breakcites}
 % MARGINS
 \usepackage[margin=1in]{geometry}
 % CHANGE THIS TO CHANGE THE TITLE
-\newcommand{\reporttitle}{Analysis Dossier}
+\newcommand{\reporttitle}{Capstone Report}
 % THIS NEXT SECTION IS FOR CHANGING SECTION TITLE FONT SIZE
 \usepackage{titlesec}
 \titleformat{\section}
@@ -35,7 +56,7 @@
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 % SPACING 1.5
-\linespread{1.25}
+\linespread{1.5}
 % SET TAB SIZE
 \setlength\parindent{10mm}
 % BIB
@@ -76,9 +97,11 @@
 
 %	TITLE SECTION
 \HRule \\[0.4cm]
-{\huge \bfseries \reporttitle{}}\\[0.1cm]
-\HRule\\ [0.4cm]
- 
+{\huge \bfseries \reporttitle{}}\\
+\HRule\\ [0.2cm]
+
+\Large \textbf{Volume \textit{x} of \textit{y}} \\[1cm]
+
 %	AUTHOR SECTION
 \Large Joey Kane - 7386330\\
 Isaak Goldenberg - 7395188\\
@@ -86,7 +109,7 @@ Sawyer Woodside - 7158568\\
 Alex Pennell - 7334789\\[0.5cm]
 
 %	DATE SECTION
-{\large October 30, 2017}\\[0.5cm] % Change to Due Date of report
+{\large December 8, 2017}\\[0.5cm] % Change to Due Date of report
 
 %	LOGO SECTION
 \includegraphics[width=0.8\textwidth]{img/general/boys.PNG}\\[0.5cm]
@@ -96,15 +119,25 @@ Alex Pennell - 7334789\\[0.5cm]
 
 \vfill
 \end{titlepage}
-
 \shipout\null
+
+\pagenumbering{roman}
+%---------------------------------------------------------------------
+%	ABSTRACT
+%---------------------------------------------------------------------
+\chapter*{Abstract}
+i.Contents of each book (if applicable) \\
+ii.Description of design\\
+iii.Special considerations\\
+iv.Illustration of the final design
+\\
+half page, one paragraph
+\pagebreak
 
 %---------------------------------------------------------------------
 %	TABLE OF CONTENTS
 %---------------------------------------------------------------------
-\pagenumbering{roman}
 \tableofcontents
-\pagebreak
 
 %---------------------------------------------------------------------
 %	LIST OF FIGURES
@@ -202,36 +235,42 @@ Alex Pennell - 7334789\\[0.5cm]
 \cfoot{\thepage}
 \pagenumbering{arabic}
 
+\shipout\null
 %#####################################################################
 %	PROBLEM STATEMENT
 %#####################################################################
-\section{Problem Statement}
+\chapter{Problem Statement}
 
 %---------------------------------------------------------------------
 %	PROJECT MANDATE
 %---------------------------------------------------------------------
-\subsection{Project Mandate} \label{Mandate}
+\section{Project Mandate} \label{Mandate}
 The goal of the project is to overcome the current limitations involved with the control and landing of unmanned airships in adverse outdoor conditions. The airship consists of a helium filled envelope, external keel, and gondola which will act as a ballast. The moving ballast will control the pitch by the controlled displacement of the centre of mass. Propulsion will be provided by propellers in the X-Y plane of the airship. The system will have vector thrusting to allow for altitude change independent of pitch change.
 
 %---------------------------------------------------------------------
 %	PROJECT SCOPE
 %---------------------------------------------------------------------
-\subsection{Group Problem Scope} \label{Scope}
+\section{Group Problem Scope} \label{Scope}
 The research project led by Dr. Eric Lanteigne involves designing a system to allow for the control of an unmanned airship. The goal of the project is to create a system that controls the airship by changing the position of the centre of mass to initiate pitch change. This pitch change, along with forward propulsion, will drive the airship in a given direction. The design team will be responsible for creating a system, where a gondola that acts as a ballast, will move along a nonlinear, diamond-shaped keel in order to initiate pitch change of an airship. Ideally, the system will be able to incur a pitch change of up to ninety degrees, allowing the airship to descend straight downwards. Currently, all designs must be scalable as specifications of the airship envelope have yet to be finalized. The unmanned airship must be capable of flying outdoors and be able to carry a payload of between 0.2kg and 0.5kg. The main components of the design can be split up into: Gondola Design, Gondola Movement, Securing Gondola to Keel, Gondola Position Measurement, Securing the Propellers, Thrust Vectoring, Batteries, and Wire Management.
 
 %---------------------------------------------------------------------
 %	CRITERIA AND RESTRICTIONS
 %---------------------------------------------------------------------
-\subsection{Criteria and Restrictions}
+\section{Criteria and Restrictions}
 The propellers will be in the X-Y plane, in line with the centre of volume. This eliminates any moments from the propellers that lead to imbalance and unwanted pitch variations. The gondola will be able to move along the varying curvature of the keel using a hinged-gondola. The driving mechanism will be two friction wheels with the additional support of 4 driven bearings. The cross-section of the keel is diamond-shaped, however it is not torsionally constant, therefore the vertexes are not coincident on the curved section. Once the airship has been constructed, a Special Flight Operations Certificate (SFOC) issued by Transport Canada will be necessary in order to fly the airship lawfully.
 
-\pagebreak
+\chapter{Test 2}
+	\section{what}
+\chapter{Test 3}
+
+\cite{BESC}
 
 %#####################################################################
 %	BIBLIOGRAPHY
 %#####################################################################
 \bibliographystyle{plainnat}
 \bibliography{library}
+
 
 \pagebreak
 
