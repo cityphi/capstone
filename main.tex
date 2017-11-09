@@ -11,7 +11,7 @@
 \usepackage{float}
 \usepackage{caption}
 \usepackage{multicol}
-\usepackage{nomencl}
+\usepackage[notintoc]{nomencl}
 \usepackage{lmodern}
 \usepackage{subfiles}
 \usepackage{setspace}
@@ -20,6 +20,10 @@
 \usepackage{titlesec}
 \usepackage{emptypage}
 \usepackage{afterpage}
+\pdfoptionpdfminorversion=7 %for pdfs
+\usepackage{etoolbox}
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+\emergencystretch=1em
 
 %% CHAPTER TITLE FORMATTING
 \titleformat{\chapter}[display]   
@@ -118,9 +122,10 @@ Alex Pennell - 7334789\\[0.5cm]
 
 \vfill
 \end{titlepage}
-\shipout\null
 
-\pagenumbering{roman}
+
+\frontmatter
+
 %---------------------------------------------------------------------
 %	ABSTRACT
 %---------------------------------------------------------------------
@@ -144,10 +149,19 @@ half page, one paragraph
 \listoffigures
 \pagebreak
 
+%---------------------------------------------------------------------
+%	LIST OF TABLES
+%---------------------------------------------------------------------
+\listoftables
+\pagebreak
+
 %#####################################################################
 %	NOMENCLATURE
 %#####################################################################
-  \makenomenclature
+\cleardoublepage  
+\renewcommand{\nomname}{Nomenclature}
+\markboth{\MakeUppercase\nomname}{\MakeUppercase\nomname}  
+\printnomenclature
   
   \nomenclature[]{$E_p$}{Modulus of elasticity of considered plastic hub or boss [$N/mm^2$]}
   \nomenclature[]{$\sigma_s$}{Allowable design stress for plastic, $N/mm^2$}
@@ -221,9 +235,6 @@ half page, one paragraph
   \nomenclature[]{$M_1$}{Reaction moment on bearing arm, [$Nm$]}
   \nomenclature[]{$F_{RSF}$}{Force of snap fit bearing [$N$]}
     
-  \printnomenclature
-\pagebreak
-
 %---------------------------------------------------------------------
 %	MAIN BODY
 %---------------------------------------------------------------------
@@ -232,44 +243,29 @@ half page, one paragraph
 \fancyhf{}
 \rhead{\rightmark}
 \cfoot{\thepage}
-\pagenumbering{arabic}
 
-\shipout\null
+\mainmatter
+
 %#####################################################################
-%	PROBLEM STATEMENT
+%	INTRODUCTION
 %#####################################################################
-\chapter{Problem Statement}
+\subfile{./tex/chapter1Introduction.tex}
 
-%---------------------------------------------------------------------
-%	PROJECT MANDATE
-%---------------------------------------------------------------------
-\section{Project Mandate} \label{Mandate}
-The goal of the project is to overcome the current limitations involved with the control and landing of unmanned airships in adverse outdoor conditions. The airship consists of a helium filled envelope, external keel, and gondola which will act as a ballast. The moving ballast will control the pitch by the controlled displacement of the centre of mass. Propulsion will be provided by propellers in the X-Y plane of the airship. The system will have vector thrusting to allow for altitude change independent of pitch change.
+%#####################################################################
+%	PROPOSED DESIGN
+%#####################################################################
+\subfile{./tex/chapter2ProposedDesign.tex}
 
-%---------------------------------------------------------------------
-%	PROJECT SCOPE
-%---------------------------------------------------------------------
-\section{Group Problem Scope} \label{Scope}
-The research project led by Dr. Eric Lanteigne involves designing a system to allow for the control of an unmanned airship. The goal of the project is to create a system that controls the airship by changing the position of the centre of mass to initiate pitch change. This pitch change, along with forward propulsion, will drive the airship in a given direction. The design team will be responsible for creating a system, where a gondola that acts as a ballast, will move along a nonlinear, diamond-shaped keel in order to initiate pitch change of an airship. Ideally, the system will be able to incur a pitch change of up to ninety degrees, allowing the airship to descend straight downwards. Currently, all designs must be scalable as specifications of the airship envelope have yet to be finalized. The unmanned airship must be capable of flying outdoors and be able to carry a payload of between 0.2kg and 0.5kg. The main components of the design can be split up into: Gondola Design, Gondola Movement, Securing Gondola to Keel, Gondola Position Measurement, Securing the Propellers, Thrust Vectoring, Batteries, and Wire Management.
-
-%---------------------------------------------------------------------
-%	CRITERIA AND RESTRICTIONS
-%---------------------------------------------------------------------
-\section{Criteria and Restrictions}
-The propellers will be in the X-Y plane, in line with the centre of volume. This eliminates any moments from the propellers that lead to imbalance and unwanted pitch variations. The gondola will be able to move along the varying curvature of the keel using a hinged-gondola. The driving mechanism will be two friction wheels with the additional support of 4 driven bearings. The cross-section of the keel is diamond-shaped, however it is not torsionally constant, therefore the vertexes are not coincident on the curved section. Once the airship has been constructed, a Special Flight Operations Certificate (SFOC) issued by Transport Canada will be necessary in order to fly the airship lawfully.
-
-\chapter{Test 2}
-	\section{what}
-	\cite{GPSModule}
-\chapter{Test 3}
-	\cite{TCAirships}
+%#####################################################################
+%	ANALYSIS
+%#####################################################################
+\subfile{./tex/chapter3Analysis.tex}
 
 %#####################################################################
 %	BIBLIOGRAPHY
 %#####################################################################
 \bibliographystyle{plainnat}
 \bibliography{library}
-
 
 \pagebreak
 
