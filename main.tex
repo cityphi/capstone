@@ -2,6 +2,7 @@
 \usepackage{indentfirst}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
+\usepackage{rotating}
 \usepackage{pdfpages}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -17,6 +18,7 @@
 \usepackage{setspace}
 \usepackage[toc,page]{appendix}
 \usepackage{apptools}
+\usepackage{pdflscape}
 \usepackage{titlesec}
 \usepackage{emptypage}
 \usepackage{afterpage}
@@ -288,6 +290,11 @@ half page, one paragraph
 \subfile{./tex/chapter3Analysis.tex}
 
 %#####################################################################
+%	DISCUSSION & CRITICAL REVIEW
+%#####################################################################
+\subfile{./tex/chapter4Discussion.tex}
+
+%#####################################################################
 %	BIBLIOGRAPHY
 %#####################################################################
 \bibliographystyle{plainnat}
@@ -331,8 +338,9 @@ half page, one paragraph
 %-----------------------------------------------------------------
 %	MEETING MINUTES
 %-----------------------------------------------------------------
+\begin{landscape}
 \subfile{./tex/appendixMinutes.tex}
-
+\end{landscape}
 %-----------------------------------------------------------------
 %	RECOMMENDATIONS FOR IMPROVING THE COURSE
 %-----------------------------------------------------------------
