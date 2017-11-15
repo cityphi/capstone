@@ -5,13 +5,13 @@
 \section{Thruster Arm Adhesion}
 To connect the carbon fibre arm to the aluminium body which holds the thruster assembly, epoxy will be used. The carbon fibre arm will slide into an aluminium pocket welded to the aluminium thruster plate, as shown in Figure \textbf{ADD RENDERED FIGURE HERE.}\\
 
-The analysis will be conducted by assuming the adhesion surface will be like a double lap joint, shown in Figure \ref{fig:doublelap} below.
+The analysis will be conducted by assuming the adhesion surface will be like a double lap joint, shown in Figure \ref{fig:lap} below.
 
 \begin{figure}[H]
 	\centering
-	\label{fig:doublelap}
 	\includegraphics[width=.8\linewidth]{img/adhesion/doubleLap}
 	\caption{Analysis of Carbon Fibre Adhesion (From Shigley's Machine Design \cite[484]{shigley})}
+	\label{fig:lap}
 \end{figure}
 
 The shear-stress distribution of the joint is given by 
@@ -50,11 +50,6 @@ Followed by substitution into Equation \ref{adhesive}:
 \tau (x) = \dfrac{100N*0.0930946mm^{-1}}{4*50.80mm*sinh(0.0930946mm^{-1}* 30mm/2)}cosh(0.0930946mm^{-1}* x) + \\ \Bigg[\dfrac{100N*0.0930946mm^{-1}}{4*50.80mm*cosh(0.0930946mm^{-1}* 30mm/2)}\left(\dfrac{2*71000 MPa*9.73mm-1300MPa*9.73mm}{2*71000 MPa*9.73mm+1300MPa*9.73mm}\right)+ \\ \dfrac{(23.7*10^{-6}mm/mm^{\circ}C-23.94*10^{-6} mm/mm^{\circ}C)*(-60^{\circ}C)*0.0930946mm^{-1}}{\left(\dfrac{1}{71000MPa*9.73mm}+\dfrac{2}{109000 MPa*9.73mm}\right)cosh(0.0930946mm^{-1}* 30mm/2)}\Bigg] sinh(0.0930946mm^{-1}* x) \\ = 0.02416MPa*cosh(0.0930946mm^{-1}* x) + [0.02098MPa + 0.1871 MPa]sinh(0.0930946mm^{-1}* x)
 \end{multline}
 
-at $x = l/2 = 30mm/2$, the shear is at a maximum value. Therefore, the shear force is 
-\begin{equation*}
-	\tau = 0.4464 MPa
-\end{equation*}
-
-Yielding a safety factor of $\eta = \dfrac{10.3MPa}{0.4464MPa} = 23.0734$.
+at $x = l/2 = 30mm/2$, the shear is at a maximum value. Therefore, the shear force is $\tau = 0.4464 MPa$, Yielding a safety factor of $\eta = 10.3MPa/0.4464MPa = 23.0734$.
 
 \end{document}

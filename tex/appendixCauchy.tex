@@ -1,0 +1,52 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\section{Cauchy Stress Tensor \cite{cauchy}} \label{appendix:cauchy}
+The Cauchy Stress tensor fully defines the stresses acting on an infinitesimally small element within a material. It is particularly useful for failure analysis, as it is the internal stresses within a material that are used to determine the safety factor of the material at a specific location. Its general forms are shown below.
+\begin{center}
+	\begin{equation}
+	\sigma = \left[{{
+			\begin{matrix}
+			\sigma _{{11}}&\sigma _{{12}}&\sigma _{{13}}\\
+			\sigma _{{21}}&\sigma _{{22}}&\sigma _{{23}}\\
+			\sigma _{{31}}&\sigma _{{32}}&\sigma _{{33}}\\
+			\end{matrix}}}\right]
+	\equiv \left[{{
+			\begin{matrix}
+			\sigma _{{xx}}&\sigma _{{xy}}&\sigma _{{xz}}\\
+			\sigma _{{yx}}&\sigma _{{yy}}&\sigma _{{yz}}\\
+			\sigma _{{zx}}&\sigma _{{zy}}&\sigma _{{zz}}\\
+			\end{matrix}}}\right]
+	\equiv \left[{{
+			\begin{matrix}
+			\sigma _{{x}}&\tau _{{xy}}&\tau _{{xz}}\\
+			\tau _{{yx}}&\sigma _{{y}}&\tau _{{yz}}\\
+			\tau _{{zx}}&\tau _{{zy}}&\sigma _{{z}}\\
+			\end{matrix}}}\right]
+	\end{equation}
+\end{center}
+
+Generally, the use of failure theories requires knowing the \textit{principal stresses}. These are located perpendicular to the \textit{principal planes}. Any body in a state of stress will have three principal planes, where there are no normal shear stresses, only three \textit{principal stresses}.\\
+
+Any stress tensor can undergo a change of coordinates to obtain the principal stresses. The transformed stress tensor can be written as follows:
+\begin{center}
+	\begin{equation}
+	\sigma '= \left[{{
+			\begin{matrix}
+			\sigma _{{1}}&0&0\\
+			0&\sigma _{{2}}&0\\
+			0&0&\sigma _{{3}}\\
+			\end{matrix}}}\right]
+	\end{equation}
+\end{center}
+
+Obtaining the principle stresses is relatively simple. The principle stresses are simply the eigenvalues of the stress tensor. MATLAB is used to find the eigenvalues of a given stress tensor, and the principle stresses are given by
+	\begin{align}
+	\sigma _1&=max(\lambda _1,\lambda _2,\lambda _3) \\
+	\sigma _3&=min(\lambda _1,\lambda _2,\lambda _3) \\
+	\sigma _2&=\sigma_{{11}}+\sigma_{{22}}+\sigma_{{33}}-\sigma_{{1}}-\sigma_{{3}}
+	\end{align}
+The principal stresses are then used to conduct failure analysis using the preferred failure analysis method (e.g. Von Mises).
+
+	\pagebreak
+\end{document}

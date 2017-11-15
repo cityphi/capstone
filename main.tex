@@ -22,8 +22,36 @@
 \usepackage{afterpage}
 \pdfoptionpdfminorversion=7 %for pdfs
 \usepackage{etoolbox}
+\usepackage{listings}
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 \emergencystretch=1em
+\raggedbottom %wont scale to end of page
+
+%Formatting to include code
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\lstset{style=mystyle}
 
 %% CHAPTER TITLE FORMATTING
 \titleformat{\chapter}[display]   
@@ -35,8 +63,6 @@
 %APPENDIX FORMATTING
 \AtAppendix{\titleformat{\chapter}[block]{\centering\huge\bfseries}{\appendixname~\thechapter:}{0.333em}{}%
 	\titlespacing*{\chapter}{0pt}{-20pt}{20pt}}
-
-\raggedbottom %wont scale to end of page
 
 % WRAP CITATIONS
 \usepackage{breakcites}
@@ -273,8 +299,44 @@ half page, one paragraph
 %	APPENDICES
 %#####################################################################
 \appendix
+%-----------------------------------------------------------------
+%	GUI INSTRUCTIONS HERE
+%-----------------------------------------------------------------
+\subfile{./tex/appendixGUI.tex}
 
+%-----------------------------------------------------------------
+%	MATLAB CODE HERE
+%-----------------------------------------------------------------
+\chapter{Code}
+\section{Code 1}
+\lstinputlisting[language=Octave]{MATLAB/dummy.m} %USE THIS FORMAT TO INSERT CODE
+
+%-----------------------------------------------------------------
+%	ADDITIONAL MATERIAL HERE
+%-----------------------------------------------------------------
+\chapter{Additional Material}
 \subfile{./tex/appendixThrustCalculations.tex}
+\subfile{./tex/appendixCauchy.tex}
+
+%-----------------------------------------------------------------
+%	DATA SHEETS HERE
+%-----------------------------------------------------------------
 \subfile{./tex/appendixDataSheets.tex}
+
+%-----------------------------------------------------------------
+%	ENGINEERING DRAWINGS HERE
+%-----------------------------------------------------------------
+\subfile{./tex/appendixDrawings.tex}
+
+%-----------------------------------------------------------------
+%	MEETING MINUTES
+%-----------------------------------------------------------------
+\subfile{./tex/appendixMinutes.tex}
+
+%-----------------------------------------------------------------
+%	RECOMMENDATIONS FOR IMPROVING THE COURSE
+%-----------------------------------------------------------------
+\chapter{Recommendations for Improving the Course}
+lol
 
 \end{document}
