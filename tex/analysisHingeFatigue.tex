@@ -1,0 +1,23 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\section{Gondola Arm Fatigue Failure}
+The loading and unloading of the plastic gondola arm due to the reaction force of the keel on the gondola motor could potentially cause a fatigue failure.A paper on cyclic performance of Laser Sintered Nylon \cite{fatiguePlastic} was used to quantity the effects of fatigue on the plastic. Very little research has been done for fatigue failure of 3D printed material. The laser sintering process is similar to 3D printing in that it melts layers of plastic in succession to obtain complex geometries with no pre-existing tooling required. Because of this, the laser sintering process creates shear planes, much like those created in 3D printing. For this reason, the paper was as a basis for the fatigue analysis of the 3D printed part, as these shear planes are critical to the fatigue strength of the material. \\
+
+The S-N curve shown in Figure \ref{fig:snCurve} was used to determine the maximum nominal stress that the gondola could take, thus defining the criteria for failure.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\linewidth]{img/gondola/snCurve.PNG}
+	\caption{S-N Curve for Laser Sintered Nylon \cite{fatiguePlastic}, Used to Determine the Fatigue Failure of the Gondola Body}
+	\label{fig:snCurve}
+\end{figure}
+
+Assuming that the loading frequency is not higher than around 3hz, no appreciable heat is generated and thus the loading frequency should not affect the cycles to failure. Assuming SLS nylon, the maximum nominal stress for infinite life ($10^6$ cycles) is $17MPa$ Any higher and the part will fail after enough loading cycles. The stress at the critical point A (shown in Figure \ref{fig:deflection}) is computed as follows:
+
+\begin{equation}
+	\sigma_a = \dfrac{M_{NB}c}{I} +\dfrac{(F_{NB_{y}}l_{arm})c}{I}
+\end{equation}
+
+The axial force contribution from $F_{NB_{z}}$ is assumed to be extremely small and thus is ignored. Therefore the faliure criteria is that $\sigma _a < 17MPa$.
+\end{document}
