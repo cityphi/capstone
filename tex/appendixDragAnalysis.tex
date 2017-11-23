@@ -1,0 +1,43 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\section{Drag Analysis}
+
+Drag values were computed using SolidWorks, by its built in Flow Simulation add-on. Simulations were conducted from 2m/s to 20m/s, at intervals of 2m/s. Skin Friction Drag and Regular Drag were computed and summed to obtain total drag for each speed. A table with the results from the simulations can be seen in Table \ref{tbl:DracTable}.
+
+\begin{table}[H]
+	\centering
+	\caption{Raw Data From SolidWorks Flow Simulation}
+	\includegraphics[width=.5\linewidth]{img/drag/dragTable.PNG}
+	\label{tbl:DracTable}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{img/drag/dragForces.PNG}
+	\caption{Drag Force Curves Computed From SolidWorks Flow Simulation}
+	\label{fig:dragForces}
+\end{figure}
+
+The values of simulated drag were then sent into MATLAB and a curve fitting analysis was completed. A graph of the raw data versus the fitted curve is shown in Figure \ref{fig:dragForces}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{img/drag/curveFit.PNG}
+	\caption{Drag Force Curves Computed From SolidWorks Flow Simulation}
+	\label{fig:dragForces}
+\end{figure}
+
+The equation from the curve (generated from MATLAB) was found to be:
+
+\begin{equation} \label{dragEqn}
+	D(v) = -0.004681v^4+0.01948v^3-0.1379v^2+0.9656v-1.04
+\end{equation}
+
+Where $ D $ is the drag force and $ v $ is the airship speed, in $m/s$. Equation \ref{dragEqn} is what is used throughout the report to obtain drag forces.\\
+
+Raw MATLAB code:
+
+\lstinputlisting[language=Octave]{MATLAB/drag/curveFit.m}
+
+\end{document}

@@ -20,6 +20,10 @@ The deflection will be calculated using simple beam equations. The force $F_{NB}
 	\delta _{Gondola Arm}  = \left(\dfrac{F_{NB_{z}}l_{arm}}{AE}\right)\hat{k} + \left(\dfrac{F_{NB_{y}}l_{arm}^3}{3EI}  + \dfrac{M_{NB}l_{arm}^2}{2EI} \right) \hat{j}
 \end{align}
 
-The faliure possibility here would be for the arm to deflect enough that the gondola falls of the keel. This occurs when the total deflection $\delta$ is larger than $0.5cm$, which is half of the width of the keel face. Therefore it is required that the result of Equation \ref{armDeflection} be less than $0.5cm$.
+The faliure possibility here would be for the arm to deflect enough that the gondola falls of the keel. This occurs when the total deflection $\delta$ is larger than $0.5cm$, which is half of the width of the keel face. Since both arms can deflect at the same time, they can be combined to reach 0.5cm. Therefore it is required that the result of Equation \ref{armDeflection} be less than $0.25cm$. Therefore the equation to optimize is:
+\begin{equation}
+	0.25 \leq \sqrt{\left(\dfrac{F_{NB_{z}}l_{arm}}{AE}\right)^2 + \left(\dfrac{F_{NB_{y}}l_{arm}^3}{3EI}  + \dfrac{M_{NB}l_{arm}^2}{2EI} \right)^2}
+\end{equation}
+
 
 \end{document}
