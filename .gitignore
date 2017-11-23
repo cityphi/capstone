@@ -11,6 +11,9 @@
 *.cb
 *.cb2
 
+## Mac file
+.DS_Store
+
 ## main pdf
 main.pdf
 
