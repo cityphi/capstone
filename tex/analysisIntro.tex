@@ -2,43 +2,46 @@
 
 \begin{document}
 
-
-\begin{center}
-	\begin{tabular}{|c|c|c|}
-	\hline
-	\textbf{Section} &\textbf{Analysis} & \textbf{Failure Likelihood} \\
-	\hline
-	\ref{batterySelect} & Thruster Assembly Component Selection& \cellcolor{white}N/A \\
-	\hline
-	\ref{thrustShaft} & Thruster Shaft & \cellcolor{black}\color{white}HIGH \\
-	\hline
-	\ref{thrustArms} & Thruster Arms & \cellcolor{black}\color{white}HIGH \\
-	\hline
-	\ref{connector} & Connection To Keel & \cellcolor{black}\color{white}HIGH \\
-	\hline
-	\ref{frictionSlip} & Friction Wheel Slip & \cellcolor{black}\color{white}HIGH \\
-	\hline
-	\ref{gondDeflection} & Gondola Arm Deflection & \cellcolor{black}\color{white}HIGH \\
-	\hline
-	\ref{bearingArm} & Gondola Arm & \cellcolor{black}\color{white}HIGH \\
-	\hline
-	\ref{armFatigue} & Gondola Arm Fatigue & \cellcolor{gray}MEDIUM \\
-	\hline
-	\ref{snapFit} & Bearing Mounting & \cellcolor{black}\color{white}HIGH \\
-	\hline
-	\ref{compressive} & Gondola Hinge Bolts & \cellcolor{gray}MEDIUM \\
-	\hline
-	\ref{motorShaft} & Hinge Motor Shaft & \cellcolor{gray}MEDIUM \\
-	\hline
+\begin{table}[H]
+	\centering
+	\caption{List of All Parametrized Components}
+	\label{allComponents}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Section} & \textbf{Analysis} & \textbf{Parametrized Part} & \textbf{Failure Likelihood} \\ \hline
+		&  & Thruster Battery & \cellcolor[HTML]{C0C0C0} \\ \cline{3-3}
+		&  & Propeller Diameter & \cellcolor[HTML]{C0C0C0} \\ \cline{3-3}
+		&  & Motor & \cellcolor[HTML]{C0C0C0} \\ \cline{3-3}
+		&  & Thruster Shaft Length & \cellcolor[HTML]{C0C0C0} \\ \cline{3-3}
+		\multirow{-5}{*}{\ref{batterySelect}} & \multirow{-5}{*}{Thruster Assembly Component Selection} & Diameter of Encasement & \multirow{-5}{*}{\cellcolor[HTML]{C0C0C0}MEDIUM} \\ \hline
+		&  & Diameter of Thruster Shaft & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} } \\ \cline{3-3}
+		&  & Thread Type & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} } \\ \cline{3-3}
+		&  & Material Type & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} } \\ \cline{3-3}
+		\multirow{-4}{*}{\ref{thrustShaft}} & \multirow{-4}{*}{Thruster Shaft} & Bearing Dimensions & \multirow{-4}{*}{\cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} MEDIUM}} \\ \hline
+		&  & Width & \cellcolor[HTML]{000000}{\color[HTML]{FFFFFF} } \\ \cline{3-3}
+		\multirow{-2}{*}{\ref{thrustArms}} & \multirow{-2}{*}{Thruster Arms} & Thickness & \multirow{-2}{*}{\cellcolor[HTML]{000000}{\color[HTML]{FFFFFF} HIGH}} \\ \hline
+		\ref{connector} & Connection To Keel & Width of Insert & \cellcolor[HTML]{000000}{\color[HTML]{FFFFFF} HIGH} \\ \hline
+		&  & Spring Force & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} } \\ \cline{3-3}
+		\multirow{-2}{*}{\ref{frictionSlip}} & \multirow{-2}{*}{Friction Wheel Slip} & Motor Torque & \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} MEDIUM}} \\ \hline
+		\ref{compressive} & Gondola Hinge Bolts & Diameter of Washers & \cellcolor[HTML]{C0C0C0}MEDIUM \\ \hline
+		&  & Depth of Cut & \cellcolor[HTML]{000000}{\color[HTML]{FFFFFF} } \\ \cline{3-3}
+		\multirow{-2}{*}{\ref{snapFit}} & \multirow{-2}{*}{Gondola Bearing Snap-Fit} & Distance of Arms from Keel & \multirow{-2}{*}{\cellcolor[HTML]{000000}{\color[HTML]{FFFFFF} HIGH}} \\ \hline
 	\end{tabular}
-\end{center}
+\end{table}
 
 \begin{center}
+	\captionof{table}{List of All Inconsequential Analysis} \label{inconsequentialAnalysis}
 	\begin{tabular}{|c|c|c|}
 	\hline
 	\textbf{Section} &\textbf{Inconsequential Analysis} & \textbf{Failure Likelihood} \\
 	\hline
 	\ref{gondolaBearings} & Gondola Bearings & LOW \\
+	\hline
+	\ref{gondDeflection} & Gondola Arm Deflection  & LOW \\
+	\hline
+	\ref{armFatigue} & Gondola Arm Fatigue & LOW \\
+	\hline
+	\ref{bearingArm} & Gondola Arm Stresses & LOW \\
 	\hline
 	\ref{thrusterMotorAnalysis} & Thruster Motor & LOW \\
 	\hline
