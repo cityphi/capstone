@@ -30,18 +30,30 @@ T_{spring} = \frac{T_w\cdot{}[L_{hs}+L_{sw}]}{r{F_w}\cdot{}\mu}\cdot{}1.5
 \end{equation}
 
 Based on the assumed torque and the spring force, the acceleration of the gondola in the worst case scenario explained in SECTION????, and FIGURE ????? The acceleration of the gondola is calculated, The forces acting 
-The following equations \ref{Fxreargond} to \ref{Fzreargond} are the sum of forces acting on the rear gondola in the coordinate system defined by the plane the gondola is in. 
-Where $\theta$ is the angle between the gondolas, $\phi$ is the pitch angle and $\beta$ is the thruster angle.
-
-\begin{multline} \label{Fxreargond}
-\Sigma F_{x} : (m_{1}+m_{2}) a_{x} =\\ \sin(\phi) (m_{1} + m_2)g + F_{Drive} + \cos (\theta) F_{Drive} + \cos(\beta) (m_1+m_2) a_{Thrust} + \frac{\sqrt{2}}{2} sin(\theta) F_{Spring}
+The following equations \ref{Fxgondtw} to \ref{Fzgondtw} are the sum of forces acting on the gondola in the coordinate system defined by the plane of the surface of the rear gondola car. As a result most of the forces and reactions acting on the front gondola need to be rotated according to the angle of the hinge, $\theta$ is the angle between the gondolas. Similarly $\phi$ is the pitch angle of the airship and $\beta$ is the angle at which the acceleration due to thrust is acting. The reactions are on the left of the equal sign and the known forces acting on the gondola are to the right of the equal sign. 
+\begin{multline} \label{Fxgondtw}
+\Sigma F_{x} : (m_{1}+m_{2}) a_{x} + F_{NB3_{x}} + F_{NB4_{x}} =\\ \sin(\phi) (m_{1} + m_2)g + F_{Drive} + \cos (\theta) F_{Drive} + \cos(\beta) (m_1+m_2) a_{Thrust} + \frac{\sqrt{2}}{2} sin(\theta) F_{Spring}
+\end{multline}
+\begin{flalign} \label{Fygondtw}
+\hspace{12pt}\Sigma F_{y} : F_{NB1_{y}} - F_{NB2_{y}} - F_{NB3_{y}} + F_{NB4_{y}} = \frac{\sqrt{2}}{2} F_{Spring} -\frac{\sqrt{2}}{2} F_{Spring} &&
+\end{flalign}
+\begin{multline} \label{Fzgondtw}
+\Sigma F_{z} : F_{NB1_{z}} + F_{NB2_{z}} + F_{NB3_{z}} + F_{NB4_{z}} =\\ \cos(\phi) (m_{1} + m_2)g - \frac{\sqrt{2}}{2} cos(\theta) F_{Spring} -\frac{\sqrt{2}}{2} F_{Spring} + \sin(\beta) (m_1+m_2) a_{Thrust}
 \end{multline}
 
-\begin{equation} \label{Fyreargond}
-\Sigma F_{y} : F_{NB1_{y}} - F_{NB2_{y}} - F_{NB3_{y}} + F_{NB4_{y}} = \frac{\sqrt{2}}{2} F_{Spring} -\frac{\sqrt{2}}{2} F_{Spring}
-\end{equation}
+Force solver ??? is used to solve these equations while making some assumptions based on the reactions. All of the $F_{NB}$ the normal forces between the bearings and the keel. since the contact surface is at 45\textdegree between the XY and XZ planes, the magnitudes of the forces acting in the z and y directions must be equal. 
+\begin{align}
+\label{eqn:scenario2start}
+	 F_{NB1_{z}} &= - F_{NB1_{y}} \\
+	 F_{NB2_{z}} &= F_{NB2_{y}} 
+\end{align}
 
-\begin{multline} \label{Fzreargond}
-\Sigma F_{z} : F_{NB1_{z}} + F_{NB2_{z}} + \cos(\theta)(F_{NB3_{z}} + F_{NB4_{z}}) =\\ \cos(\phi) (m_{1} + m_2)g - \frac{\sqrt{2}}{2} cos(\theta) F_{Spring} -\frac{\sqrt{2}}{2} F_{Spring} + \sin(\beta) (m_1+m_2) a_{Thrust}
-\end{multline}
+For the bearings on the front gondola as a result of the  angle between gondolas, there will also be a force acting in the x direction such that 
+\begin{align}
+F_{NB3_{x}} &= -\tan(\theta) F_{NB3_{z}}\\ 
+F_{NB4_{x}} &= -\tan(\theta) F_{NB4_{z}}\\
+F_{NB3_{y}} &= -\frac{F_{NB3_{z}}}{\cos(\theta)} \\ F_{NB4_{y}} &= \frac{F_{NB4_{z}}}{\cos(\theta)} \label{eqn:scenario2end}
+\end{align}
+
+The above equations from \ref{eqn:scenario2start} to \ref{eqn:scenario2end} are all encompassed by the switch case, scenario 2, in the Force Solver Code????. 
 \end{document}
