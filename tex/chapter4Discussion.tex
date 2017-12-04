@@ -6,22 +6,30 @@
 \chapter{Discussion}
 
 Discussion and Critical Review of Design aka Talk shit about ourselves
+\\
+The current model design contains many unevaluated interference fits, that are not critical design components but a safety factor has not been computed and a level of confidence has therefore not been established. Snap-fits are a suitable alternative to interference fits, although with layered 3D prints, shearing between layers is a serious concern. To improve interference fits, the temperature can be varied to create a larger interference and the materials can be changed to increase the coefficient of friction between interfaces. An interference fit was used in the gondola hinge cap, which is not ideal as any axial load in the direction of press will work against the fit. The bearing used in the thruster assembly is a standard hub fit which should not cause complications. The gondola and casing doors utilize interference, which should work although accessing components on a door while removing the door is not ideal.  The propeller mounting is a standard interference fit, therefore it is not of concern. The keel connector and end stops rely on an interference fit with the keel, which means that if the keel is subject to any force in the x-direction greater than the interference fit force, the keel will become discontinuous. Likewise, if the gondola hits the end stop with too much force, the end stop will come out and the gondola will fall off the keel. The bearing snap-fit on the keel is not an ideal scenario as the direction of 3D printing will likely be at a 45$^{\circ}$, meaning that half of the force is going to be shearing the plastic between the layers.
+\\
+For this project, the envelope was not designed for any purpose but for reference. Dr. Lanteigne will be designing the envelope, therefore it was only design aesthetically and for the simplicity of calculating values such as volume. Given the complexity of the keel, thruster and gondola desgin, it would be highly beneficial to have the exact design of the envelope or to have designed it independently to have components mesh better. 
+\\
+Many components are not analysed and therefore parametrized because they are over engineered for the use. Examples of over engineered components are the bearing in the thruster assembly, the strength of fasteners, the servo mounting bracket, etc. These parts were not analysed because they are much too strong to fail in any anticipated scenarios. In retrospect, it would have been reasonable to vary the material of these components to further parametrize although conventional, off-the-shelf components will always be the least expensive to procure.
+\\
+It is not reasonable to parametrize objects that vary in design between iterations, such as propellers and propeller motors. These components vary in size, shape and mounting techniques, rendering it impossible to create Solidworks models that can represent a list of different components options. The MATLAB code outputs the suggested motor and propeller options independently of the Solidworks files. This means that the some files, also including the thread on the thruster shaft are aesthetic only and the MATLAB code should be consulted for specific suggestions.
+\\
+The servo motor mounting bracket is made up of several parts that are fastened using fasteners and welding techniques that create a complicated assembly procedure. This assembly is off-the-shelf with the addition of the custom bearing bracket, but the geometry required complicates the method of installation, such as the screws inside the hollow mounting block.
+\\
+Generally, there are too many fasteners in this assembly, which negatively contribute to the weight limitations. Using alternatives such as welding or plastic fasteners could address this issue. 
+\\
+Glueing components is not the preferred method of mounting, but it is necessary in some scenarios. In order to adequately mount the thruster assembly to the envelope, double sided tape will be placed along the mounting plate and onto the envelope. removing this tape will not be easy as the polyurethane will likely tear. Glueing the thruster arms to the thruster assembly is highly dependent on the prestress in the epoxy and the integrity of the weld holding the arm cap to the mounting plate. Glueing the component casing on the thruster assembly is also not an ideal scenario as it could travel while setting and it is not longer removable once place.
+\\
+The friction wheel motor has a shaft size of 1mm and the friction wheel has an ID of above 6mm, therefore a shaft adapter piece is 3D printed to bridge the gap. This is not ideal as the plastic can easily be deformed and shear along the print orientation. It would be preferred if compatible sizes for the shaft and friction wheel were chosen, although this is difficult given the 1cm width of the keel. The friction coefficient used for the friction wheel and the polyurethane sheet covering the keel was estimated very roughly as there is a lack of data on the subject.
+\\
+3D printing technology has come a long way but it is still not feasible for load bearing applications at affordable prices, therefore it is not ideal that many components are 3D printed. Material properties for 3D printed materials are only very roughly estimated and the print setting influence the properties as infill, print speed, layer height, heat, strand orientation, etc. each have a significant impact on the properties exhibited.
+\\
+Carbon fibre parts are not easy to manufacture in house but given the complexity it would be difficult to commission custom molding without the high startup cost of mold creation (as seen in the quote obtained from an Alibaba Supplier in Appendix ref{?????????????????????????????????????????????????????????????????????}). Therefore the material properties of the thruster arms are highly dependent not only on the material used but also the skill of the manufacturer.
+\\
+The cable glands used in the solid model are not dimensioned based on any design, they are simply assumed to be in existence. Cable glands are also often designed to contain one wire, but the gondola requires several to pass through one gland, minimizing it's effectiveness in waterproofing the gondola. The thruster motor was not waterproofed, therefore it will likely be the weakest link when it comes to rainfall. The thruster motor can be easily removed, making this issue less critical in a potential failure. 
+\\
+Wiring of components was not a significant consideration. There is no consideration for how the wires will be managed within the gondolas, although this will be aesthetically pleasing as few wires are visible. A downfall of wireless communication transmission is the lack of confidence in operation overtime. The thruster shaft has a wire running through it from the components to the propeller motor, with makes wire removal difficult as well as servicing the shaft and the components attached to it.
+\\
 
-- absurd number of interference fits (gondola hinge cap, bearing mounting on thruster, gondola and casing door, propeller, keel connectors, end stops)
-- envelope design not specific, relying on soul patch to design
-- snap-fits for bearing not ideal
-- over engineering many things, not enough parameters
--  motors in the solidworks cannot change, they vary too much to accurately depict them
-- some things are only aesthetic, like the rshaft thread, motor mounting bracket, propeller
-- servo mounting bracket is fucked up complicated to assembly
-- too... many...fasteners...
-- glueing component casing, glueing thruster arms to envelope
-- shaft adapter for friction wheel, not great. use motor with bigger shaft size or smaller friction wheel
-- friction wheel coefficient of friction is not legit, estimated at something that could be good-ish?
-- wayyyyyy too much 3D printing, weights and material properties not great. very dependent on the print orientation.
-- difficult to manufacture carbon fibre in house, see quote for China keel manufacturing.
-- cable glands not totally accurate, none could be found that small. also only good for one wire, many going in at once.
-- did not waterproof well. thruster motor is totally exposed.
-- 3D model did not reflect wiring. Wiring not so great. no consideration for how wires will be managed inside casings. wire passing through thruster shaft significantly decreases the ease of assembly.
-- 
 \end{document}
