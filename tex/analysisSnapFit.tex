@@ -2,6 +2,14 @@
 
 \begin{document}
 \subsection{Bearing Mounting (Snap-Fit)} \label{snapFit}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1 \textwidth]{img/Paramaterization/snapFit.pdf}
+	\caption{Paramaterization Outline of Snapfit Analysis}
+	\label{fig:snapParamaterization}
+\end{figure}
+
+
 The snapfit piece will be subject to a high load when the bearing is being installed, as significant deflection is necessary to allow the bearing into the grooved area. To account for this, there is a gaped section between the arms that allow for deflection. The bearing snap fit will be subject to potential failure at point at the outer edge of the shaft at the bottom of the snap fit cut shown in FIG?????. The analysis determines the minimum required cut depth in order to meet a safety factor of 1.5. the require inputs for this analysis are the bearing shaft diameter, the snap fit overhang and the material properties of nylon 12. These values are both constant as the shaft diameter is based on the inner diameter of the bearing used which will not be changing, this is justified by the analysis done in the Appendix Section \ref{gondolaBearings}. The choice of overhang coincides with the dimensions of the bearing used which can be seen in Appendix Datasheet \ref{PBearings}.\\  
 
 The analysis first computes the the force required for the deflection that must occur for the the snap fit to close to allow the bearing to slide onto the shaft. This calculation is done based on an initially chosen cut depth. The over hang is 1mm so the required deflection of each side of the snap cut is 1mm. The force required to achieve the the 1mm deflection $F_{Snapfit}$ is calculated by modeling the snap fit as a cantilever beam with a concentrated load, cantilevered at the depth of the cut into the shaft $L_{Snapfit}$. 
@@ -14,7 +22,7 @@ F_{Snapfit} = \frac{3 \delta E I}{L_{snapfit}^3}
 Because of the geometry each side of the snap fit the distance the moment of inertia was calculated using the following equations REF??. $\theta$ in the equation is the angle that forms between the point in the center of the cut edge and the outside of the cut edge as seen in Figure \ref{fig:circleSection}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.4\textwidth]{img/Gondola/circleSectionGeometry.jpg}
+	\includegraphics[width=0.6\textwidth]{img/Gondola/circleSectionGeometry.jpg}
 	\caption{Centeroid of Section of Circle \cite{circlesection}}
 	\label{fig:circleSection}
 \end{figure}
