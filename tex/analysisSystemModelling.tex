@@ -3,12 +3,39 @@
 \graphicspath {{../}}
 
 \begin{document}
-\section{System Modelling} \label{modelling}
-\subsection{Drag} \label{dragModelling}
+	
 \subsection{Gondola Forces} \label{gondForces}
 In order to complete the analysis on the gondola there are numerous forces and reaction that need to be computed. Reaction forces are solved using the gondolaForces code REF??? in conjunction with forceSolver which is explain in section REF?? and  the rotate code REF???. The gondolaForces code required the inputs of all the known forces acting on the gondola and their positions including the drive force of the friction wheel motor, the spring force acting on the friction wheel, the maximum thruster acceleration, the weight of each gondola car, and the linear actuator holding force. The code also requires the pitch angle of the airship ($\phi$), the thruster angle ($\beta$), the angle between the gondola cars($\Theta$), the position of each of the bearing arm reactions. All of the angles mentioned above are with reference to the top surface of the rear gondola. The code will output acceleration of the gondola, The maximum force applied the bearing arms and the braking force if the linear actuator is applied. \\
 
-the coordinate system in which all the forces are referenced is based on the rear gondola (gondola 1) as seen in FIG ??. The code first takes the drive force and the spring force both of which are acting on the friction wheels and rotates them into the coordinated system of the rear gondola based on the 45 degree angle of the torsion hinge. The spring and drive force acting on the front gondola (gondola 2) are again rotated based on the angle between the gondolas ($\Theta$). Then the code takes the inputed maximum thrust acceleration, rotates it based on the thrust angle ($\beta$) multiplies it by the mass of each gondola car and applies it to the center of mass of the corresponding gondola car. The weight of each car is then based on the pitch angle ($\phi$) is then also applied to the center of mass of each gondola car. For the case  
+the coordinate system in which all the forces are referenced is based on the rear gondola (gondola 1) as seen in FIG ??. The code first takes the drive force and the spring force both of which are acting on the friction wheels and rotates them into the coordinated system of the rear gondola based on the 45 degree angle of the torsion hinge. The spring and drive force acting on the front gondola (gondola 2) are again rotated based on the angle between the gondolas ($\Theta$). Then the code takes the inputed maximum thrust acceleration, rotates it based on the thrust angle ($\beta$) multiplies it by the mass of each gondola car and applies it to the center of mass of the corresponding gondola car. The weight of each car is then based on the pitch angle ($\phi$) is then also applied to the center of mass of each gondola car. For the case where the linear actuator is applied that force is included and the braking force in the x direction is equated to the sum of all other forces acting in that direction up to the maximum capable braking. The maximum capable breaking is determined in the linear actuator analysis \ref{linearActuator}. The sum of forces in x y and z in there most general form are presented below with the reactions on the left of the equal sign and the forces on the right.
+
+\begin{multline} \label{Fxgond}
+\Sigma F_{x} : (m_{1}+m_{2}) a_{gondola} + F_{NB3_{x}} + F_{NB4_{x}}  =\\ \sin(\phi) (m_{1} + m_2)g + F_{Drive} + \cos (\Theta) F_{Drive} + \cos(\beta) (m_1+m_2) a_{Thrust} + \frac{\sqrt{2}}{2} sin(\Theta) F_{Spring} + F_{Brake}
+\end{multline}
+
+\begin{flalign} \label{Fygond}
+\hspace{12pt}\Sigma F_{y} : F_{NB1_{y}} - F_{NB2_{y}} - F_{NB3_{y}} + F_{NB4_{y}} = \frac{\sqrt{2}}{2} F_{Spring} -\frac{\sqrt{2}}{2} F_{Spring} &&
+\end{flalign}
+
+\begin{multline} \label{Fzgond}
+\Sigma F_{z} : F_{NB1_{z}} + F_{NB2_{z}} + F_{NB3_{z}} + F_{NB4_{z}} =\\ \cos(\phi) (m_{1} + m_2)g - \frac{\sqrt{2}}{2} cos(\Theta) F_{Spring} -\frac{\sqrt{2}}{2} F_{Spring} + \sin(\beta) (m_1+m_2) a_{Thrust}+\sin (\Theta) F_{Drive} + F_{LA}
+\end{multline}
+
+Force solver ??? is used to solve these equations while making some assumptions based on the reactions. All of the $F_{NB}$ the normal forces between the bearings and the keel. since the contact surface is at 45 $\textdegree$  between the XY and XZ planes, the magnitudes of the forces acting in the z and y directions must be equal. 
+\begin{align}
+\label{eqn:scenario2start}
+F_{NB1_{z}} &= - F_{NB1_{y}} \\
+F_{NB2_{z}} &= F_{NB2_{y}} 
+\end{align}
+
+For the bearings on the front gondola as a result of the  angle between gondolas, there will also be a force acting in the x direction such that 
+\begin{align}
+F_{NB3_{x}} &= -\tan(\Theta) F_{NB3_{z}}\\ 
+F_{NB4_{x}} &= -\tan(\Theta) F_{NB4_{z}}\\
+F_{NB3_{y}} &= -\frac{F_{NB3_{z}}}{\cos(\Theta)} \\ F_{NB4_{y}} &= \frac{F_{NB4_{z}}}{\cos(\Theta)} \label{eqn:scenario2end}
+\end{align}
+
+The above equations from \ref{eqn:scenario2start} to \ref{eqn:scenario2end} are all encompassed by the switch case, scenario 2, in the Force Solver Code????. 
 
 
 \subsection{Loading Scenarios} \label{loadingScenarios}

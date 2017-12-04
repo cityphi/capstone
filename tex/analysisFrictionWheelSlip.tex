@@ -47,19 +47,5 @@ The following equations \ref{Fxgondtw} to \ref{Fzgondtw} are the sum of forces a
 \Sigma F_{z} : F_{NB1_{z}} + F_{NB2_{z}} + F_{NB3_{z}} + F_{NB4_{z}} =\\ \cos(\phi) (m_{1} + m_2)g - \frac{\sqrt{2}}{2} cos(\Theta) F_{Spring} -\frac{\sqrt{2}}{2} F_{Spring} + \sin(\beta) (m_1+m_2) a_{Thrust}+\sin (\Theta) F_{Drive}
 \end{multline}
 
-Force solver ??? is used to solve these equations while making some assumptions based on the reactions. All of the $F_{NB}$ the normal forces between the bearings and the keel. since the contact surface is at 45\textdegree between the XY and XZ planes, the magnitudes of the forces acting in the z and y directions must be equal. 
-\begin{align}
-\label{eqn:scenario2start}
-	 F_{NB1_{z}} &= - F_{NB1_{y}} \\
-	 F_{NB2_{z}} &= F_{NB2_{y}} 
-\end{align}
 
-For the bearings on the front gondola as a result of the  angle between gondolas, there will also be a force acting in the x direction such that 
-\begin{align}
-F_{NB3_{x}} &= -\tan(\Theta) F_{NB3_{z}}\\ 
-F_{NB4_{x}} &= -\tan(\Theta) F_{NB4_{z}}\\
-F_{NB3_{y}} &= -\frac{F_{NB3_{z}}}{\cos(\Theta)} \\ F_{NB4_{y}} &= \frac{F_{NB4_{z}}}{\cos(\Theta)} \label{eqn:scenario2end}
-\end{align}
-
-The above equations from \ref{eqn:scenario2start} to \ref{eqn:scenario2end} are all encompassed by the switch case, scenario 2, in the Force Solver Code????. 
 \end{document}
