@@ -14,8 +14,9 @@
 ## Mac file
 .DS_Store
 
-## main pdf
+## main pdfs
 main.pdf
+tex/*.pdf
 
 ## Intermediate documents:
 *.dvi
