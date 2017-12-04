@@ -16,7 +16,6 @@
 
 ## main pdfs
 main.pdf
-tex/*.pdf
 
 ## Intermediate documents:
 *.dvi
