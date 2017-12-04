@@ -31,7 +31,7 @@ The analysis first must solve the gondola forces for the case in which the great
 The sum of forces in the x direction are not shown because in this scenario, there are no forces acting in the x direction although the brake is applied. If there where any forces in the x direction since the brake is activated it would resisted by the braking force $F_{brake}$. The arm that is subjected to the highest force is usually located opposite to the friction wheel, but the code REF??? will check all the bearing forces, $F_{NB}$, and determine which is the largest. \\
 
 The member is most likely fail at the inner interface with the gondola, marked as shown ing FIGURE ???. This is due to the fact that this corner will be in tension. Stress is only relevant acting upon the direction of anticipated rotation, in the x-direction. Stress at the inner corner of the arm is found as:
->>>>>>> 9c32acc2bce62a7252501e1713478b18750eff97
+
 \begin{align}
 	\sigma _{Gondola Arm} = \sigma _{axial} + \sigma _{bending force} + \sigma _{bending moment} \\ \label{armStress}
 	\sigma _{Gondola Arm}  = \left(\dfrac{F_{NB_{z}}}{A}\right)\hat{k} + \left(\dfrac{F_{NB_{y}}l_{arm}c}{I}  + \dfrac{M_{NB}c}{I} \right) \hat{j}
