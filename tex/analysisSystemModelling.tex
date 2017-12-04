@@ -3,8 +3,7 @@
 \graphicspath {{../}}
 
 \begin{document}
-\section{System Modelling} \label{modelling}
-\subsection{Drag} \label{dragModelling}
+	
 \subsection{Gondola Forces} \label{gondForces}
 In order to complete the analysis on the gondola there are numerous forces and reaction that need to be computed. Reaction forces are solved using the gondolaForces code REF??? in conjunction with forceSolver which is explain in section REF?? and  the rotate code REF???. The gondolaForces code required the inputs of all the known forces acting on the gondola and their positions including the drive force of the friction wheel motor, the spring force acting on the friction wheel, the maximum thruster acceleration, the weight of each gondola car, and the linear actuator holding force. The code also requires the pitch angle of the airship ($\phi$), the thruster angle ($\beta$), the angle between the gondola cars($\Theta$), the position of each of the bearing arm reactions. All of the angles mentioned above are with reference to the top surface of the rear gondola. The code will output acceleration of the gondola, The maximum force applied the bearing arms and the braking force if the linear actuator is applied. \\
 
