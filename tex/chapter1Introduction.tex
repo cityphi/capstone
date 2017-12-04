@@ -8,13 +8,13 @@
 %	PROJECT MANDATE
 %---------------------------------------------------------------------
 \section{Project Mandate} \label{Mandate}
-The goal of the project is to overcome the current limitations involved with the control and landing of unmanned airships in adverse outdoor conditions. The airship consists of a helium filled envelope, external keel, and gondola which will act as a ballast. The moving ballast will control the pitch by the controlled displacement of the centre of mass. Propulsion will be provided by propellers in the X-Y plane of the airship. The system will have vector thrusting to allow for altitude change independent of pitch change.
+The goal of the project is to overcome the current limitations involved with the control of unmanned airships in adverse outdoor conditions. The airship consists of a helium filled envelope, external keel, and gondola which will act as a ballast. The moving ballast will control the pitch by the controlled displacement of the centre of mass. Propulsion will be provided by propellers in the X-Y plane of the airship. The system will have vector thrusting to allow for altitude change independent of pitch change.
 
 %---------------------------------------------------------------------
 %	PROJECT SCOPE
 %---------------------------------------------------------------------
 \section{Group Problem Scope} \label{Scope}
-The research project led by Dr. Eric Lanteigne involves designing a system to allow for the control of an unmanned airship. The goal of the project is to create a system that controls the airship by changing the position of the centre of mass to initiate pitch change. This pitch change, along with forward propulsion, will drive the airship in a given direction. The design team will be responsible for creating a system, where a gondola that acts as a ballast, will move along a non-linear, diamond-shaped keel in order to initiate pitch change of an airship. Ideally, the system will be able to incur a pitch change of up to ninety degrees, allowing the airship to descend straight downwards. Currently, all designs must be scalable as specifications of the airship envelope have yet to be finalized. The unmanned airship must be capable of flying outdoors and be able to carry a payload of between 0.2kg and 0.5kg. The main components of the design can be split up into: Gondola Design, Gondola Movement, Securing Gondola to Keel, Gondola Position Measurement, Securing the Propellers, Thrust Vectoring, Batteries, and Wire Management.
+The research project led by Dr. Eric Lanteigne involves designing a system to allow for the control of an unmanned airship. The goal of the project is to create a system that controls the airship by changing the position of the centre of mass to initiate pitch change. This pitch change, along with forward propulsion, will drive the airship in a given direction. The design team will be responsible for creating a system, where a gondola that acts as a ballast, will move along a non-linear, diamond-shaped keel in order to initiate pitch change of an airship. Ideally, the system will be able to incur a pitch change of up to ninety degrees, allowing the airship to descend straight downwards. Currently, all designs must be scalable as specifications of the airship envelope have yet to be finalized. The unmanned airship must be capable of flying outdoors and be able to carry a payload of between 0.2kg and 0.5kg. Dr. Lanteigne specifically stated that landing/mooring will not be an issue, and thus is outside of the project scope, as it will be grabbed by an individual during descent.
 
 %---------------------------------------------------------------------
 %	CRITERIA AND RESTRICTIONS
@@ -35,10 +35,6 @@ A high level overview of the system's parametrization is shown in Figure \ref{fi
 	\label{fig:ModellingOutline}
 \end{figure}
 
-Figure \ref{fig:ModellingParameterization} is a more detailed parametrization outline, which shows how user inputs will be converted to forces using an iterative approach. This approach will be used to compute all forces shown in Section ADD HERE??.
-
-
-Once all of the forces acting on the body are computed, failure analyses for each part are conducted in Section ADD HERE.
-
+This outline conveys the extreme interdependencies involved in parametrizing the airship. Each input parameter impacts almost every output parameter, making total parametrization non-linear. The Parametrization outline for the entire airship can be seen in Figure ??.
 
 \end{document}

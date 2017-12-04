@@ -1,4 +1,5 @@
 \documentclass[../main.tex]{subfiles}
+<<<<<<< HEAD
 %!TEX root = ./appendixDragAnalysis.tex
 \graphicspath {{../}}
 
@@ -6,6 +7,15 @@
 \subsection{Drag Analysis}
 
 Once it was understood that the airship itself needed to be parametrizable, a new method of computed drag needed to be determined, as the simulations only accounted for the old airship dimensions. For this, an analysis from a report called \textit{Technical Manual of Airship Aerodynamics} \cite{airshipAerodynamics} was used. The following formula was used to compute drag:
+=======
+%!TEX root = ./analysisDragAnalysis.tex
+\graphicspath {{../}}
+
+\begin{document}
+\subsection{Drag Analysis} \label{drag}
+
+An analysis from a report called \textit{Technical Manual of Airship Aerodynamics} \cite{airshipAerodynamics} was used to determine the drag forces acting on the airship. The following formula was used to compute drag:
+>>>>>>> 298c9488c2e855158610141e4e65cad7b30856ed
 
 \begin{equation}
 		D = C_D\rho (vol)^{2/3}v^{1.86}
@@ -20,9 +30,17 @@ Where $D$ is the drag in $lbf$ (converted to N), $ \rho $ is the density of air 
 	\label{tbl:airshipTable}
 \end{table}
 
+<<<<<<< HEAD
 Various airship dimensions can be seen below here. The aircraft dimensions shown below were for testing done in a wind tunnel to determine drag effects on real airships, so they are scaled down models. The goal is to select a model that has comparable dimensions to the airship we are using. As a starting point, the fineness ratio $f$ is computed for out airship. As an estimate, $f=L/D \approx 3.6/1.2 = 3$. In reference to Table \ref{tbl:airshipTable}, the closest match would be the Pony Blimp AA, with a fineness ratio of 3.4.\\
 
 It can be deduced from the table that the Prandtl Shape coefficient encompasses both skin and form drag. When the fineness ratio is higher, skin friction drag will have a larger effect than form drag, so when the airspeed is increased (from 20mph to 60mph), $C_D$ will decrease. The opposite is true with small fineness ratios, where the form drag plays a larger role, therefore the $C_D$ increases as airspeed is increased. To be conservative, the highest $C_D$ from the Pony Blimp AA, therefore $C_D = 0.0227$. An example calculation is shown below, for a windspeed of $20m/s$:
+=======
+Various airship dimensions can be seen below here. The aircraft dimensions shown below were for testing done in a wind tunnel to determine drag effects on real airships, so they are scaled down models. The goal is to select a model that has comparable dimensions to the airship to be constructed for this project.\\
+
+It can be deduced from the table that the Prandtl Shape coefficient encompasses both skin and form drag. When the fineness ratio is higher, skin friction drag will have a larger effect than form drag, so when the airspeed is increased (from 20mph to 60mph), $C_D$ will decrease. The opposite is true with small fineness ratios, where the form drag plays a larger role, therefore the $C_D$ increases as airspeed is increased. \\
+
+As a example, assuming the blimp designed has a fineness ratio of 3.4, the comparable blimp would be the Pony Blimp AA. To be conservative, the highest $C_D$ from the Pony Blimp AA is $C_D = 0.0227$. The calculation is shown below, for a windspeed of $20m/s$:
+>>>>>>> 298c9488c2e855158610141e4e65cad7b30856ed
 \begin{equation} \label{exDrag}
 D = C_D\rho (vol)^{2/3}v^{1.86}=0.0227*(0.00237 slugs/ft^3)*(122.644 ft^3)^{2/3}(65.616 ft/s) ^{1.86} = 3.183 lbf = 14.1586N 
 \end{equation}
