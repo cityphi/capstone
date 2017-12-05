@@ -3,7 +3,7 @@
 \graphicspath {{../}}
 
 \begin{document}
-\subsection{Previous Drag Analysis}
+\section{Previous Drag Analysis}
 
 Before knowing that the airship envelope needed to be parametrizable, drag values were initially computed using SolidWorks, by its built in Flow Simulation add-on, using a generic airship size. Simulations were conducted from 2m/s to 20m/s, at intervals of 2m/s. Skin Friction Drag and Regular Drag were computed and summed to obtain total drag for each speed. A table with the results from the simulations can be seen in Table \ref{tbl:DracTable}.
 
@@ -38,9 +38,6 @@ The equation from the curve (generated from MATLAB) was found to be:
 
 Where $ D $ is the drag force and $ v $ is the airship speed, in $m/s$. Equation \ref{dragEqn} is what is used throughout the report to obtain drag forces.\\
 
-<<<<<<< HEAD
-=======
 It is clear that the values computed at here were much higher than that computed from Section \ref{drag}. This suggests that the program was not outputting reliable results. The mesh resolution had a huge impact on the results, as expected, with the value for drag force going from $ 44.1682N $ at $ 20m/s $ to $ 28N $ at $ 20m/s $. The second value, with the more refined mesh, was much closer to the result shown in Section \ref{drag}, which was $31.463N$.
 
->>>>>>> 298c9488c2e855158610141e4e65cad7b30856ed
 \end{document}
