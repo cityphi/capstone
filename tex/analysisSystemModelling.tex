@@ -4,7 +4,13 @@
 \graphicspath {{../}}
 
 \begin{document}
-	
+\subsection{Thrusters} \label{thrusterIntro}
+The thruster will be balanced so that the servo motor will only use power when actively rotating the thruster. As a result, when the thruster is vectored straight forward, it will not be able to move the shaft assembly due to the inertia of the parts and the minimal resistance in the servo motor. The same effect will be present when the thruster is vectored vertically.\\
+
+Given the high angular velocity and non-negligible inertia of the propeller, the system will be subject to gyroscopic forces if the thruster orientation is changed in flight. To counter the addition of unwanted high forces to the components, power to the thruster will be cut and if need be, applied in the reverse orientation for a specific duration before the thruster is reoriented. This reduction or elimination of angular velocity will effectively render gyroscopic forces negligible or eliminate them all together. \\
+
+Also, the analysis done on the thruster motor did not present considerable results and can be found in Appendix section \ref{thrusterMotorAnalysis}. The propeller will be well balanced eliminating any detrimental rotating imbalances. The motor mounting bracket will secure the motor using screws, which do not need to be analysed as the stresses applied are negligible compared to the strength of the material.
+
 \subsection{Gondola Forces} \label{gondForces}
 In order to complete the analysis on the gondola there are numerous forces and reaction that need to be computed. Reaction forces are solved using the gondolaForces code REF??? in conjunction with forceSolver which is explain in section REF?? and  the rotate code REF???. The gondolaForces code required the inputs of all the known forces acting on the gondola and their positions including the drive force of the friction wheel motor, the spring force acting on the friction wheel, the maximum thruster acceleration, the weight of each gondola car, and the linear actuator holding force. The code also requires the pitch angle of the airship ($\phi$), the thruster angle ($\beta$), the angle between the gondola cars($\Theta$), the position of each of the bearing arm reactions. All of the angles mentioned above are with reference to the top surface of the rear gondola. The code will output acceleration of the gondola, The maximum force applied the bearing arms and the braking force if the linear actuator is applied. \\
 
