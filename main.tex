@@ -124,28 +124,34 @@
 \center
  
 %	HEADING SECTIONS
-\textsc{\LARGE University of Ottawa}\\[1.5cm]
-\textsc{\Large MCG4322}\\[0.5cm]
-\textsc{\large RE3 - Wildcat Engineering}\\[0.5cm]
+\textsc{\LARGE University of Ottawa}\\
+\textsc{\Large MCG4322}\\
+\textsc{\large Group RE3}\\[0.2cm]
+
+%	LOGO SECTION
+\includegraphics[width=0.3\textwidth]{img/general/wDesign.png}
 
 %	TITLE SECTION
 \HRule \\[0.4cm]
 {\huge \bfseries \reporttitle{}}\\
-\HRule\\ [0.2cm]
+\HRule\\ 
 
-\Large \textbf{Volume \textit{x} of \textit{y}} \\[1cm]
+\Large \textbf{Volume \textit{x} of \textit{y}} \\
 
+\singlespacing
 %	AUTHOR SECTION
 \Large Joey Kane - 7386330\\
 Isaak Goldenberg - 7395188\\
 Sawyer Woodside - 7158568\\
-Alex Pennell - 7334789\\[0.5cm]
+Alex Pennell - 7334789\\[0.4cm]
+
+\linespread{1.5}
 
 %	DATE SECTION
-{\large December 8, 2017}\\[0.5cm] % Change to Due Date of report
+{\large December 8, 2017}\\[0.25cm] % Change to Due Date of report
 
-%	LOGO SECTION
-\includegraphics[width=0.8\textwidth]{img/general/boys.PNG}\\[0.5cm]
+%	GROUP PHOTO SECTION
+\includegraphics[width=0.85\textwidth]{img/general/boys.PNG}\\[0.25cm]
 
 % 	SPONSOR SECTION
 \large \emph{Sponsor:} Dr. Eric Lanteigne
@@ -160,12 +166,14 @@ Alex Pennell - 7334789\\[0.5cm]
 %	ABSTRACT
 %---------------------------------------------------------------------
 \chapter*{Abstract}
-i.Contents of each book (if applicable) \\
-ii.Description of design\\
-iii.Special considerations\\
-iv.Illustration of the final design
-\\
-half page, one paragraph
+Volume 1 of the Capstone Report contains the main body of the report, including all design and analysis information. Volume 2 contains all appendices.\\
+
+The aim of this design was to create a system for control of an unmanned airship. It was achieved by using a gondola as a ballast to move the centre of mass in relation to the centre of volume and initiate pitch changes. The design features stationary thrusters located in the XY plane of the airship, attached by carbon fibre arms which are secured to a pre-existing keel. The keel acts as a rail for the gondola to move back and forth on. The gondola contains control equipment used to communicate with the thruster assembly wirelessly, as well as drive the gondola to the desired position. Passive breaking is highly desirable and achieved through a linear actuator with a holding force with no signal. Vectoring of the propellers is achieved by a servo motor mounted to a plate which connects to the thruster arms.\\
+
+The dimensions of the airship may vary as it is not manufactured yet, and input parameters are selected by the user, meaning that the whole airship must be scalable and feasible. A GUI is implemented in MATLAB to ensure that the user selects values which are feasible and produces SolidWorks Models that can be used as reference for manufacturing and design.\\
+
+iv.Illustration of the final design????
+
 \pagebreak
 
 %---------------------------------------------------------------------
@@ -284,7 +292,7 @@ half page, one paragraph
 %#####################################################################
 %	PROPOSED DESIGN
 %#####################################################################
-\subfile{./tex/chapter2ProposedDesign.tex}
+%\subfile{./tex/chapter2ProposedDesign.tex}
 
 %#####################################################################
 %	ANALYSIS
@@ -338,21 +346,19 @@ half page, one paragraph
 \section{Code 1}
 \lstinputlisting[language=Octave]{MATLAB/dummy.m} %USE THIS FORMAT TO INSERT CODE
 
-
 %-----------------------------------------------------------------
 %	ADDITIONAL MATERIAL HERE
 %-----------------------------------------------------------------
 \chapter{Additional Material}
-\subfile{./tex/appendixGondolaBearings.tex}
 \subfile{./tex/analysisGondolaArmDeflection.tex}
 \subfile{./tex/analysisArmFatigue.tex}
-\subfile{./tex/appendixThrusterMotor.tex}
 \subfile{./tex/analysisThrusterAdhesion.tex}
-\subfile{./tex/appendixThrusterBearings.tex}
 \subfile{./tex/analysisMotorShaft.tex}
 \subfile{./tex/appendixNylonShaftScrew.tex}
+\subfile{./tex/appendixVectoringMotor.tex}
+\subfile{./tex/appendixGondolaHinge.tex}
+\subfile{./tex/appendixBearings.tex}
 \subfile{./tex/appendixCauchy.tex}
-\subfile{./tex/appendixFromAnalysisDossier.tex}
 \subfile{./tex/appendixThrustCalculations.tex}
 \subfile{./tex/appendixDragAnalysis.tex}
 
