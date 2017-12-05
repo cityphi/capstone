@@ -39,7 +39,11 @@ As a example, assuming the blimp designed has a fineness ratio of 3.5, the compa
 D = C_D\rho (vol)^{2/3}v^{1.86}=0.0167*(0.00237 slugs/ft^3)*(122.644 ft^3)^{2/3}(65.616 ft/s) ^{1.86} = 2.342 lbf = 10.417735N 
 \end{equation*}
 
-Based on Table \ref{tbl:contributionsTable}, the envelope contributes 45\% to the drag. Therefore the total drag will be estimated as $D_{total}=D/0.45$. Based on this, the total drag in found in Equation \ref{exDrag} is now $23.15N$.
+Based on Table \ref{tbl:contributionsTable}, the envelope contributes 35\% to the drag. Therefore the total drag will be estimated as $D_{total}=D/0.35$. Based on this, the total drag is found to be $29.76495N$. When the 35\% is factored into Equation \ref{eqnDrag}, the coefficient changes and the final forumla becomes:
+
+\begin{equation} \label{eqnDrag2}
+D[N] = 2.420293983*(C_D)*(\rho[kg/m^3])*(vol [m^3])^{2/3}*(v [m/s])^{1.86}
+\end{equation}
 
 \begin{table}[H]
 	\centering
@@ -80,6 +84,6 @@ The resulting equation for drag coefficient is found as:
 	C_D(fr)= 0.00092642*fr^2 -0.010134*fr + 0.040569
 \end{equation}
 
-Equations \ref{eqnDrag} and \ref{eqnCD} are used in conjunction to determine the drag force acting on the blimp.
+Equations \ref{eqnDrag2} and \ref{eqnCD} are used in conjunction to determine the drag force acting on the blimp.
 
 \end{document}
