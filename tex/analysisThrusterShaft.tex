@@ -30,7 +30,8 @@ I _{z}  = \dfrac{\pi}{4} (r_{minor}^4 - r_{bore}^4)
 This stress is then used to determine the safety factor by Brittle Mohr-Coulomb Theory \cite[227]{shigley}.
 
 \begin{equation}
-\eta = \dfrac{S_{ut}}{\sigma _a} \Rightarrow 1.5 \geq \dfrac{S_{ut}}{\sigma _a}
+\eta = \dfrac{S_{ut}}{\sigma _a} \Rightarrow 3 \geq \dfrac{S_{ut}}{\sigma _a}
 \end{equation}
 
+Due to the medium failure likelihood a safety factor $\eta$ of 3 is used. If for the shaft diameter used does not meet this requirement, the code selects the next highest standard threaded shaft diameter and runs through the analysis using those numbers. This repeats until the safety factor is met. 
 \end{document}
