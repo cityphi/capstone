@@ -21,8 +21,17 @@ The first analysis relates to the System Modelling Loading Scenario section \ref
 \end{equation}
 Because of the loading scenario both $F_y$ and $M_z$ are zero and there for do not contribute to the total stress. In addition to the planar stress in z there is also torsional shear in the xy plane. This is describes by equation \ref{eqn:armtorsionShear} from {(Shigley's Machine Design \cite[102]{shigley})}.
 \begin{equation} \label{eqn:armtorsionShear}
-\tau_{xy} = \dfrac{M_{z}}{tw^2}(3+\frac{1.8h}{t})
+\tau_{xy} = \dfrac{M_{z}}{wt^2}(3+\frac{1.8t}{w})
 \end{equation}
+The equation accounts for the maximum shear stress in a rectangular cross section which occurs in the center of the wider side which in this case is the width. \\ 
+
+Next the analysis takes both the planar and shear stresses and convertes them to principle stresses (as shown in Appendix \ref{appendix:cauchy}). These principle stresses are then used to determine the safety factor by Von Mises Theory \cite[221]{shigley}.
+
+\begin{equation}
+\eta = \dfrac{S_{ut}}{\sigma _a} \Rightarrow 5 \geq \dfrac{S_{ut}}{\sigma _a}
+\end{equation}
+
+A safety factor of five was chosen because there is a relatively high failure likelihood and a failure of this component would result in catastrophic failure of the airship.\\
 
 For the buckling failure, this could occur at the top part of the connector. Using the reaction forces found in Force Calculation section the cross section can be drawn, seen in Figure ?? The buckling is calculated using Euler's critical load cite??. 
 

@@ -4,5 +4,28 @@
 
 \begin{document}
 \section{Gondola Motor Shaft} \label{motorShaft}
+The gondola motor shaft analysis assures that the motor shaft meets the specified safety factor of 3. In order to preform the motor shaft analysis the required inputs are the motor torque $T_w$, the driving force $F_{Drive}$ and the spring force $F_{spring}$ based off of equations \ref{eqn:driveForce} and \ref{eqn:springTorque} in the friction wheel slip analysis section \ref{frictionSlip}, the length of the motor shaft $L_{ms}$ and the radius of the motor shaft $r_{ms}$.
 
+The coordinate system used to describe the forces on the shaft are based on the angle of the motor hinge and are denoted by  x'' y' z''. The scenario simply involves the motor driving the gondola at full force. The stresses acting on the shaft include planar stress in x'' and z'' as well as shear force in the x''z'' plane. The planar force is shown below in equations  \ref{eqn:shaftstressx}, \ref{eqn:shaftstressz}, and \ref{eqn:shaftshearxz}.
+
+\begin{equation} \label{eqn:shaftstressz}
+\sigma_{z'}=\frac{Mc}{I}=\frac{R_{x}\cdot{}L_{Rx}\cdot{}r_{ms}}{\frac{\pi\cdot{}r_{ms}^4}{4}}
+\end{equation}
+
+\begin{equation} 
+\label{eqn:shaftstressx}
+\sigma_{x'}=\frac{Mc}{I}=\frac{F_{spring}\cdot{}L_{Rx}\cdot{}r_{ms}}{\frac{\pi\cdot{}r_{ms}^4}{4}}
+\end{equation}
+
+\begin{equation}
+\label{eqn:shaftshearxz}
+\tau_{z'x'} = \frac{-T_w\cdot{}r_{ms}}{J} = \frac{-2T_w}{\pi\cdot{}r_{ms}^3}
+\end{equation}
+
+Next the analysis takes both the planar and shear stresses and converts them to principle stresses (as shown in Appendix \ref{appendix:cauchy}). These principle stresses are then used to determine the safety factor by Von Mises Theory \cite[221]{shigley}. 
+\begin{equation}
+\eta = \dfrac{S_{ut}}{\sigma _a} \Rightarrow 3 \geq \dfrac{S_{ut}}{\sigma _a}
+\end{equation}
+
+This analysis was deemed inconsequential as the calculated safety factor far exceeded 3, this can be seen in the results below???. The extremely high safety factor is due to the properties of steel being considerably higher than those needed for our application, since is shaft analysed is a component of a off the shelf motor, we could not change the material. 
 \end{document}
