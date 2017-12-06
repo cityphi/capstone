@@ -9,7 +9,7 @@
 \subsection{Thruster Bearings}
 
 \subsection{Thruster Bearings Press Fit}
-The bearing in the Bearing Shaft Support seen in Figure \ref{fig:ShaftLocation} will be mounted using a press fit. The calculations \cite{pressfit} for will need to be used for the bearing as the shaft (bearing into Bearing Bracket). {(Shigley's Machine Design \cite[116]{shigley})}.
+The bearing in the Bearing Bracket seen in Figure \ref{fig:shaftAssembly} will be mounted using a press fit. The calculations for will need to be used for the bearing as the shaft (bearing into Bearing Bracket). {(Shigley's Machine Design \cite[116]{shigley})}. Considering the bearing will only be pressed in once, a safety factor of 1.5 is desired. All material properties taken from Matweb and the dimensions were taken as the largest diameter for the worst case stress (\cite{316StainlessSteel} \cite{Aluminum6061} \cite{Nylon6}).
 
 \begin{figure}[H]
 	\centering
@@ -19,34 +19,41 @@ The bearing in the Bearing Shaft Support seen in Figure \ref{fig:ShaftLocation} 
 \end{figure}
 
 \begin{equation}
-\sigma_r=\frac{\delta}{R[\frac{1}{E_o}\cdot{}(\frac{r_o^2+R^2}{r_o^2-R^2}+v_o)+\frac{1}{E_i}\cdot{}(\frac{R^2+r_i^2}{R^2-r_o^2}+v_i)]}
+n=\frac{S_y}{\sigma_r}=1.5
 \end{equation}
 
 \begin{equation}
-\sigma_r=\frac{0.1}{20mm[\frac{1}{E_o}\cdot{}(\frac{r_o^2+R^2}{r_o^2-R^2}+v_o)+\frac{1}{E_i}\cdot{}(\frac{R^2+r_i^2}{R^2-r_o^2}+v_i)]}
+{\sigma_r}=\frac{S_y}{n}=\frac{103MPa}{1.5}=68.67MPa
 \end{equation}
 
 \begin{equation}
-n=\frac{S_y}{\sigma_a}
+\sigma_r=\frac{\delta}{R[\frac{1}{E_o}\cdot{}(\frac{r_o^2+R^2}{r_o^2-R^2}+v_o)+\frac{1}{E_i}\cdot{}(\frac{R^2+r_i^2}{R^2-r_i^2}+v_i)]}
+\end{equation}	 
+	
+\begin{multline}
+\delta = {68.67MPa}\cdot{}14.06mm[\cdot{}\frac{1}{68.9\cdot{10^3MPa}}\cdot{(\frac{(19.12mm)^2+(14.06mm)^2}{(19.12mm)^2-(14.06mm)^2}+0.33)}  
+	\\ +\frac{1}{193\cdot{10^3MPa}}\cdot{(\frac{(14.06mm)^2+(12mm)^2}{(14.06mm)^2-(12mm)^2}-0.27)}]
+\end{multline}
+
+\begin{equation}
+	\delta=0.082mm
 \end{equation}
-<<<<<<< HEAD
-Dimensions were taken as the worst case for the bearing OD. Yield stress for aluminum is 276MPa cite{?????????????}, 316 stainless steel data was taken from cite{???????????}.
-=======
+\\
+Therefore, the bearing should be 0.082mm radially larger than the Bearing Bracket.
+For the nylon 6 shaft in the bearing, a different pressfit calculation was used to calculate the same value (optimized for plastic \cite{pressfit}).
 
-Dimensions were taken as the worst case for the bearing OD. Yield stress for aluminum is 276MPa.
+\begin{equation}
+	n=\frac{S_y}{\sigma_r}
+\end{equation}
 
-\begin{equation*}
-\sigma_a=\frac{6mm-(5.8mm)}{6mm}\cdot{}55MPa\cdot{}
-\frac{(16mm)^2+(6mm)^2}{2(16mm)^2}=1.04MPa
-\end{equation*}
+\begin{equation}
+{\sigma_r}=\frac{S_y}{n}=\frac{103MPa}{1.5}=68.67MPa
+\end{equation}
 
-\begin{equation*}
-n=\frac{65MPa}{1.04MPa}=62.5
-\end{equation*}
-
-\begin{equation*}
-i_a=(6mm)\cdot{}\frac{(1.04MPa)}{52.6MPa}\cdot{}
-\frac{(16mm)^2+(6mm)^2}{2(16mm)^2}=0.068mm
->>>>>>> 8dff15a56de286864a77158fb21a54c1b61983f4
-\end{equation*}
+\begin{equation}
+i_a=(12mm)\cdot{}\frac{(68.67MPa)}{68.9\cdot{}10^3MPa}\cdot{}
+\frac{(14mm)^2+(12mm)^2}{2(14mm)^2}=0.010mm
+\end{equation}
+\\
+Therefore the shaft should be 0.01mm larger than the bearing inner diameter to provide an acceptable press fit.
 \end{document}
