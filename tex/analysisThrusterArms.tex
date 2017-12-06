@@ -21,15 +21,14 @@ C.G_{arm} =\frac{4(r_o^3 - r_i^3)}{3\pi(r_o^2 - r_i^2)}
 It also considers the maximum thrust force. once the code solves the reaction forces it computes all considerable stresses acting on the center of the inner radius surface shown in FIG ??. Planar stress in Y is calculated using the equation \ref{eqn:armystress} shown below. The stress is a result of the bending moment about Z
 \begin{equation}
 \label{eqn:armystress}
-\sigma_{y}= \frac{M_{x}c_z}{A r_i (\bar{r} - r)}
+\sigma_{y}=  \underbrace{\frac{M_{x}c_z}{A r_i (\bar{r} - r)}}_\text{Bending moment stress about x} + \underbrace{\frac{M_{z}c_x}{I_z}}_\text{Bending moment stress about z} + \underbrace{\frac{F_y}{A}}_\text{Axial stress} 
 \end{equation}
-Where $A$ is the area, width $w$ times height $h$, $\bar{r}$ is the center radius of the arm and $r$ is the neutral axis calculated by equations \ref{eqn:armNeutralAxis} shown below. $c_z$ is the distance to the neutral axis $r - r_i$.
+Where $A$ is the area, width $w$ times height $h$, $\bar{r}$ is the centre radius of the arm and $r$ is the neutral axis calculated by equations \ref{eqn:armNeutralAxis} shown below. $c_z$ is the distance to the neutral axis $r - r_i$. Because of the loading scenario both $F_y$ and $M_z$ are zero and there for do not contribute to the total stress.
 \begin{equation} \label{eqn:armNeutralAxis}
 \bar{r} = r_i + \frac{h}{2} \hspace{20mm}  r = \frac{h}{ln(r_o/r_i)}
 \end{equation}
-
-In addition to the planar stress in Y there is also torsional shear in the XZ plane. This is describes by equation \ref{eqn:torsionShear} from {(Shigley's Machine Design \cite[102]{shigley})}.
-\begin{equation} \label{eqn:torsionShear}
+In addition to the planar stress in Y there is also torsional shear in the XZ plane. This is describes by equation \ref{eqn:armtorsionShear} from {(Shigley's Machine Design \cite[102]{shigley})}.
+\begin{equation} \label{eqn:armtorsionShear}
 \tau_{XZ} = \dfrac{M_{y}}{wh^2}(3+\frac{1.8h}{w})
 \end{equation}
 
