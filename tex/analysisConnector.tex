@@ -50,5 +50,13 @@ The safety factor is calculated using the force applied and the critical force (
 \begin{equation}
 \eta = \frac{P_{cr}}{F_{Rz}}
 \end{equation}
+\paragraph*{Sample Calculations}
+$M_y$ value taken from the MATLAB Force Solver.
+$$\sigma_{z}={\frac{M_{x}c_y}{I_x}}+{\frac{M_{y}c_x}{I_y}}+{\frac{F_z}{A}}$$
+$$\sigma_{z}=0+\frac{(17.2196N\cdot{}m)(0.0200m)}{8.000\cdot{}10^{-9}mm^4}+0 = 43.049MPa$$
+$$\eta = \dfrac{S_{ut}}{\sigma _a} = \dfrac{310MPa}{43.049MPa}=7.2$$
+$$P_{cr} = \frac{(1.2)\pi^2Eb^3}{12l}=\frac{(1.2)\pi^2(68.9\cdot{}10^9Pa)(0.0015m)^3}{12(0.0330m)}=6954.71N$$
+$F_{Rz}$ is calculated using the MATLAB Force Solver.
+$$\eta = \frac{P_{cr}}{F_{Rz}} = \frac{6954.71N}{29.9623N} = 232$$
 
 \end{document}
