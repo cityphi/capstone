@@ -47,9 +47,9 @@ Where $A$ is the area, width $w$ times height $h$, $\bar{r}$ is the centre radiu
 \begin{equation} \label{eqn:armNeutralAxis}
 \bar{r} = r_i + \frac{h}{2} \hspace{20mm}  r = \frac{h}{ln(r_o/r_i)}
 \end{equation}
-As mentioned above the primary stress acting on the arm is torsional shear. This is calculated using equation \ref{eqn:armtorsionShear} from {(Shigley's Machine Design \cite[102]{shigley})}. 
+As mentioned above the primary stress acting on the arm is torsional shear. This is calculated using equation \ref{eqn:armtorsionShear} from {(Shigley's Machine Design \cite[102]{shigley})}. $M_y$ is the reaction moment at A $w , 
 \begin{equation} \label{eqn:armtorsionShear}
-\tau_{XZ} = \dfrac{M_{A}}{wh^2}(3+\frac{1.8h}{w})
+\tau_{XZ} = \dfrac{M_{y}}{wh^2}(3+\frac{1.8h}{w})
 \end{equation}
 
 The equation accounts for the maximum shear stress in a rectangular cross section which occurs in the center of the wider side which in this case is the width. \\ 
