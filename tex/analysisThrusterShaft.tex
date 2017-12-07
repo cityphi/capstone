@@ -12,11 +12,11 @@
 	\label{fig:ThrusterShaftParametrization}
 \end{figure}
 
-The thruster shaft analysis will optimize the diameter of the thruster shaft based on standard threaded shaft dimensions The Analysis will output the diameter of the shaft, the thread of the shaft, the length of the shaft, the weight of the shaft from which it updates the weight and centre of gravity of the entire thruster assembly. The inputs required for the analysis are the maximum thrust, the size of propellers, the weight of the assembly, the material properties of Nylon 6 \cite{Nylon6} (the shaft material), the bore size of the shaft which is 3.8mm and the standard thread dimensions from M8 to M16 REF \cite{threadSizes}.\\
+The thruster shaft analysis will optimize the diameter of the thruster shaft based on standard threaded shaft dimensions. The analysis will output the diameter of the shaft, the thread of the shaft (based don a standard metric thread), the length of the shaft, and the weight of the shaft (from which the program updates the weight and centre of gravity of the entire thruster assembly). The inputs required for the analysis are the maximum thrust, the size of propellers, the weight of the assembly, the material properties of Nylon 6 \cite{Nylon6} (the shaft material), the bore size of the shaft  (3.8mm, for the set screw), and the standard thread dimensions from M8 to M16 \cite{threadSizes}.\\
 
-The material nylon 6 was chosen because of its suitable strength, ease of manufacturability and weight. Aluminium was also considered but would have resulted in an over-engineered component or a un-proportionally small radius while still being heavier. Results that justify this decision are shown at the end of the section REF??. The bore diameter of 3.8mm is based on the screw that attaches the shaft axially to the thrust vectoring motor, shown in FIG ??.\\
+The material nylon 6 was chosen because of its suitable strength, ease of manufacturability and weight. Aluminium was also considered but would have resulted in an over-engineered component or a un-proportionally small radius while still being heavier. The bore diameter of 3.8mm is based on the screw that attaches the shaft axially to the thrust vectoring motor, which can be seen more clearly in Figure REF??\\
 
-The scenario for the analysis is that described in Loading Scenario, Section \ref{loadingScenarios}, Maximum Downward Force is shown in Figure \ref{fig:scenario1} where all forces are with reference to the coordinate system $xyz$ defined by the pitch of the airship. The shaft is analysed using simple bending where it is cantilevered at the bearing in the thrust vector motor assembly shown in Figure \ref{fig:thrusterShaftFBD}. The analysis begins by calculating the required length of shaft for the propeller size, as well as the position of the propeller with reference to the bearing. The forces and weights are passed to forceSolver REF??? to solve the force and moments at the bearing of all the forces acting on the shaft.
+The scenario for the analysis is described in Section \ref{loadingScenarios}, shown specifically in Figure \ref{fig:scenario1}. All forces are with reference to the coordinate system $xyz$ defined by the pitch of the airship. The shaft is analysed using simple bending where it is cantilevered at the bearing in the thrust vector motor assembly shown in Figure \ref{fig:thrusterShaftFBD}. The analysis begins by calculating the required length of shaft for the propeller size, as well as the position of the propeller with reference to the bearing. The forces and weights are passed to forceSolver (Appendix \ref{code:forceSolver}) to solve the force and moments at the bearing of all the forces acting on the shaft.
 
 \begin{figure}[H]
 	\centering
@@ -25,7 +25,7 @@ The scenario for the analysis is that described in Loading Scenario, Section \re
 	\label{fig:thrusterShaftFBD}
 \end{figure}
 
-The free body diagram in Figure \ref{fig:thrusterShaftFBD} is used to get the summation of forces at the bearing. The forces on the figure are the thrust force ($F_T$), weight of thruster components ($W_T$), weight of shaft ($W_{TS}$), and the reaciton forces ($R_B$ and $M_B$). As mentioned the forceSolver REF?? does this analysis, however calculating by hand will need the summation of forces:
+The free body diagram in Figure \ref{fig:thrusterShaftFBD} is used to get the summation of forces at the bearing. The forces on the figure are the thrust force ($F_T$), weight of thruster components ($W_T$), weight of shaft ($W_{TS}$), and the reaction forces ($R_B$ and $M_B$). To show sample calculates, summation of forces will be necessary:
 
 \begin{equation}
 \label{eqn:thrustShaftFx} 
@@ -36,7 +36,7 @@ The free body diagram in Figure \ref{fig:thrusterShaftFBD} is used to get the su
 \curveplus \Sigma M_B = 0 = -M_B + F_T(L_T) - W_T(L_{WT}) - W_{TS}(L_{TS})
 \end{equation}
 
-Because in this scenario both the thrust and the weight are acting in the same direction all forces are acting in the x-direction. So the greatest stress will be the one generated by the moment in $z$ ($M_B$). Stress is calculated using the equation \ref{eqn:thrustShaftStress} shown below, assuming that the maximum stress will occur when the shaft is in tension at the upper outer edge. Where $c$ is the radius of the maximum pitch and $I_z$ is the moment of inertia in z of a hollow cylinder (Equation \ref{eqn:hollowInertia}).
+Because in this scenario both the thrust and the weight are acting in the same direction all forces are acting in the x-direction. Therefore the greatest stress will be the one generated by the moment in $z$ ($M_B$). Stress is calculated using Equation \ref{eqn:thrustShaftStress}, assuming that the maximum stress will occur when the shaft is in tension at the upper outer edge. In Equation \ref{eqn:thrustShaftStress}, $c$ is the radius of the maximum pitch and $I_z$ is the moment of inertia in z of a hollow cylinder (Equation \ref{eqn:hollowInertia}).
 
 \begin{equation}
 \label{eqn:thrustShaftStress} 
@@ -48,13 +48,13 @@ Because in this scenario both the thrust and the weight are acting in the same d
 I _{z}  = \dfrac{\pi}{4} (r_{minor}^4 - r_{bore}^4)
 \end{equation}
 
-Since this is only simple bending the analysis does not have to use Cauchy to solve the stresses. However, Brittle Mohr-Coulomb Theory \cite[227]{shigley} can still be used with the only stress being plugged in. In equation $\sigma_{t}$ is the ultimate tensile strength of Nylon 6 \cite{Nylon6}.
+Since this is only simple bending the analysis does not have to use the Cauchy Stress Tensor to solve the stresses. Brittle Mohr-Coulomb Theory \cite[227]{shigley} can be used directly. In Equation \ref{eqn:thrusterFactor}, $\sigma_{t}$ is defined as the ultimate tensile strength of Nylon 6 \cite{Nylon6}.
 
-\begin{equation}
+\begin{equation} \label{eqn:thrusterFactor}
 \eta = \dfrac{\sigma_{T}}{\sigma _a} \Rightarrow 3 \geq \dfrac{\sigma_{T}}{\sigma _a}
 \end{equation}
 
-Due to the medium failure likelihood, a safety factor $\eta$ of 3 is used. If for the shaft diameter used does not meet this requirement, the code selects the next highest standard threaded shaft diameter and runs through the analysis using those numbers. This repeats until the safety factor is met. 
+Because the likelihood of failure has been assessed at medium, a safety factor $\eta$ of 3 is used. If the shaft diameter used does not meet this requirement, the code selects the next highest standard threaded shaft diameter and runs through the analysis using those numbers. This repeats until the safety factor requirement is met. 
 
 \subsubsection*{Sample Calculations}
 $M_z$ is calculated using the MATLAB Force Solver program.
