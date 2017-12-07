@@ -34,4 +34,12 @@ This stress is then used to determine the safety factor by Brittle Mohr-Coulomb 
 \end{equation}
 
 Due to the medium failure likelihood a safety factor $\eta$ of 3 is used. If for the shaft diameter used does not meet this requirement, the code selects the next highest standard threaded shaft diameter and runs through the analysis using those numbers. This repeats until the safety factor is met. 
+
+\subsubsection*{Sample Calculations}
+$M_z$ is calculated using the MATLAB Force Solver program.
+$$\sigma _{Shaft}  = \dfrac{M_{z}c}{I} = \dfrac{(1.2535N\cdot{}m)(0.0051m)}{(3.4817\cdot{}10^{-10}mm^4)}=18.28MPa$$
+$$I _{z}  = \dfrac{\pi}{4} (r_{minor}^4 - r_{bore}^4) = \dfrac{\pi}{4} ((0.0051mm)^4 - (0.0038)^4) = 3.4817\cdot{}10^{-10}mm^4$$
+$$\eta = \dfrac{S_{ut}}{\sigma _a} \Rightarrow 3 \geq \dfrac{S_{ut}}{\sigma _a}$$
+$$\eta = \dfrac{69MPa}{18.28MPa}=3.7756$$
+After 3 iterations, a safety factor of 3.8 is calculated which has gone above the design threshold.
 \end{document}
