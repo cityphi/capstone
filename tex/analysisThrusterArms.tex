@@ -65,6 +65,6 @@ A safety factor of five was chosen because there is a relatively high failure li
 $M_y$, $S_1$ and $S_3$ are taken from the MATLAB Force Solver program.
 $$\tau_{XZ} = \dfrac{M_{y}}{wh^2}(3+\frac{1.8h}{w})= \dfrac{8.6098N\cdot{}m}{(0.030m)(0.0040m)^2}(3+\frac{1.8(0.0040m)}{(0.030m)})=58.12MPa$$
 
-$$\eta = \dfrac{S_{ut}}{\sigma _a} = \dfrac{S_{ut}}{\sigma _a}$$
+$$\eta = \frac{\sigma_t\sigma_c} {\sigma_c\sigma_1 -\sigma_t\sigma_3}=\frac{600MPa\cdot{}570MPa} {570MPa\cdot{}58.12MPa - 600MPa\cdot{}(-58.12MPa)}=5.03$$
 
 \end{document}
