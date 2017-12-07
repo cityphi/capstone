@@ -1,24 +1,26 @@
 \documentclass[../main.tex]{subfiles}
-%!TEX root = ./appendixFromAnalysisDossier.tex
+%!TEX root = ./appendixVectoringMotor.tex
 \graphicspath {{../}}
 
 \begin{document}
 \section{Vectoring Motor} \label{vectoringMotor}
-In order to determine the required torque of the servo that is at the end  of the thruster shaft, worst case scenario moments of inertia were considered, as seen in Figure \ref{fig:ThrusterI}. The angular acceleration can be set for any chosen servo motor as long as the acceleration is less than the specified maximum. The shaft could be either hollow or solid, therefore the solid case was chosen to account for the higher moment of inertia. The thruster motor and mounting bracket were considered as a single rectangular prism. The propeller was also considered as a rectangular prism.
-
-\begin{equation}
-T_{servo} = I_{total}\cdot{}\alpha
-\end{equation}
+In order to determine the required torque of the servo that is at the end  of the thruster shaft, worst case scenario moments of inertia were considered, as seen in Figure \ref{fig:??????????}. The angular acceleration can be set for any chosen servo motor as long as the acceleration is less than the specified maximum. The shaft is hollow, the thruster motor and propeller mototr mounting bracket were assumed as a single rectangular prism. The propeller was also assumed as a rectangular prism. The motor torque at 7.4V is $T_{servo} = 35kg\cdot{}cm (3.4323N\cdot{}m)$, therefore the maximum angular acceleration will be $\alpha=\frac{T_{servo}}{I_{total}}$. This calculation assumes that the shaft assembly is perfectly balanced.
 
 \begin{equation}
 I_{total} = \frac{m_{shaft}\cdot{}r_{st}^2}{2} + \frac{(m_{motor} + m_{bracket})}{12} \cdot{}(d_{m_{x}}^2 + d_{m_{z}}^2) + \frac{m_{prop}}{12}\cdot{}(d_{p+{x}}^2 + d_{p_{z}}^2)
 \end{equation}
+\\$$ I_{total} = \frac{0.02072kg\cdot{}(0.006m)^2}{2} + \frac{(0.136kg + 0.02657kg )}{12} \cdot{}((0.03493m)^2 + (0.0381m)^2)+\frac{0.0309kg}{12}\cdot{}((0.0058m)^2 + (0.3302m)^2) $$
+$$I_{total}=3.17\cdot{}10^{-4}kg\cdot{}m^2$$
+$$\alpha=\frac{T_{servo}}{I_{total}}=\frac{3.4323N\cdot{}m}{3.17\cdot{}10^{-4}kg\cdot{}m^2}$$
+$$\alpha=10827rad/s$$
+\\
+This servo motor is excessively strong, in retrospect it could have been parametrized with a safety factor high enough to overcome the perfectly balanced assumption.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{img/analysis/thruster/thruster1.pdf}
+	\includegraphics[width=0.5\textwidth]img\analysis\thrusterTorque\vectoringAnalysis.png}
 	\caption{Thruster Pitching Shaft Worst Case Moment of Inertia}
-	\label{fig:ThrusterI}
+	\label{fig:vectoringAnalysis}
 \end{figure}
 
 \end{document}
