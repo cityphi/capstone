@@ -39,7 +39,7 @@ The sum of forces in x' y and z' in there most general form are presented below 
 \Sigma F_{z} : F_{NB1_{z}} + F_{NB2_{z}} + F_{NB3_{z}} + F_{NB4_{z}} =\\ \cos(\phi) (m_{1} + m_2)g -  cos(\Theta) F_{Springz} - F_{Springz} + \sin(\beta) (m_1+m_2) a_{Thrust}+\sin (\Theta) F_{Drive} + F_{LA}
 \end{multline}
 
-The spring forces $F_{Springz}$ and $F_{Springy}$ are acting on the keel at 45 \textdegree. They are both the result of the spring torque $T_spring$ shown in equation \ref{eqn:springForce} in the friction wheel slip analysis section \ref{frictionSlip}. Therfore the following equation can be used to define the spring forces. 
+The spring forces $F_{Springz}$ and $F_{Springy}$ are acting on the keel at 45 \textdegree. They are both the result of the spring torque $T_{Spring}$ shown in equation \ref{eqn:springForce} in the friction wheel slip analysis section \ref{frictionSlip}. Therefore the following equation can be used to define the spring forces. 
 \begin{equation}
 F_{Springz} = F_{Springy} = \frac{\sqrt{2}}{2} F_{Spring}
 \end{equation}
@@ -62,8 +62,18 @@ The above equations from \ref{eqn:scenario2start} to \ref{eqn:scenario2end} are 
 \subsection{Loading Scenarios} \label{loadingScenarios}
 \subsubsection*{Maximum Downward Force(Thrust Force and Gravity Acting Together)}
 The following scenario shown in FIG??? is the one that would require the greatest drive force from the gondola friction wheel motors. The assumptions made for this scenario are extremely conservative in that the scenario is extremely unlikely to actually occur but would result in considerably greater forces acting against the gondola motors than any more likely situation. The scenario involves the airship pitching straight upwards (pitch angle $\phi$ of 90 degrees),thrusting straight upwards at full thrust (thrust angle $\beta$ of 0 degrees) and the gondola is on the straight section of the keel (gondola angle $\Theta$ of 0) driving up towards the curved section of the keel.
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{img/analysis/scenario1.pdf}
+	\caption{Side View of Maximum Downward Force Scenario With Both Airship and Gondola Coordinate Systems}
+	\label{fig:scenario1}
+\end{figure}
 \subsubsection*{Maximum Gondola Bearing Arm Forces}
 The scenario shown in FIG??? results in the largest fores being applied to the gondola bearing arms. The scenario involves the linear actuator being applied in order to hold the position of the gondola on the straight part of the keel. The airship has a pitch angle of 0 and the thrusters is  angle is 90 degrees straight up. This loading scenario results in the largest force  being applied to the bearing arms.
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{img/analysis/scenario2.pdf}
+	\caption{Side View of Maximum Gondola Bearing Arm Forces Scenario With Both Airship and Gondola Coordinate Systems}
+	\label{fig:scenario2}
+\end{figure}
 \end{document}
