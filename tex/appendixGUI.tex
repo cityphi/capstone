@@ -3,8 +3,46 @@
 \graphicspath {{../}}
 
 \begin{document}
-	\chapter{Instructions for Installing and Running the GUI} \label{appendix:GUI}
-yep
+\chapter{Instructions for Installing and Running the GUI} \label{appendix:GUI}
+
+Running the GUI involves simply running the main.m file. Ensure that the current folder on MATLAB is the one containing the main.m file. Simply adding it to the path will cause errors when trying to write to the text files. Upon running main.m the GUI will launch as shown in Figure \ref{fig:gui}. In terms of inputs, there are default selected values and the program can be run by pressing the Generate button.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{img/gui/gui.pdf}
+	\caption{Overview of te Entire GUI}
+	\label{fig:gui}
+\end{figure}
+
+The GUI is broken into different sections based on their use. These are labels in Figure \ref{fig:gui} correspond to the list below. The description of each of the areas is:
+
+\begin{enumerate}
+	\item Envelope Dimensions: fields to enter dimensions of the envelope, discussed in Section \ref{gui:envelope}.
+	\item Main Parameters: the three main inputs for the program, discussed in Section \ref{gui:parameters}.
+	\item Important Value: an output of the important parameters of the program. These are also found in the log but are displayed here, so they can easily be seen after the program is run.
+	\item Log: the log section takes the text from the log file and displays it here once the program is completed.
+	\item Graphs: the right side of the GUI will display useful graphs of the airship that was generated. The top one with the drag and thrust curve. The difference between the two is the acceleration of the airship and their intersection is the maximum possible speed.
+\end{enumerate}
+
+\section{Entering Envelope Dimensions} \label{gui:envelope}
+As mentioned above this section allows the user to input the dimensions of the envelope. A close up of the section can be seen in Figure \ref{fig:gui2}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{img/gui/guiSection2.pdf}
+	\caption{Close Up of the Envelope Dimensions}
+	\label{fig:gui2}
+\end{figure}
+
+The section has three input fields, an output field, and a Calculate button. Using the figure as reference
+
+\begin{enumerate}[(a)]
+	\item Weight
+\end{enumerate}
+
+\section{Entering Main Parameters} \label{gui:parameters}
+
+\section{Warnings and Errors} \label{gui:error}
 
 \pagebreak
 \end{document}
