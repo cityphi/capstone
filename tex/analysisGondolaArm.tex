@@ -25,16 +25,21 @@ For the sake of simplicity, the curved section at the very top is ignored and th
 
 Three analysis were done on the gondola bearing arms. these include deflection, stress concentration analysis and fatigue analysis. However, the only analysis whose results influenced a change in design was the stress concentration. The other two can be found in Appendix sections \ref{gondDeflection} and \ref{armFatigue}.
 
-The analysis first must solve the gondola forces for the case in which the greatest force is exerted on the bearing arms, when the brake is activated and the airship is thrusting upwards while the pitch remains at 0. This case is explained in REF???. The sum of forces acting on the gondola are. 
-
-\begin{equation} \label{FygondLA}
+The analysis first must solve the gondola forces for the case in which the greatest force is exerted on the bearing arms, when the brake is activated and the airship is thrusting upwards while the pitch remains at 0. This case is explained in System Modeling section \ref{loadingScenarios}, Maximum Bearing Arm Force, and Figure \ref{fig:scenario2}. The forces acting on the gondola in this scenario can be seen in Figure \ref{fig:sideGondolaLA}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.1\textwidth]{img/gondola/sideGondolaNoDrive.pdf}
+	\caption{Side View of Gondola With Linear Actuator Applied and No Drive Force}
+	\label{fig:sideGondolaLA}
+\end{figure}
+ The sum of forces acting on the gondola are shown below in Equations \ref{eqn:FygondLA} and \ref{eqn:FzgondLA}. 
+\begin{equation} \label{eqn:FygondLA}
 \Sigma F_{y} : F_{NB1_{y}} - F_{NB2_{y}} - F_{NB3_{y}} + F_{NB4_{y}} = \frac{\sqrt{2}}{2} F_{Spring} -\frac{\sqrt{2}}{2} F_{Spring} 
 \end{equation}
-\begin{multline} \label{FzgondLA}
+\begin{multline} \label{eqn:FzgondLA}
 \Sigma F_{z} : F_{NB1_{z}} + F_{NB2_{z}} + F_{NB3_{z}} + F_{NB4_{z}} =\\ (m_{1} + m_2)g - \frac{\sqrt{2}}{2} F_{Spring} - \frac{\sqrt{2}}{2} F_{Spring} + \sin(\beta) (m_1+m_2) a_{Thrust}
 \end{multline}
  
-
 The sum of forces in the x direction are not shown because in this scenario, there are no forces acting in the x direction although the brake is applied. If there where any forces in the x direction since the brake is activated it would resisted by the braking force $F_{brake}$. The arm that is subjected to the highest force is usually located opposite to the friction wheel, but the code REF??? will check all the bearing forces, $F_{NB}$, and determine which is the largest. \\
 
 The member is most likely fail at the inner interface with the gondola, marked as shown ing FIGURE ???. This is due to the fact that this corner will be in tension. Stress is only relevant acting upon the direction of anticipated rotation, in the x-direction. Stress at the inner corner of the arm is found as:
