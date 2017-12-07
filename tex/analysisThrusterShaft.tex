@@ -25,14 +25,14 @@ The scenario for the analysis is that described in Loading Scenario, Section \re
 	\label{fig:thrusterShaftFBD}
 \end{figure}
 
-The free body diagram in Figure \ref{fig:thrusterShaftFBD}  is used to get the summation of forces at the bearing. The forces on the figure are the thrust force ($F_T$), weight of thruster components ($W_T$), weight of shaft ($W_{TS}$), and the reaciton forces ($R_B$ and $M_B$). As mentioned the forceSolver REF?? does this analysis, however calculating by hand will need the summation of forces:
+The free body diagram in Figure \ref{fig:thrusterShaftFBD} is used to get the summation of forces at the bearing. The forces on the figure are the thrust force ($F_T$), weight of thruster components ($W_T$), weight of shaft ($W_{TS}$), and the reaciton forces ($R_B$ and $M_B$). As mentioned the forceSolver REF?? does this analysis, however calculating by hand will need the summation of forces:
 
 \begin{equation}
 \label{eqn:thrustShaftFx} 
 \upplus \Sigma F_x  = 0 = R_B - F_T - W_T - W_{TS}
 \end{equation}
 \begin{equation}
-\label{eqn:thrustShaftFx} 
+\label{eqn:thrustShaftMB} 
 \curveplus \Sigma M_B = 0 = -M_B + F_T(L_T) - W_T(L_{WT}) - W_{TS}(L_{TS})
 \end{equation}
 
@@ -54,5 +54,13 @@ Since this is only simple bending the analysis does not have to use Cauchy to so
 \eta = \dfrac{\sigma_{T}}{\sigma _a} \Rightarrow 3 \geq \dfrac{\sigma_{T}}{\sigma _a}
 \end{equation}
 
-Due to the medium failure likelihood, a safety factor $\eta$ of 3 is used. If for the shaft diameter used does not meet this requirement, the code selects the next highest standard threaded shaft diameter and runs through the analysis using those numbers. This repeats until the safety factor is met. 
+Due to the medium failure likelihood a safety factor $\eta$ of 3 is used. If for the shaft diameter used does not meet this requirement, the code selects the next highest standard threaded shaft diameter and runs through the analysis using those numbers. This repeats until the safety factor is met. 
+
+\subsubsection*{Sample Calculations}
+$M_z$ is calculated using the MATLAB Force Solver program.
+$$\sigma _{Shaft}  = \dfrac{M_{z}c}{I} = \dfrac{(1.2535N\cdot{}m)(0.0051m)}{(3.4817\cdot{}10^{-10}mm^4)}=18.28MPa$$
+$$I _{z}  = \dfrac{\pi}{4} (r_{minor}^4 - r_{bore}^4) = \dfrac{\pi}{4} ((0.0051mm)^4 - (0.0038)^4) = 3.4817\cdot{}10^{-10}mm^4$$
+$$\eta = \dfrac{S_{ut}}{\sigma _a} \Rightarrow 3 \geq \dfrac{S_{ut}}{\sigma _a}$$
+$$\eta = \dfrac{69MPa}{18.28MPa}=3.7756$$
+After 3 iterations, a safety factor of 3.8 is calculated which has gone above the design threshold.
 \end{document}
