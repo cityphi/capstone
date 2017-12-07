@@ -355,8 +355,24 @@ The dimensions of the airship may vary as it is not manufactured yet, and input 
 %	MATLAB CODE HERE
 %-----------------------------------------------------------------
 \chapter{Code}
-\section{Code 1}
+\section{Main} \label{code:main}
 \lstinputlisting[language=Octave]{MATLAB/dummy.m} %USE THIS FORMAT TO INSERT CODE
+\section{Design Code} \label{code:designCode}
+\subsection{Envelope Size} \label{code:envelope}
+\subsection{Propeller and Motor Selection} \label{code:motorSelect}
+\subsection{Battery Selection} \label{code:batterySelect}
+\subsection{Battery, Motor, and Propeller Data} \label{code:bmpData}
+\subsection{Thruster Shaft Analysis} \label{code:thrusterShaft}
+\subsection{Thruster Arm Analysis} \label{code:arm}
+\subsection{Airship Mass} \label{code:mass}
+\subsection{Gondola Analysis} \label{code:gondola}
+\subsection{Pitch Plot} \label{code:pitch}
+
+\section{Generic}
+\subsection{Cauchy} \label{code:cauchy}
+\subsection{Force Solver} \label{code:forceSolver}
+\subsection{Centre Mass} \label{code:CM}
+
 
 %-----------------------------------------------------------------
 %	ADDITIONAL MATERIAL HERE
@@ -370,6 +386,7 @@ The dimensions of the airship may vary as it is not manufactured yet, and input 
 \subfile{./tex/appendixVectoringMotor.tex}
 \subfile{./tex/appendixGondolaHinge.tex}
 \subfile{./tex/appendixBearings.tex}
+\subfile{./tex/appendixForceSolver.tex}
 \subfile{./tex/appendixCauchy.tex}
 \subfile{./tex/appendixThrustCalculations.tex}
 \subfile{./tex/appendixDragAnalysis.tex}
