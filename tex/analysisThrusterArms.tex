@@ -53,11 +53,18 @@ As mentioned above the primary stress acting on the arm is torsional shear. This
 \tau_{XZ} = \dfrac{M_{y}}{wh^2}(3+\frac{1.8h}{w})
 \end{equation}
 
-Lastly, the analysis takes both the planar and shear stresses, then uses Cauchy's tensor to convert to principle stresses (Appendix \ref{appendix:cauchy}). These principle stresses are then used to determine the safety factor by Brittle Mohr-Coulomb Theory \cite[227]{shigley}.
+Lastly, the analysis takes both the planar and shear stresses, then uses Cauchy's tensor to convert to principle stresses (Appendix \ref{appendix:cauchy}). These principle stresses are then used to determine the safety factor by Brittle Mohr-Coulomb Theory \cite[227]{shigley}. $\sigma_t$ is the ultimate tensile strength, $\sigma_c$ is the ultimate compressive strength, $\sigma_1$ is the first principle stress, and $\sigma_3$ is the third principle stress.
 
 \begin{equation}
-\eta = \dfrac{S_{ut}}{\sigma _a} \Rightarrow 5 \geq \dfrac{S_{ut}}{\sigma _a}
+\eta = \frac{\sigma_t\sigma_c} {\sigma_c\sigma_1 -\sigma_t\sigma_3} \Rightarrow 5 \geq \frac{\sigma_t\sigma_c} {\sigma_c\sigma_1 -\sigma_t\sigma_3}
 \end{equation}
 
 A safety factor of five was chosen because there is a relatively high failure likelihood and due to their size they are prone to manufacturing defects.
+
+\paragraph*{Sample Calculations}
+$M_y$, $S_1$ and $S_3$ are taken from the MATLAB Force Solver program.
+$$\tau_{XZ} = \dfrac{M_{y}}{wh^2}(3+\frac{1.8h}{w})= \dfrac{8.6098N\cdot{}m}{(0.030m)(0.0040m)^2}(3+\frac{1.8(0.0040m)}{(0.030m)})=58.12MPa$$
+
+$$\eta = \dfrac{S_{ut}}{\sigma _a} = \dfrac{S_{ut}}{\sigma _a}$$
+
 \end{document}
