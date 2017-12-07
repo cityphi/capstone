@@ -33,7 +33,7 @@ The sum of forces in x' y and z' in there most general form are presented below 
 \Sigma F_{x} : (m_{1}+m_{2}) a_{gondola} + F_{NB3_{x}} + F_{NB4_{x}}  =\\ \sin(\phi) (m_{1} + m_2)g + F_{Drive} + \cos (\Theta) F_{Drive} + \cos(\beta) (m_1+m_2) a_{Thrust} + sin(\Theta) F_{Springz} + F_{Brake}
 \end{multline}
 \begin{flalign} \label{Fygond}
-\hspace{12pt}\Sigma F_{y} : F_{NB1_{y}} - F_{NB2_{y}} - F_{NB3_{y}} + F_{NB4_{y}} =  F_{Springy} - F_{Springy} &&
+\hspace{12pt}\Sigma F_{y} : -F_{NB1_{y}} + F_{NB2_{y}} - F_{NB3_{y}} + F_{NB4_{y}} =  F_{Springy} - F_{Springy} &&
 \end{flalign}
 \begin{multline} \label{Fzgond}
 \Sigma F_{z} : F_{NB1_{z}} + F_{NB2_{z}} + F_{NB3_{z}} + F_{NB4_{z}} =\\ \cos(\phi) (m_{1} + m_2)g -  cos(\Theta) F_{Springz} - F_{Springz} + \sin(\beta) (m_1+m_2) a_{Thrust}+\sin (\Theta) F_{Drive} + F_{LA}
@@ -61,7 +61,7 @@ The above equations from \ref{eqn:scenario2start} to \ref{eqn:scenario2end} are 
 
 \subsection{Loading Scenarios} \label{loadingScenarios}
 \subsubsection*{Maximum Downward Force(Thrust Force and Gravity Acting Together)}
-The following scenario shown in FIG??? is the one that would require the greatest drive force from the gondola friction wheel motors. The assumptions made for this scenario are extremely conservative in that the scenario is extremely unlikely to actually occur but would result in considerably greater forces acting against the gondola motors than any more likely situation. The scenario involves the airship pitching straight upwards (pitch angle $\phi$ of 90 degrees),thrusting straight upwards at full thrust (thrust angle $\beta$ of 0 degrees) and the gondola is on the straight section of the keel (gondola angle $\Theta$ of 0) driving up towards the curved section of the keel.
+The following scenario shown in Figure \ref{fig:scenario1} is the one that would require the greatest drive force from the gondola friction wheel motors. The assumptions made for this scenario are extremely conservative in that the scenario is extremely unlikely to actually occur but would result in considerably greater forces acting against the gondola motors than any more likely situation. The scenario involves the airship pitching straight upwards (pitch angle $\phi$ of 90 degrees),thrusting straight upwards at full thrust (thrust angle $\beta$ of 0 degrees) and the gondola is on the straight section of the keel (gondola angle $\Theta$ of 0) driving up towards the curved section of the keel.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{img/analysis/scenario1.pdf}
@@ -69,7 +69,7 @@ The following scenario shown in FIG??? is the one that would require the greates
 	\label{fig:scenario1}
 \end{figure}
 \subsubsection*{Maximum Gondola Bearing Arm Forces}
-The scenario shown in FIG??? results in the largest fores being applied to the gondola bearing arms. The scenario involves the linear actuator being applied in order to hold the position of the gondola on the straight part of the keel. The airship has a pitch angle of 0 and the thrusters is  angle is 90 degrees straight up. This loading scenario results in the largest force  being applied to the bearing arms.
+The scenario shown in Figure \ref{fig:scenario2} results in the largest fores being applied to the gondola bearing arms. The scenario involves the linear actuator being applied in order to hold the position of the gondola on the straight part of the keel. The airship has a pitch angle of 0 and the thrusters is  angle is 90 degrees straight up. This loading scenario results in the largest force  being applied to the bearing arms.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{img/analysis/scenario2.pdf}
