@@ -13,7 +13,16 @@
 \end{figure}
 
 
-The linear actuator analysis is preformed to ensure that the holding force of the linear actuator generates a great enough friction to keep the gondola from moving. The analysis first solves for the acceleration in a scenario similar to that of worst case mention above in REF???? and in friction wheel slip section \ref{frictionSlip} with the the friction wheel motor not being powered, therefor the drive force $F_{Drive} = 0$. The inputs required to run this analysis are the geometry of the friction wheel, the motor, the hinge, the gondola, as well as the material properties of the braking surface, the mass of each gondola car, the maximum achievable thruster acceleration and the loading conditions specific to the worst case scenario. The sum of forces used to solve for the case are as follows. 
+The linear actuator analysis is preformed to ensure that the holding force of the linear actuator generates a great enough friction to keep the gondola from moving. The analysis first solves for the acceleration in a scenario similar to that of worst case scenario explained in System Modeling section \ref{loadingScenarios}, Maximum Downward Force, and Figure \ref{fig:scenario1} and in friction wheel slip section \ref{frictionSlip}, the only difference is that the friction wheel motor will not being powered, therefor the drive force $F_{Drive} = 0$. Freebody diagram for this case can be seen below in Figure \ref{fig:sideGondolaNoDrive}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.1\textwidth]{img/gondola/sideGondolaNoDrive.pdf}
+	\caption{Side View of Gondola With Maximum Downward Force and No Drive Force}
+	\label{fig:sideGondolaNoDrive}
+\end{figure}
+
+The inputs required to run this analysis are the geometry of the friction wheel, the motor, the hinge, the gondola, as well as the material properties of the braking surface, the mass of each gondola car, the maximum achievable thruster acceleration and the loading conditions specific to the worst case scenario. The sum of forces used to solve for the case are as follows. 
 \begin{multline} \label{FxGondLA}
 \Sigma F_{x} : (m_{1}+m_{2}) a_{x} + F_{NB3_{x}} + F_{NB4_{x}} =\\ \sin(\phi) (m_{1} + m_2)g + \cos(\beta) (m_1+m_2) a_{Thrust} + \frac{\sqrt{2}}{2} sin(\theta) F_{Spring}
 \end{multline}
@@ -24,7 +33,7 @@ The linear actuator analysis is preformed to ensure that the holding force of th
 \Sigma F_{z} : F_{NB1_{z}} + F_{NB2_{z}} + F_{NB3_{z}} + F_{NB4_{z}} =\\ \cos(\phi) (m_{1} + m_2)g - \frac{\sqrt{2}}{2} cos(\theta) F_{Spring} -\frac{\sqrt{2}}{2} F_{Spring} + \sin(\beta) (m_1+m_2) a_{Thrust}
 \end{multline}
 
-The braking force $F_{brake}$ must then be greater than the calculated acceleration $a_{x}$. The brake force is dependent on the friction force between the polyurethane and rubber contact piece of the linear actuator, as seen in Figure ???.  The breaking force is related to the linear actuator for $F_{LA}$ by the equation \ref{eqn:brake} below.
+The braking force $F_{brake}$ must then be greater than the calculated acceleration $a_{x}$. The brake force is dependent on the friction force between the polyurethane and rubber contact piece of the linear actuator, as seen in Figure FIND IN PROPOSED DESIGN ???.  The breaking force is related to the linear actuator for $F_{LA}$ by the equation \ref{eqn:brake} below.
 \begin{equation}
 \label{eqn:brake}
 F_{brake} = \mu_{braking surface} F_{LA}
