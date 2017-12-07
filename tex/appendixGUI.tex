@@ -25,24 +25,47 @@ The GUI is broken into different sections based on their use. These are labels i
 \end{enumerate}
 
 \section{Entering Envelope Dimensions} \label{gui:envelope}
-As mentioned above this section allows the user to input the dimensions of the envelope. A close up of the section can be seen in Figure \ref{fig:gui2}.
+As mentioned above this section allows the user to input the dimensions of the envelope. A close up of the section can be seen in Figure \ref{fig:gui1}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{img/gui/guiSection2.pdf}
+	\includegraphics[width=0.7\linewidth]{img/gui/guiSection1.pdf}
 	\caption{Close Up of the Envelope Dimensions}
+	\label{fig:gui1}
+\end{figure}
+\begin{enumerate}[	A]
+	\item Length: the tip to tip length of the airship in metres.
+	\item Diameter: the diameter of the main cylinder of the airship in metres.
+	\item Fineness Ratio: the ratio between the the length and the diameter of the airship.
+	\item Section Length: calculated value of the length of the cylindrical shape of the blimp. Used to make sure it is within the limits of 1m to 1.524m.
+	\item Calculate: button that runs the calculation of the dimensions, it will NOT run the full program.
+\end{enumerate}
+
+Since the three input fields are all related, only two fields need to be filed out to calculate the airship dimensions. In the case where all three are input, the default will be to use the Length and Fineness Ratio. The errors from this section will appear as a message box or in the Main Parameters Section \ref{gui:parameters}, they are all outline in Section \ref{gui:error}
+
+\section{Entering Main Parameters} \label{gui:parameters}
+This section of the GUI is the inputs for the main parameters of the program. These are the required weight, required speed, and flight time. This can all be seen in Figure \ref{fig:gui2} below.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/gui/guiSection2.pdf}
+	\caption{Close Up of the Main Parameters}
 	\label{fig:gui2}
 \end{figure}
 
-The section has three input fields, an output field, and a Calculate button. Using the figure as reference
-
-\begin{enumerate}[(a)]
-	\item Weight
+\begin{enumerate} [	A]
+	\item Dominant Parameter: selects the parameter the program will attempt to achieve.
+	\item Required Weight: the required carrying capacity of the airship.
+	\item Required Speed: the required top speed of the airship.
+	\item Required Flight Time: the required flight time of the airship
+	\item Generate: this button will run the program. It will also run the calculations of the envelope size, so the calculate button doesn't necessarily have to be pressed before the generate button.
+	\item Values: this section shows the values of the sliders.
+	\item Warning: this will show warnings about the envelope dimensions. They are listed in section \ref{gui:error}.
 \end{enumerate}
 
-\section{Entering Main Parameters} \label{gui:parameters}
-
 \section{Warnings and Errors} \label{gui:error}
+???
+
 
 \pagebreak
 \end{document}
