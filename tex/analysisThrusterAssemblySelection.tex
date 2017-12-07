@@ -3,7 +3,24 @@
 \graphicspath {{../}}
 
 \begin{document}
-\subsection{Thruster Assembly Component Selection} \label{batterySelect}
+\subsection{Motor and Propeller Selection} \label{motorSelect}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/paramaterization/motorPropellerChoice.pdf}
+	\caption{Parametrization Outline For Motor and Propeller Selection}
+	\label{fig:motorOutline}
+\end{figure}
+
+\subsection{Battery Selection} \label{batterySelect}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\linewidth]{img/paramaterization/batteryChoice.pdf}
+	\caption{Parametrization Outline For Battery Selection}
+	\label{fig:batteryOutline}
+\end{figure}
+
 
 The thruster assembly component selection is the logic that decides what propeller, motor, and a battery is used to power the blimp. This selection is what satisfies the three main parameters given to the program from the GUI. The three parameters are the required carrying capacity, required speed, and required flight time. Additional to this is the envelope dimensions which affect the carrying capacity and the required speed (drag). Since the three main parameters are all related, a dominant parameter is also given through the GUI. This dominant parameter will force the program to meet this value and reduce the other two as necessary.
 
