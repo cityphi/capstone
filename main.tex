@@ -357,24 +357,40 @@ The dimensions of the airship may vary as it is not manufactured yet, and input 
 %-----------------------------------------------------------------
 \chapter{Code}
 \section{Main} \label{code:main}
-\lstinputlisting[language=Octave]{MATLAB/dummy.m} %USE THIS FORMAT TO INSERT CODE
+\lstinputlisting[language=Octave]{MATLAB/main.m}
 \section{Design Code} \label{code:designCode}
 \subsection{Envelope Size} \label{code:envelope}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/airship/envelope.m}
 \subsection{Propeller and Motor Selection} \label{code:motorSelect}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/thruster/propeller.m}
 \subsection{Battery Selection} \label{code:batterySelect}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/thruster/battery.m}
 \subsection{Battery, Motor, and Propeller Data} \label{code:bmpData}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/thruster/battMotPropData.m}
 \subsection{Thruster Shaft Analysis} \label{code:thrusterShaft}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/thruster/thrusterShaft.m}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/thruster/thrusterAssy.m}
 \subsection{Thruster Arm Analysis} \label{code:arm}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/arm/arm.m}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/arm/connector.m}
 \subsection{Airship Mass} \label{code:mass}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/airship/airshipMass.m}
 \subsection{Gondola Forces} \label{code:gondolaforce}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/gondola/gondolaForces.m}
 \subsection{Gondola Analysis} \label{code:gondola}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/gondola/gondolaAnalysis.m}
 \subsection{Pitch Plot} \label{code:pitch}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/airship/pitchPlot.m}
 
 \section{Generic}
 \subsection{Cauchy} \label{code:cauchy}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/generic/cauchy.m}
 \subsection{Force Solver} \label{code:forceSolver}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/generic/forceSolver.m}
 \subsection{Centre Mass} \label{code:CM}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/generic/centreMass.m}
 \subsection{Gondola Force Rotator} \label{code:rotate}
+\lstinputlisting[language=Octave]{MATLAB/subFunctions/gondola/rotate.m}
 
 %-----------------------------------------------------------------
 %	ADDITIONAL MATERIAL HERE
@@ -413,6 +429,6 @@ The dimensions of the airship may vary as it is not manufactured yet, and input 
 %	RECOMMENDATIONS FOR IMPROVING THE COURSE
 %-----------------------------------------------------------------
 \chapter{Recommendations for Improving the Course}
-lol
+Do we have any??
 
 \end{document}
