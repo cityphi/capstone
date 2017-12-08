@@ -54,7 +54,14 @@ The distance from the point the force is being applied to the neutral axis $c$ i
  c = r_{overhang} - \frac{4r_{Snap}}{3}\left(\frac{\sin^3\left(\frac{\theta}{2}\right)} {\theta-\sin(\theta)}\right)
  \end{equation}
 
- This safety factor is slightly lower than other analysis with high failure likelihood which can be found in in table \ref{allComponents}. This is due to the fact that the installation will only be performed once. Maximum stress under normal loading conditions will be a direct result of the normal force applied on the bearing by the keel.
+Once the analysis has been performed and the required snapfit cut depth has been determined, Equation \ref{eqn:snapangle} is used to calculate the bevel angle so that when the snap fit is in full deflection, there is no interference from the upper overhanging section. 
+
+\begin{equation}
+\label{eqn:snapangle}
+\theta_{snap} = \frac{F_{Snafit}L_{Snapfit}^2}{2EI_{Snap}}  
+\end{equation}
+
+This safety factor is slightly lower than other analysis with high failure likelihood which can be found in in table \ref{allComponents}. This is due to the fact that the installation will only be performed once. Maximum stress under normal loading conditions will be a direct result of the normal force applied on the bearing by the keel.
 
 
 \end{document}
