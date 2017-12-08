@@ -45,7 +45,7 @@ Once the centre of mass is found the code uses forceSolver to find the reaction 
 \sigma_{y}=  \underbrace{\frac{M_{x}c_z}{A r_i (\bar{r} - r)}}_\text{Bending moment stress about x} + \underbrace{\frac{M_{z}c_x}{I_z}}_\text{Bending moment stress about z} + \underbrace{\frac{F_y}{A}}_\text{Axial stress} 
 \end{equation}
 
-Where $A$ is the area, width $w$ times height $h$, $\bar{r}$ is the centre radius of the arm and $r$ is the neutral axis calculated by Equation \ref{eqn:armNeutralAxis} shown below. In Equation \ref{eqn:armNeutralAxis}, $c_z$ is the distance to the neutral axis $r - r_i$. As mentioned above for this loading scenario $M_x = 0$, $c_x = 0$, and $F_y = 0$, which results in Equation \ref{eqn:armstress} summing to 0.??
+Where $A$ is the area, width $w$ times height $h$, $\bar{r}$ is the centre radius of the arm and $r$ is the neutral axis calculated by Equation \ref{eqn:armNeutralAxis} shown below. In Equation \ref{eqn:armNeutralAxis}, $c_z$ is the distance to the neutral axis $r - r_i$. As mentioned above for this loading scenario $M_x = 0$, $c_x = 0$, and $F_y = 0$, which results in Equation \ref{eqn:armstress} summing to 0.
 
 \begin{equation} \label{eqn:armNeutralAxis}
 \bar{r} = r_i + \frac{h}{2} \hspace{20mm}  r = \frac{h}{ln(r_o/r_i)}
@@ -65,7 +65,7 @@ Lastly, the analysis takes both the planar and shear stresses, then uses Cauchy'
 A safety factor of five was chosen because there is a relatively high failure likelihood and due to their size they are prone to manufacturing defects.
 
 \paragraph*{Sample Calculations}
-$M_y$, $S_1$ and $S_3$ are taken from the MATLAB Force Solver program.
+$M_y$, $S_1$ and $S_3$ are taken from the MATLAB \textit{forceSolver} program.
 
 $$\tau_{XZ} = \dfrac{M_{y}}{wh^2}\left(3+\frac{1.8h}{w}\right)= \dfrac{8.6098N\cdot{}m}{(0.030m)(0.0040m)^2}\left(3+\frac{1.8(0.0040m)}{(0.030m)}\right)=58.12MPa$$
 
