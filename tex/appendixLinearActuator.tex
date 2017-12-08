@@ -22,22 +22,32 @@ The linear actuator analysis is preformed to ensure that the holding force of th
 \end{figure}
 
 The inputs required to run this analysis are the geometry of the friction wheel, the motor, the hinge, the gondola, as well as the material properties of the braking surface, the mass of each gondola car, the maximum achievable thruster acceleration and the loading conditions specific to the worst case scenario. The sum of forces used to solve for the case are as follows. 
-\begin{multline} \label{FxGondLA}
-\Sigma F_{x} : (m_{1}+m_{2}) a_{x} + F_{NB3_{x}} + F_{NB4_{x}} =\\ \sin(\phi) (m_{1} + m_2)g + \cos(\beta) (m_1+m_2) a_{Thrust} + \frac{\sqrt{2}}{2} sin(\theta) F_{Spring}
-\end{multline}
-\begin{flalign} \label{FyGondLA}
-\hspace{12pt}\Sigma F_{y} : F_{NB1_{y}} - F_{NB2_{y}} - F_{NB3_{y}} + F_{NB4_{y}} = \frac{\sqrt{2}}{2} F_{Spring} -\frac{\sqrt{2}}{2} F_{Spring} &&
-\end{flalign}
+\begin{equation} \label{FxGondLA}
+\Sigma F_{x} : (m_{1}+m_{2}) a_{gondola} + F_{NB3_{x}} + F_{NB4_{x}} = \sin(\phi) (m_{1} + m_2)g + \cos(\beta) (m_1+m_2) a_{Thrust} 
+\end{equation}
+\begin{equation} \label{FyGondLA}
+\hspace{12pt}\Sigma F_{y} : F_{NB1_{y}} - F_{NB2_{y}} - F_{NB3_{y}} + F_{NB4_{y}} =  F_{Springy} -F_{Springy} 
+\end{equation}
 \begin{multline} \label{FzGondLA}
-\Sigma F_{z} : F_{NB1_{z}} + F_{NB2_{z}} + F_{NB3_{z}} + F_{NB4_{z}} =\\ \cos(\phi) (m_{1} + m_2)g - \frac{\sqrt{2}}{2} cos(\theta) F_{Spring} -\frac{\sqrt{2}}{2} F_{Spring} + \sin(\beta) (m_1+m_2) a_{Thrust}
+\Sigma F_{z} : F_{NB1_{z}} + F_{NB2_{z}} + F_{NB3_{z}} + F_{NB4_{z}} =\\ \cos(\phi) (m_{1} + m_2)g -  F_{Springz} - F_{Springz} + \sin(\beta) (m_1+m_2) a_{Thrust}
 \end{multline}
+The spring forces $F_{Springz}$ and $F_{Springy}$ are acting on the keel at 45 \textdegree. The following equation can be used to define the spring forces. 
+\begin{equation}
+F_{Springz} = F_{Springy} = \frac{\sqrt{2}}{2} F_{Spring}
+\end{equation} \\
 
-The braking force $F_{brake}$ must then be greater than the calculated acceleration $a_{x}$. The brake force is dependent on the friction force between the polyurethane and rubber contact piece of the linear actuator, as seen in Figure FIND IN PROPOSED DESIGN ???.  The breaking force is related to the linear actuator for $F_{LA}$ by the equation \ref{eqn:brake} below.
+The braking force $F_{brake}$ must then be greater than the calculated acceleration $a_{gondola}$. The brake force is dependent on the friction force between the polyurethane and rubber contact piece of the linear actuator, as seen in Figure FIND IN PROPOSED DESIGN ???.  The breaking force is related to the linear actuator for $F_{LA}$ by the equation \ref{eqn:brake} below.
 \begin{equation}
 \label{eqn:brake}
 F_{brake} = \mu_{braking surface} F_{LA}
 \end{equation}
 
-The value for $\mu_{braking surface}$ is based on the coefficient of friction between rubber and polyurethane which is 0.65 CITESTION???. Once the required linear actuator force is calculated it is compared with the Actuonix linear actuator in Appendix Datasheets \ref{LinAct} in order to make sure that the force is achievable.
+The value for $\mu_{braking surface}$ is based on the coefficient of friction between rubber and polyurethane which is 0.65 CITESTION???. Once the required linear actuator force is calculated it is compared with the Actuonix linear actuator in Appendix Datasheets \ref{LinAct} in order to make sure that the force is achievable.\\
 
+As explained above the analysis first solves for the acceleration of the gondola while the motors are not driving, with the inputs specified in the System Modeling section \ref{sampleCals} Sample Calculation Conditions, the acceleration was 5.35[$\dfrac{m}{s^2}$]. There for the required holding force which is simply the acceleration times the mass of the airship is 11.68[N]. The required linear actuator force required to hold the gondola is calculated in the following equation.
+\begin{equation}
+\label{eqn:brake}
+F_{LA} = \frac{F_{brake}}{\mu_{braking surface} } = \frac{11.68[N]}{0.65} = 17.96
+\end{equation}
+The linear actuator from Actuonix linear Actuator in Appendix Datasheets \ref{LinAct} with 22N holding force was chosen. 
 \end{document}
