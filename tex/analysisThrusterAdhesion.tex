@@ -4,7 +4,7 @@
 
 \begin{document}
 \section{Thruster Arm Adhesion} \label{adhesion}
-To connect the carbon fibre arm to the aluminium body which holds the thruster assembly, epoxy will be used. The carbon fibre arm will slide into an aluminium pocket welded to the aluminium thruster plate, as shown in Figure \textbf{ADD RENDERED FIGURE HERE.}\\
+To connect the carbon fibre arm to the aluminium body which holds the thruster assembly, epoxy will be used. The carbon fibre arm will slide into an aluminium pocket welded to the aluminium thruster plate, as shown in Figure \ref{fig:thrusterOnKeel} \\
 
 The analysis will be conducted by assuming the adhesion surface will be like a double lap joint, shown in Figure \ref{fig:lap} below.
 
@@ -39,7 +39,7 @@ $E_0=71GPa$ \cite{shigley}\\
 $\alpha _0=23.94 mm/mm^{\circ}C$ \cite{shigley}\\
 \end{center}
 
-$\Delta T$ can be estimated by assuming the epoxy is cured at room temperature ($20 ^{\circ}C$) and that the lowest temperature the blimp will be used at is  $-40 ^{\circ}C$. This yields $\Delta T = -60^{\circ}C$. The thickness of the adhesive will be estimated as $h=0.5mm$. As preliminary estimates, $t_0= 9.73mm$, $t_i= 9.73mm$, $l=30mm$, and $b=50.80mm$. The force $P$ can be estimated using \textbf{SOME STUFF} $P=100N$.
+$\Delta T$ can be estimated by assuming the epoxy is cured at room temperature ($20 ^{\circ}C$) and that the lowest temperature the blimp will be used at is  $-40 ^{\circ}C$. This yields $\Delta T = -60^{\circ}C$. The thickness of the adhesive will be estimated as $h=0.5mm$. As preliminary estimates, $t_0= 9.73mm$, $t_i= 9.73mm$, $l=30mm$, and $b=50.80mm$. The force $P$ can be estimated using the maximum thrust that any of the propellers can provide, which is 12N.
 
 Substituting these values into Equation \ref{omega} yields
 \begin{equation} \label{omegaSolve}
@@ -48,9 +48,9 @@ Substituting these values into Equation \ref{omega} yields
 
 Followed by substitution into Equation \ref{adhesive}:
 \begin{multline} \label{adhesiveSolve}
-\tau (x) = \dfrac{100N*0.0930946mm^{-1}}{4*50.80mm*sinh(0.0930946mm^{-1}* 30mm/2)}cosh(0.0930946mm^{-1}* x) + \\ \Bigg[\dfrac{100N*0.0930946mm^{-1}}{4*50.80mm*cosh(0.0930946mm^{-1}* 30mm/2)}\left(\dfrac{2*71000 MPa*9.73mm-1300MPa*9.73mm}{2*71000 MPa*9.73mm+1300MPa*9.73mm}\right)+ \\ \dfrac{(23.7*10^{-6}mm/mm^{\circ}C-23.94*10^{-6} mm/mm^{\circ}C)*(-60^{\circ}C)*0.0930946mm^{-1}}{\left(\dfrac{1}{71000MPa*9.73mm}+\dfrac{2}{109000 MPa*9.73mm}\right)cosh(0.0930946mm^{-1}* 30mm/2)}\Bigg] sinh(0.0930946mm^{-1}* x) \\ = 0.02416MPa*cosh(0.0930946mm^{-1}* x) + [0.02098MPa + 0.1871 MPa]sinh(0.0930946mm^{-1}* x)
+\tau (x) = \dfrac{12N*0.0930946mm^{-1}}{4*50.80mm*sinh(0.0930946mm^{-1}* 30mm/2)}cosh(0.0930946mm^{-1}* x) + \\ \Bigg[\dfrac{12N*0.0930946mm^{-1}}{4*50.80mm*cosh(0.0930946mm^{-1}* 30mm/2)}\left(\dfrac{2*71000 MPa*9.73mm-1300MPa*9.73mm}{2*71000 MPa*9.73mm+1300MPa*9.73mm}\right)+ \\ \dfrac{(23.7*10^{-6}mm/mm^{\circ}C-23.94*10^{-6} mm/mm^{\circ}C)*(-60^{\circ}C)*0.0930946mm^{-1}}{\left(\dfrac{1}{71000MPa*9.73mm}+\dfrac{2}{109000 MPa*9.73mm}\right)cosh(0.0930946mm^{-1}* 30mm/2)}\Bigg] sinh(0.0930946mm^{-1}* x) \\ = 0.0028992MPa*cosh(0.0930946mm^{-1}* x) + [0.0025176MPa + 0.1871 MPa]sinh(0.0930946mm^{-1}* x)
 \end{multline}
 
-at $x = l/2 = 30mm/2$, the shear is at a maximum value. Therefore, the shear force is $\tau = 0.4464 MPa$, Yielding a safety factor of $\eta = 10.3MPa/0.4464MPa = 23.0734$.
+at $x = l/2 = 30mm/2$, the shear is at a maximum value. Therefore, the shear force is $\tau = 0.3658 MPa$, Yielding a safety factor of $\eta = 10.3MPa/0.3658MPa = 28.15746$.
 
 \end{document}
