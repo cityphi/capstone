@@ -295,7 +295,7 @@ fprintf(fid, '\n***Gondola Analysis Outputs***\r\n');
 fprintf(fid, ['Washer outter diamter: ' , num2str(Dwashero) 'mm\r\n' ]);
 fprintf(fid, ['Bearing arm diameter: ' , num2str(bearingArmDiameter) 'mm\r\n']);
 fprintf(fid, ['Snapfit cut depth: ' , num2str(Lsnap) 'mm\r\n']);
-fprintf(fid, ['Snapfit edge bevel angle: ', num2str(snapAngle) '°\r\n']);
+fprintf(fid, ['Snapfit edge bevel angle: ', num2str(snapAngle) '\r\n']);
 fprintf(fid, ['The required spring torque of the torsion spring is: ', num2str(Tspring) 'Nm\r\n']);
 fprintf(fid, ['Linear actuator force: ', num2str(maxBrakeForce) 'N\r\n']);
 fprintf(fid, ['The torque of the selected motors is: ', num2str(Tw) 'Nm\r\n']);
