@@ -27,5 +27,19 @@ Next the analysis takes both the planar and shear stresses and converts them to 
 \eta = \dfrac{S_{ut}}{\sigma _a} \Rightarrow 3 \geq \dfrac{S_{ut}}{\sigma _a}
 \end{equation}
 
-This analysis was deemed inconsequential as the calculated safety factor far exceeded 3, this can be seen in the results below???. The extremely high safety factor is due to the properties of steel being considerably higher than those needed for our application, since is shaft analysed is a component of a off the shelf motor, we could not change the material. 
+This analysis was deemed inconsequential as the calculated safety factor far exceeded 3, this can be seen in the results below. The extremely high safety factor is due to the properties of steel being considerably higher than those needed for our application, since is shaft analyzed is a component of a off the shelf motor, we could not change the material. 
+
+\begin{equation*} 
+\sigma_{x'} =\frac{Mc}{I}=\frac{F_{spring}\cdot{}L_{Rx}\cdot{}r_{ms}}{\frac{\pi\cdot{}r_{ms}^4}{4}} = \frac{11.55[N]\cdot{0.0092[m]}}{\pi\cdot{(0.0015[m])}^3} = 42.8[Mpa]
+\end{equation*}
+
+\begin{equation*} 
+\sigma_{z'}=\frac{Mc}{I}=\frac{R_{x}\cdot{}L_{Rx}\cdot{}r_{ms}}{\frac{\pi\cdot{}r_{ms}^4}{4}} == \frac{5.04[N]\cdot{0.0092[m]}}{\pi\cdot{(0.0015[m])}^3} = 18[Mpa]
+\end{equation*}
+
+\begin{equation*}
+\tau_{z'x'} = \frac{-T_w\cdot{}r_{ms}}{J} = \frac{-2T_w}{\pi\cdot{}r_{ms}^3} = \frac{-2(0.0636[Nm])}{\pi\cdot{}(0.0015[m])^3} = -12.7[Mpa]
+\end{equation*}
+
+Plugging these stress into cauchy results in a safety factor of 5.55
 \end{document}
