@@ -59,5 +59,15 @@ The compressive yield strength ($S_{compressive}$) of Nylon 12  is found to be 6
 \eta = \dfrac{S_{compressive}}{\sigma _{washer}}
 \end{equation}
 
-If the safety actor is less than 3 the analysis is reiterated with a larger washer outer radius. 
+If the safety actor is less than 3 the analysis is reiterated with a larger washer outer radius.\\
+
+With the G.U.I inputs specified in the Modeling Analysis section REF??, the calculated required motor torque $T_w$ was equal 0.0636[Nm]. For this motor torque the forces that will be exerted by the motor onto the hinge are as follows: $F_{Drive} = 5.0043[N]$ in the x direction, $F_{Springy} = -8.1659[N]$ in the y direction, and $F_{Springy} = -8.1659[N]$ in the z direction, these forces are used with the forceSolver code to solve for the reactions at the bolts. There is two bolts (bolt a and bolt b), with three forces and two moments acting on each. As a result the system is indeterminate To solve this system assumptions are made such that the calculated reaction is equal or greater than it would actually be. it is assumed that bolt b is subjected to all of the loading in the x and z direction and that the reaction moments on each bolt are equal. The reaction forces on bolt $F_{bx} = -5.0042[N]$, $F_{by} = 4.9227[N]$, $F_{bz} = 8.1658[N]$. 
+\begin{equation*}
+F_{bolt} = \dfrac{\sqrt[]{F_{bx}^2 + F_{by}^2}}{\mu} + F_{bz} = \dfrac{\sqrt{(-5.0042[N])^2 + (4.9227[N])^2}}{0.65} + 8.1658[N] = 43.2641[N]
+\end{equation*}
+
+The analysis determines that an outer washer radius of 0.00425[m] achieves a safety factor of 3. The compressive stress on the gondola is shown in the below equation. 
+\begin{equation*}
+\sigma _{washer} = \dfrac{F_{bolt}}{\pi (r_o - r_i)^2} = \dfrac{43.2641[N]}{\pi (0.00425[m] - 0.0015)^2}  = 1.82[Mpa] 
+\end{equation*}
 \end{document}
