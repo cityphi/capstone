@@ -17,11 +17,11 @@ In order to complete the analysis on the gondola there are numerous forces and r
 The \textit{gondolaForces} code requires the inputs of all the known forces acting on the gondola and their positions including the drive force of the friction wheel motor, the spring force acting on the friction wheel, the maximum thruster acceleration, the weight of each gondola car, and the linear actuator holding force. The code also requires the pitch angle of the airship ($\phi$), the thruster angle ($\beta$), the angle between the gondola cars($\Theta$) and the position of each bearing arm reaction. All of the angles mentioned above are with reference to the top surface of the rear gondola. The code will output acceleration of the gondola, the maximum force applied on the bearing arms and the holding force if the linear actuator is applied. \\
 
 
-The coordinate system x' y z' in which all the forces are referenced, is based on the orientation rear gondola (gondola 1) as seen in \ref{fig:bentGondolaSideAllForce}. The code first takes the drive force and the spring force both of which are acting on the friction wheels and rotates them into the coordinated system of the rear gondola based on the 45$^{\circ}$ angle of the torsion hinge. The spring force and drive force acting on the front gondola (gondola 2) are again rotated based on the angle between the gondolas ($\Theta$). Then the code takes the inputed maximum thrust acceleration, rotates it based on the thrust angle ($\beta$) multiplies it by the mass of each gondola car and applies it to the centre of mass of the corresponding gondola car. The mass of each car is then based on the pitch angle ($\phi$) is then also applied to the centre of mass of each gondola car. For the case where the linear actuator is applied that force is included and the holding force in the x-direction is equated to the sum of all other forces acting in that direction up to the maximum capable holding. The maximum capable holding is determined in the linear actuator analysis \ref{linearActuator}. All of the aforementioned forces and angles can be see acting on the gondolas in Figures \ref{fig:bentGondolaSideAllForce} and \ref{fig:bentGondolaTopAllForce}. \\
+The coordinate system $x'yz'$ in which all the forces are referenced, is based on the orientation rear gondola (gondola 1) as seen in Figure \ref{fig:bentGondolaSideAllForce}. The code first takes the drive force and the spring force both of which are acting on the friction wheels and rotates them into the coordinated system of the rear gondola based on the 45$^{\circ}$ angle of the torsion hinge. The spring force and drive force acting on the front gondola (gondola 2) are again rotated based on the angle between the gondolas ($\Theta$). Then the code takes the inputed maximum thrust acceleration, rotates it based on the thrust angle ($\beta$) multiplies it by the mass of each gondola car and applies it to the centre of mass of the corresponding gondola car. The mass of each car is then based on the pitch angle ($\phi$) is then also applied to the centre of mass of each gondola car. For the case where the linear actuator is applied that force is included and the holding force in the x-direction is equated to the sum of all other forces acting in that direction up to the maximum capable holding. The maximum capable holding is determined in the linear actuator analysis \ref{linearActuator}. All of the aforementioned forces and angles can be see acting on the gondolas in Figures \ref{fig:bentGondolaSideAllForce} and \ref{fig:bentGondolaTopAllForce}. \\
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.1\linewidth]{img/gondola/bentGondolaSideAllForces.pdf}
+	\includegraphics[width=1\linewidth]{img/gondola/bentGondolaSideAllForces.pdf}
 	\caption{Side View of Gondola With All Possible Forces and Reactions}
 	\label{fig:bentGondolaSideAllForce}
 \end{figure}
@@ -32,7 +32,7 @@ The coordinate system x' y z' in which all the forces are referenced, is based o
 	\label{fig:bentGondolaTopAllForce}
 \end{figure}
 
-The sum of forces in x' y and z' in their most general form are presented below with the reactions on the left of the equal sign and the forces on the right.
+The sum of forces in $x'y$ and $z'$ in their most general form are presented below with the reactions on the left of the equal sign and the forces on the right.
 \begin{multline} \label{Fxgond}
 \Sigma F_{x} : (m_{1}+m_{2}) a_{gondola} + F_{NB3_{x}} + F_{NB4_{x}}  =\\ \sin(\phi) (m_{1} + m_2)g + F_{Drive} + \cos (\Theta) F_{Drive} + \cos(\beta) (m_1+m_2) a_{Thrust} + sin(\Theta) F_{Springz} + F_{Brake}
 \end{multline}
@@ -47,14 +47,14 @@ The spring forces $F_{Springz}$ and $F_{Springy}$ are acting on the keel at 45\t
 \begin{equation}
 F_{Springz} = F_{Springy} = \frac{\sqrt{2}}{2} F_{Spring}
 \end{equation}
-\textit{forceSolver} is used to solve these equations while making some assumptions based on the reactions. All of the $F_{NB}$ the normal forces between the bearings and the keel. since the contact surface is at 45\textdegree between the XY and XZ planes, the magnitudes of the forces acting in the y- and z-directions must be equal. 
+\textit{forceSolver} is used to solve these equations while making some assumptions based on the reactions. All of the $F_{NB}$ the normal forces between the bearings and the keel. since the contact surface is at 45\textdegree between the $xy$ and $xz$ planes, the magnitudes of the forces acting in the y- and z-directions must be equal. 
 \begin{align}
 \label{eqn:scenario2start}
 F_{NB1_{z}} &= - F_{NB1_{y}} \\
 F_{NB2_{z}} &= F_{NB2_{y}} 
 \end{align}
 
-For the bearings on the front gondola as a result of the angle between gondolas, there will also be a force acting in the x-direction such that 
+For the bearings on the front gondola as a result of the angle between gondolas, there will also be a force acting in the x-direction such that:
 \begin{align}
 F_{NB3_{x}} &= -\tan(\Theta) F_{NB3_{z}}\\ 
 F_{NB4_{x}} &= -\tan(\Theta) F_{NB4_{z}}\\
@@ -64,12 +64,12 @@ The above equations from \ref{eqn:scenario2start} to \ref{eqn:scenario2end} are 
 
 
 \subsection{Loading Scenarios} \label{loadingScenarios}
-\subsubsection*{Maximum Downward Force(Thrust Force and Gravity Acting Together)}
+\subsubsection*{Maximum Downward Force (Thrust Force and Gravity Acting Together)}
 The scenario shown in Figure \ref{fig:scenario1} would require the greatest drive force from the gondola friction wheel motors. The assumptions made for this scenario are conservative, in that the scenario is unlikely to actually occur but would result in considerably greater forces acting against the gondola motors. The scenario involves the airship pitching straight upwards (pitch angle $\phi$ of 90$^{\circ}$),thrusting straight upwards at full thrust (thrust angle $\beta$ of 0$^{\circ}$) and the gondola is on the straight section of the keel (gondola angle $\Theta$ of 0$^{\circ}$) driving up towards the curved section of the keel.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{img/analysis/scenario1.pdf}
+	\includegraphics[width=0.5\textwidth]{img/analysis/scenario1.pdf}
 	\caption{Side View of Maximum Downward Force Worst-Case Scenario}
 	\label{fig:scenario1}
 \end{figure}
