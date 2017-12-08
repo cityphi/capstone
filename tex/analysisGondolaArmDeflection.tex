@@ -13,10 +13,12 @@ The deflection will be calculated using simple beam equations. The force $F_{NB}
 	\delta _{Gondola Arm}  = \left(\dfrac{F_{NB_{z}}l_{arm}}{AE}\right)\hat{k} + \left(\dfrac{F_{NB_{y}}l_{arm}^3}{3EI}  + \dfrac{M_{NB}l_{arm}^2}{2EI} \right) \hat{j}
 \end{align}
 
-The faliure possibility here would be for the arm to deflect enough that the gondola falls of the keel. This occurs when the total deflection $\delta$ is larger than $0.5cm$, which is half of the width of the keel face. Since both arms can deflect at the same time, they can be combined to reach 0.5cm. Therefore it is required that the result of Equation \ref{armDeflection} be less than $0.25cm$. Therefore the equation to optimize is:
-\begin{equation}
-	0.25 \leq \sqrt{\left(\dfrac{F_{NB_{z}}l_{arm}}{AE}\right)^2 + \left(\dfrac{F_{NB_{y}}l_{arm}^3}{3EI}  + \dfrac{M_{NB}l_{arm}^2}{2EI} \right)^2}
-\end{equation}
+The faliure possibility here would be for the arm to deflect enough that the gondola falls of the keel. This occurs when the total deflection $\delta$ is larger than $0.5cm$, which is half of the width of the keel face. Since both arms can deflect at the same time, they can be combined to reach 0.5cm. Therefore it is required that the result of Equation \ref{armDeflection} be less than $0.25cm$. Therefore the failure criteria is:
 
+\begin{multline}
+	0.25cm \geq \sqrt{\left(\dfrac{F_{NB_{z}}l_{arm}}{AE}\right)^2 + \left(\dfrac{F_{NB_{y}}l_{arm}^3}{3EI}  + \dfrac{M_{NB}l_{arm}^2}{2EI} \right)^2} =\\ \sqrt{\left(\dfrac{26.6082N*0.036m}{2.874*10^{-5}m^2*1.1380*10^9Pa}\right)^2 + \left(\dfrac{-26.6082N*0.036m^3}{3*1.1380*10^9Pa*7.0686*10^{-6}m^4}  + \dfrac{2.3823Nm*0.036m^2}{21.1380*10^9Pa*7.0686*10^{-6}m^4} \right)^2}\\=0.1931mm
+\end{multline}
+
+Therefore the gondola arms have no risk of deflecting enough to cause the gondola to fall off.
 
 \end{document}
