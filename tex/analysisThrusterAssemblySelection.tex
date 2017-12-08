@@ -39,6 +39,6 @@ The data is filtered to remove batteries that are too heavy, do not have enough 
 \text{Capacity} = At*1000;
 \end{equation}
 
-This calculated value is then compared to the data and the lightest matching battery is picked. If no batteries meet the requirements, the required time is reduced and the capacity is recalculated until it matches a battery. The chosen battery information is used to get the weight of the thruster assembly and parametrise the battery enclosure. The code for this can be seen in Section \ref{code:batterySelect}.
+This calculated value is then compared to the data and the lightest matching battery is picked. If no batteries meet the requirements, the required time is reduced and the capacity is recalculated until it matches a battery. The chosen battery information is used to get the weight of the thruster assembly and parametrise the battery enclosure. The code for this can be seen in Section \ref{code:batterySelect}. It is important to note that this flight time is only valid for just the thruster motor. The BESC, receiver, and vector thrusting motor will all reduce this life depending on their need.
 
 \end{document}
