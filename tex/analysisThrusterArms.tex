@@ -38,7 +38,7 @@ To get $W_{Arm}$ and $L_{Arm}$, the centre of mass of the arm has to be calculat
 W_{Arm} = \rho g\frac{0.03\pi(r_o^2 - r_i^2)}{4}, \quad L_{Arm} =\frac{4(r_o^3 - r_i^3)}{3\pi(r_o^2 - r_i^2)}
 \end{equation}
 
-Once the centre of mass is found the code uses forceSolver to find the reaction forces at the bottom of the arm. These reactions are used to calculate the stresses acting on the centre of the inner radius surface shown in Figure \ref{fig:thrusterArmLoc}. In the initial design of the component, all possible stresses were considered. These were used to find the worst case loading scenarios and the location to take the stresses. The maximum stress occurs of the middle of the top of the cross section when the airship is angled at $90°$. Subsequently this results in Equation \ref{eqn:armstress} being zero and having no effect on the safety factor. For analysis, the planar stress in $y$ is calculated using the Equation \ref{eqn:armstress}.
+Once the centre of mass is found the code uses forceSolver to find the reaction forces at the bottom of the arm. These reactions are used to calculate the stresses acting on the centre of the inner radius surface shown in Figure \ref{fig:thrusterArmLoc}. In the initial design of the component, all possible stresses were considered. These were used to find the worst case loading scenarios and the location to take the stresses. The maximum stress occurs of the middle of the top of the cross section when the airship is angled at 90°. Subsequently this results in Equation \ref{eqn:armstress} being zero and having no effect on the safety factor. For analysis, the planar stress in $y$ is calculated using the Equation \ref{eqn:armstress}.
 
 \begin{figure}[H]
 	\centering

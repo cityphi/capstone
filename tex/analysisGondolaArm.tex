@@ -40,7 +40,7 @@ The analysis first must solve the gondola forces for the case in which the great
 \Sigma F_{z} : F_{NB1_{z}} + F_{NB2_{z}} + F_{NB3_{z}} + F_{NB4_{z}} =\\ (m_{1} + m_2)g - \frac{\sqrt{2}}{2} F_{Spring} - \frac{\sqrt{2}}{2} F_{Spring} + \sin(\beta) (m_1+m_2) a_{Thrust}
 \end{multline}
  
-The sum of forces in the x-direction are not shown because in this scenario, there are no forces acting in the x-direction although the linear actuator is applied. If there where any forces in the x-direction since the linear actuator is activated it would resist by the holding force $F_{brake}$. The arm that is subjected to the highest force is usually located opposite to the friction wheel, but the code \ref{gondolaForces} will check all the bearing forces, $F_{NB}$, and determine which is the largest. \\
+The sum of forces in the x-direction are not shown because in this scenario, there are no forces acting in the x-direction although the linear actuator is applied. If there where any forces in the x-direction since the linear actuator is activated it would resist by the holding force $F_{brake}$. The arm that is subjected to the highest force is usually located opposite to the friction wheel, but the code \ref{gondForces} will check all the bearing forces, $F_{NB}$, and determine which is the largest. \\
 
 The member is most likely fail at the inner interface with the gondola, marked as shown in Figure \ref{fig:armStressLocation}.
 \begin{figure}[H]
