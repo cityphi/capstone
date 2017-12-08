@@ -11,13 +11,11 @@
 	\label{fig:frictionWheelParametrization}
 \end{figure}
 
-The friction wheel slip analysis, calculates the required motor torque in order to allow for the gondola to move in a worst case scenario, and then calculates the motor hinge spring torque that will generate a large enough normal force to prevent slip of the friction wheel. The inputs required for the analysis are the geometry of the friction wheel, the motor, the hinge, the gondola, as well as the material properties of the friction wheel, the mass of each gondola car, the maximum achievable thruster acceleration and the loading conditions specific to the worst case scenario. \\
-
 The friction wheel slip analysis, calculates the required motor torque in order to allow for the gondola to move in a worst case scenario, and then calculates the motor hinge spring torque that will generate a large enough normal force to prevent slip of the friction wheel. The inputs required for the analysis are the geometry of the friction wheel, the motor, the hinge, the gondola, as well as the material properties of the friction wheel, the mass of each gondola car, the maximum achievable acceleration as a result of the thrusters and the loading conditions specific to the worst case scenario. \\
 
-Parameters that will not change through out the gondola analysis include, the geometry of the motor, this is because different torques can be achieved with the same geometry by modifying the gearing. See Appendix \ref{FrictionMotor}. The geometry of the hinge will not change as it is aluminium and the forces applied to it are minimal. The components inside of the gondola which include the R.F transmitter, the BESC and the battery will not be changing. Calculations for required power and run time are done in the Component Analysis section \ref{batterySelect} Thruster Assembly Component Selection, show that regardless of motor gearing, power requirements are easily met and the limiting factor for flight time will be the thruster batteries. As a result the geometry of the main frame of the gondola (length, width, and height) will not be parametrized and the weights of the gondola will remains approximately the same. \\
+Parameters that will not change through out the gondola analysis include, the geometry of the motor, this is because different achievable torques with the same geometry by modifying the gearing. See Appendix \ref{FrictionMotor} for the specifications. The geometry of the hinge will not change as it is aluminium and the forces applied to it are minimal. The components inside of the gondola which include the RF transmitter, the BESC and the battery will not be changing. Calculations for required power and run time are done in the Component Analysis Section \ref{batterySelect}, Thruster Assembly Component Selection, show that regardless of motor gearing, power requirements are easily met and the limiting factor for flight time will be the thruster batteries. As a result the geometry of the main frame of the gondola (length, width, and height) will not be parametrized and the weights of the gondola will remains approximately the same. \\
 
-The analysis first assumes a motor torque. With this torque the code computes the spring torque such that $F_{spring} = F_{Nfric}$, which ensures the friction wheel will not slip. For the purpose of this analysis, the friction wheel and shaft interface are considered without slip, and the set screw is assumed to not fail as it will be metal interfacing with plastic.
+The analysis first assumes a motor torque. With this torque, the code computes the spring torque such that $F_{spring} = F_{Nfric}$, which ensures the friction wheel will not slip. For the purpose of this analysis, the friction wheel and shaft interface are considered without slip, and the set screw is assumed to not fail as it will be metal interfacing with plastic.
 
 \begin{equation}
 F_{spring} = F_{Nfric} = \frac{F_{fFric}}{\mu} = \frac{T_w}{r_{Fw}\cdot{}\mu}
@@ -42,7 +40,7 @@ T_{spring} = \frac{T_w\cdot{\sqrt{L_{hs}^2+L_{sw}^2}}}{r_{Fw}\cdot{}\mu}\cdot{1.
 F_{Drive} = \frac{T_w}{r_{Fw}}
 \end{equation}
 
-Based on the assumed torque and the spring force, the acceleration of the gondola in the worst case scenario explained in System Modeling section \ref{loadingScenarios}, Maximum Downward Force, and Figure \ref{fig:scenario1}, the acceleration of the gondola is calculated. The free body diagrams shown in Figures \ref{sideFBDtw} and \ref{topFBDtw} depict all th forces that will be acting on the gondola for this scenario in the coordinate system defined by the plane of the surface of the rear gondola car. As a result most of the forces and reactions acting on the front gondola need to be rotated according to the angle of the hinge, $\Theta$ is the angle between the gondolas which is in this case equal zero. Similarly $\phi$ is the pitch angle of the airship which is equal  and $\beta$ is the angle at which the acceleration due to thrust is acting. 
+Based on the assumed torque and the spring force, the acceleration of the gondola in the worst case scenario explained in the System Modelling Section \ref{loadingScenarios}, Maximum Downward Force, and Figure \ref{fig:scenario1}, the acceleration of the gondola is calculated. The free body diagrams shown in Figures \ref{fig:gondolaSideTW} and \ref{fig:gondolaTopTW} depict all the forces that will be acting on the gondola for this scenario in the coordinate system defined by the plane of the surface of the rear gondola car. As a result most of the forces and reactions acting on the front gondola need to be rotated according to the angle of the hinge, $\Theta$ is the angle between the gondolas which is in this case equal zero. Similarly $\phi$ is the pitch angle of the airship which is equal and $\beta$ is the angle at which the acceleration due to thrust is acting. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.1\linewidth]{img/gondola/gondolaSideTW.pdf}
@@ -56,7 +54,7 @@ Based on the assumed torque and the spring force, the acceleration of the gondol
 	\label{fig:gondolaTopTW}
 \end{figure}
 
-The following equations \ref{Fxgondtw}, \ref{Fygondtw} to \ref{Fzgondtw} are the sum of forces acting on the gondola
+Equations \ref{Fxgondtw}, \ref{Fygondtw} and \ref{Fzgondtw} are the sum of forces acting on the gondola.
 The reactions are on the left of the equal sign and the known forces acting on the gondola are to the right of the equal sign. 
 \begin{multline} \label{Fxgondtw}
 \Sigma F_{x} : (m_{1}+m_{2}) a_{gondola} = \sin(\phi)(m_{1} + m_2)g + F_{Drive} + F_{Drive} + \cos(\beta) (m_1+m_2) a_{Thrust} 
@@ -72,7 +70,7 @@ The spring forces $F_{Springz}$ and $F_{Springy}$ are acting on the keel at 45 \
 F_{Springz} = F_{Springy} = \frac{\sqrt{2}}{2} F_{Spring}
 \end{equation}
 
-With the G.U.I inputs specified in the System Modeling section \ref{sampleCals} Sample Calculation Conditions, the calculated required motor torque $T_w$ was equal 0.0636[Nm]. For this motor torque the other results of the analysis are shown below 
+With the GUI inputs specified in the System Modelling Section \ref{sampleCalcs} Sample Calculation Conditions, the calculated required motor torque $T_w$ was equal 0.0636[Nm]. For this motor torque the other results of the analysis are shown below:
 \begin{equation*}
 T_{spring} = \frac{T_w\cdot{}\sqrt{L_{hs}^2+L_{sw}^2}}{r{F_w}\cdot{}\mu}\cdot{}1.5 = \frac{0.0636[Nm]\cdot{\sqrt{(0.0219[m])^2+(0.0211[m])^2}}}{0.0127[m]\cdot{0.65}}\cdot{1.5} = 0.351[Nm]
 \end{equation*}
@@ -81,5 +79,5 @@ T_{spring} = \frac{T_w\cdot{}\sqrt{L_{hs}^2+L_{sw}^2}}{r{F_w}\cdot{}\mu}\cdot{}1
 F_{Drive} = \frac{T_w}{r_{Fw}} =  \frac{0.0636[Nm]}{0.0127[m]} = 5.0043[N]
 \end{equation*}
 
-With this drive force in the worst case scenario with motors will be capable of at 4.64[$\dfrac{m}{s^2}$]. This is determined using the gondolaForces code explained in the System Modeling section \ref{gondForces}. 
+With this drive force in the worst case scenario with motors will be capable of at 4.64[$\dfrac{m}{s^2}$]. This is determined using the \textit{gondolaForces} code explained in the System Modelling Section \ref{gondForces}. 
 \end{document}
