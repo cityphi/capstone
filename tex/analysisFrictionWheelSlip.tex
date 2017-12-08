@@ -34,12 +34,12 @@ The relation for the minimum necessary spring torque is multiplied by a factor o
 
 \begin{equation}
 \label{eqn:springTorque}
-T_{spring} = \frac{T_w\cdot{}[L_{hs}+L_{sw}]}{r{F_w}\cdot{}\mu}\cdot{}1.5
+T_{spring} = \frac{T_w\cdot{\sqrt{L_{hs}^2+L_{sw}^2}}}{r_{Fw}\cdot{}\mu}\cdot{1.5}
 \end{equation}
 
 \begin{equation}
 \label{eqn:driveForce}
-F_{Drive} = \frac{T_w}{r{F_w}}
+F_{Drive} = \frac{T_w}{r_{Fw}}
 \end{equation}
 
 Based on the assumed torque and the spring force, the acceleration of the gondola in the worst case scenario explained in System Modeling section \ref{loadingScenarios}, Maximum Downward Force, and Figure \ref{fig:scenario1}, the acceleration of the gondola is calculated. The free body diagrams shown in Figures \ref{sideFBDtw} and \ref{topFBDtw} depict all th forces that will be acting on the gondola for this scenario in the coordinate system defined by the plane of the surface of the rear gondola car. As a result most of the forces and reactions acting on the front gondola need to be rotated according to the angle of the hinge, $\Theta$ is the angle between the gondolas which is in this case equal zero. Similarly $\phi$ is the pitch angle of the airship which is equal  and $\beta$ is the angle at which the acceleration due to thrust is acting. 
@@ -71,4 +71,15 @@ The spring forces $F_{Springz}$ and $F_{Springy}$ are acting on the keel at 45 \
 \begin{equation}
 F_{Springz} = F_{Springy} = \frac{\sqrt{2}}{2} F_{Spring}
 \end{equation}
+
+With the G.U.I inputs specified in the Modelling Analysis section REF??, the calculated required motor torque $T_w$ was equal 0.0636[Nm]. For this motor torque the other results of the analysis are shown below 
+\begin{equation*}
+T_{spring} = \frac{T_w\cdot{}\sqrt{L_{hs}^2+L_{sw}^2}}{r{F_w}\cdot{}\mu}\cdot{}1.5 = \frac{0.0636[Nm]\cdot{\sqrt{(0.0219[m])^2+(0.0211[m])^2}}}{0.0127[m]\cdot{0.65}}\cdot{1.5} = 0.351[Nm]
+\end{equation*}
+
+\begin{equation*}
+F_{Drive} = \frac{T_w}{r_{Fw}} =  \frac{0.0636[Nm]}{0.0127[m]} = 5.0043[N]
+\end{equation*}
+
+With this drive force in the worst case scenario with motors will be capable of at 10.12[$\dfrac{m}{s^2}$]. This is determined using the gondolaForces code explained in the System Modelling section \ref{gondForces}. 
 \end{document}
