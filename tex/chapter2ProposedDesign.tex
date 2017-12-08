@@ -24,7 +24,7 @@ The gondola sub-assembly is the most distinguishable feature of the airship desi
 	\label{fig:gondolaIsomeric}
 \end{figure}
 
-The gondola is comprised of two half sections which each house required flight components: The battery, flight controller, transmitter, GPS module and two ESCs. Figure \ref{fig:gondolaPartialSection} shows how these components are nested in one of the gondola sections. 
+The gondola is comprised of two half sections, each housing required flight components: the battery, flight controller, transmitter, GPS module and two ESCs. Figure \ref{fig:gondolaPartialSection} shows how these components are nested in one of the gondola sections. 
 
 \begin{figure}[H]
 	\centering
@@ -33,7 +33,7 @@ The gondola is comprised of two half sections which each house required flight c
 	\label{fig:gondolaPartialSection}
 \end{figure}
 
-Joining the two sections is a hinge, seen in Figure  \ref{fig:gondola1ExplodedView}, which allows the gondola to bend in the centre. The hinge has a flanged end and a cap that relies upon an interference fit to ensure the hinge does not slip out of the gondola axially. The bend in the middle allows the gondola to overcome a more significant turning radius compared to being fixed in a straight line, which is depicted in Figure \ref{fig:gondolaBent}. Similarly to curve fitting, the more points that are used, the better fit. 
+A hinge joins the two sections, as seen in Figure \ref{fig:gondola1ExplodedView}, which allows the gondola to bend freely in the centre. The hinge has a flanged end and a cap that relies upon an interference fit to ensure the hinge does not slip out of the gondola axially. The bend in the middle allows the gondola to overcome a more significant turning radius compared to being fixed in a straight line, which is depicted in Figure \ref{fig:gondolaBent}. Similarly to curve fitting, the more points that are used, the better fit. 
 
 \begin{figure}[H]
 	\centering
@@ -49,7 +49,7 @@ Joining the two sections is a hinge, seen in Figure  \ref{fig:gondola1ExplodedVi
 	\label{fig:gondolaBent}
 \end{figure}
 
-Braking of the gondola is accomplished by turning the friction wheels in the opposite direction until motion is stopped. Once this occurs, the position is held by a linear actuator, which provides force perpendicular to the keel surface. The linear actuator motion can be seen in Figure \ref{fig:linearActuatorAndMotor}. The gondola has been designed to be resistant to small amounts of water, considering the gondola will always be shielded from rainfall by the envelope, therefore total waterproofing is not required. Cable glands (see Appendix \ref{CableGland}) will be used for all surfaces perpendicular to rainfall that require waterproofing. They can be seen more clearly in Figure \ref{fig:gondola1ExplodedView}. The gondola section are made using high quality 3D prints, given their complex geometries and relatively small size.
+Braking of the gondola is accomplished by turning the friction wheels in the opposite direction until motion is stopped. Once this occurs, the position is held by a linear actuator, which provides force perpendicular to the keel surface. The linear actuator motion can be seen in Figure \ref{fig:linearActuatorAndMotor}. The gondola has been designed to be resistant to small amounts of water, considering the gondola will always be shielded from rainfall by the envelope, therefore less waterproofing is required. Cable glands (see Appendix \ref{CableGland}) will be used for all surfaces perpendicular to rainfall that require waterproofing. They can be seen more clearly in Figure \ref{fig:gondola1ExplodedView}. The gondola sections are made using high quality 3D prints, given their complex geometries and relatively small size.
 \\
 
 \begin{figure}[H]
@@ -60,7 +60,7 @@ Braking of the gondola is accomplished by turning the friction wheels in the opp
 \end{figure}
 
 \subsection{Friction Wheel}
-The friction wheel must always be in contact with the keel, shown in Figure \ref{fig:frictionWheelOnGondola}. The friction wheel is made from 55D rubber, purchased off-the-shelf. It has a shore hardness of 55A, which is considered medium soft, so it can deform when it is placed on the keel. A shaft adapter is necessary to bridge the gap between the motor shaft and the friction wheel, as the two sizes are not compatible. The shaft adapter will be 3D printed, and held in place by an existing set screw in the friction wheel. To ensure adequate pressure on the keel, the friction wheel assembly is mounted on a hinged bracket equipped with a torsion spring at the pin, as seen in Figure \ref{fig:explodedFrictionWheel}. The motor used can rotate in both directions, making it useful as a brake as well. A magnetic encoder allows for accurate positioning of the gondola sections, independently allowing for redundancy between the two motors. The motor is mounted to the bracket using two nuts and two bolts. The bracket is mounted to the gondola using 2 nuts, 2 bolts and 2 washers. The hinged bracket will be manufactured in house with aluminium, and a sourced torsion spring (see Appendix \ref{TORSIONSPRING}).
+The friction wheel must always be in contact with the keel, shown in Figure \ref{fig:frictionWheelOnGondola}. The friction wheel is made from 55D rubber, purchased off-the-shelf. It has a shore hardness of 55A, which is considered medium soft, so it can deform when it is placed on the keel. A shaft adapter is necessary to bridge the gap between the motor shaft and the friction wheel, as the two sizes are not compatible. The shaft adapter will be 3D printed, and held in place by an existing set screw in the friction wheel. To ensure adequate pressure on the keel, the friction wheel assembly is mounted on a hinged bracket equipped with a torsion spring at the pin, as seen in Figure \ref{fig:explodedFrictionWheel}. The motor used can rotate in both directions, making it useful as a reverse rotating brake as well. A magnetic encoder allows for accurate positioning of the gondola sections, independently allowing for redundancy between the two motors. The motor is mounted to the bracket using two nuts and two bolts. The bracket is mounted to the gondola using 2 nuts, 2 bolts and 2 washers. The hinged bracket will be manufactured in house with aluminium, and a sourced torsion spring (see Appendix \ref{TORSIONSPRING}).
 
 \begin{figure}[H]
 	\centering
@@ -76,7 +76,7 @@ The friction wheel must always be in contact with the keel, shown in Figure \ref
 \end{figure}
 
 \subsection{Bearings}
-Bearings (Appendix \ref{PBearings}) are placed on top of the keel to support the weight of the gondola and counter the force applied to the keel by the friction wheel. The bearings act as wheels turning and slipping along the keel. Low weight, plastic bearings will be used. The bearings are mounted using a snap fit design, that can be seen in Figure \ref{fig:gondola1ExplodedView}, where the bearing is held in place by a diameter slightly larger than its own. The bearing is placed over the piece, deflecting it until the bearing can slip past the overhang where the snap fit piece elastically snaps back into its original position, securely holding the bearing.
+Bearings (Appendix \ref{PBearings}) are placed on top of the keel to support the weight of the gondola and counter the force applied to the keel by the friction wheel. The bearings act as wheels turning and slipping along the keel. Low weight, plastic bearings will be used. The bearings are mounted using a snap fit design, that can be seen in Figure \ref{fig:gondola1ExplodedView}. This bearing is held in place by a shaft diameter slightly larger than the bearing inner diameter. The bearing is placed over the piece, deflecting it until the bearing can slip past the overhang where the snap fit piece elastically snaps back into its original position, securely holding the bearing.
 \\
 \subsection{Linear Actuator}
 A linear actuator is housed on one of the two sections of the gondola. The linear actuator is to be activated when the gondola is not moving to hold its position on the keel. The motion can be seen in Figure \ref{fig:linearActuatorAndMotor}. A custom 3D printed piece is outfitted to the top of the actuator (Keel Holder) in a V-shape to mesh ideally with the keel, as seen in Figure \ref{fig:gondola1ExplodedView}. The V-shaped 3D printed surface will then be coated with a Plasti Dip\textregistered{} like coating, to reduce the likelihood of tearing the polyurethane cover on the keel.  The  linear actuator chosen has a variety of holding forces without constant power, making it ideal for run time. It is also water resistant to the IP54 standard. 
@@ -85,7 +85,7 @@ A linear actuator is housed on one of the two sections of the gondola. The linea
 The gondola features a sliding door (the motion can be seen in Figure \ref{fig:gondola1ExplodedView}), to ease the process of component charging and changing. The door relies upon an interference fit to stay in place. Components are inserted into the gondola while it is off the keel and secured by double sided tape. The door is inserted and the gondola is reinserted onto the keel. See Figure \ref{fig:gondolaPartialSection} (selective cross-section). The door will also be 3D printed.
 \\
 \section{Keel}
-Figure \ref{fig:keelAssemblyCompressedThruster} shows the keel assembly in a condensed form. The two straight and one curved sections of the keel and the envelope support originate from Dr. Lanteigne's design. Sections of the keel are joined using connectors that rely on interference fits, also designed by Dr. Lanteigne, but modified and machined for better material properties, as the proposed design involves much higher forces being applied to the connector pieces than the previous design. 
+Figure \ref{fig:keelAssemblyCompressedThruster} shows the keel assembly in a condensed form. The two straight and one curved sections of the keel and the envelope support originate from Dr. Lanteigne's design. Sections of the keel are joined using connectors that rely on interference fits, also designed by Dr. Lanteigne. The connectors are modified and machined for improved material properties. The proposed design involves much higher forces applied to the connector pieces than the previous design. 
 
 \begin{figure}[H]
 	\centering
@@ -109,7 +109,7 @@ The envelope support slides into a slot on the keel connectors remaining in posi
 	\label{fig:thrusterArmConnectorPiece}
 \end{figure}
 
- 3D printed end stops are inserted in either end of the keel using an interference fit identical to the connectors. The end stop design can be seen in Figure \ref{fig:keelEndCap}. These stops are slightly larger than the size of the keel, effectively interfering with the gondola wheels, keeping it from rolling off the ends of the keel. All geometries in the keel assembly are fixed in relation to the airship with the exception of the thrusters.
+ 3D printed end stops are inserted in either end of the keel using an interference fit identical to the connectors. The end stop design can be seen in Figure \ref{fig:keelEndCap}. The stops are slightly larger than the size of the keel, effectively interfering with the gondola friction wheels, thereby keeping the gondola from rolling off the ends of the keel. All geometries in the keel assembly are fixed in relation to the airship with the exception of the thrusters.
 
 \begin{figure}[H]
 	\centering
@@ -129,14 +129,7 @@ The thruster arms are made from carbon fibre that will be made in house by layin
 	\label{fig:envelopeDeformation}
 \end{figure}
 
-The compression will enable contact between the airship and plate, increasing the surface area for the double sided tape union. The edges of the aluminium plate will be bevelled to ensure that the plate does not pierce the envelope (see Figure \ref{fig:roundedEdges}). All analysis performed in this report assumes that there is no support from the double sided tape at the plate, so that estimates of stresses are very conservative. The thruster arms will therefore be designed to be able to withstand any loading condition without support from the envelope.\\
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=.5\linewidth]{img/design/thruster/roundedEdges.JPG}
-	\caption{Close-up of Rounded Edges used to Protect the Envelope from Piercing}
-	\label{fig:roundedEdges}
-\end{figure}
+The compression will enable contact between the airship and plate, increasing the surface area for the double sided tape union. The edges of the aluminium plate will be bevelled to ensure that the plate does not pierce the envelope. All analysis performed in this report assumes that there is no support from the double sided tape at the plate, so that estimates of stresses are very conservative. The thruster arms will therefore be designed to sustain loading condition without support from the envelope.\\
 
 The mounting of the plate to the thruster arm can be seen in Figure \ref{fig:thrusterOnKeel}. The full assembly can be seen in Figure \ref{fig:thrusterAssembly}.  
 
@@ -147,7 +140,7 @@ The mounting of the plate to the thruster arm can be seen in Figure \ref{fig:thr
 	\label{fig:thrusterOnKeel}
 \end{figure}
 
-Components are housed inside a 3D printed casing that features a 3D printed door, similar to the gondola. Figure \ref{fig:plateAssembly} displays how the components are mounted on the plate. The components for each thruster include a receiver, a battery and a BESC. The components are located above the centre of volume of the airship in the z-direction, raising the centre of mass, allowing for better pitching properties. These components are well covered from the rain and any splashing water. With the casing above the servo motor, the servo motor is shielded from rain in normal flying conditions.
+Components are housed inside a 3D printed casing that features a 3D printed door, similar to that designed for the gondola. Figure \ref{fig:plateAssembly} displays how the components are mounted on the plate. The components for each thruster include a receiver, a battery and a BESC. The components are located above the centre of volume of the airship in the z-direction, raising the centre of mass, providing for better pitching properties. These components are well covered from the rain and any splashing water. The casing above the servo motor will shield it from rain in level flying conditions.
 
 \begin{figure}[H]
 	\centering
@@ -182,7 +175,7 @@ Components are housed inside a 3D printed casing that features a 3D printed door
  	\label{fig:bearingShoulder}
  \end{figure}
  
- The shaft will be machined to be hollow and threaded on the outside. It will be manufactured using a Nylon 6, for its corrosion resistance, ease of machining, and low density. It will include a shoulder that fits into the bearing inner race. The shaft is mounted to the spline on the servo, and an M3 screw is placed inside to shaft, axially fastening it to the servo, as the servo comes standard with a tapped hole. Several screws are used to securely fasten the servo to the supporting parts, all of which are shown in Figure \ref{fig:shaftAssembly}.
+ The shaft will be machined to be hollow and threaded on the outside. It will be manufactured using a Nylon 6, for its corrosion resistance, ease of machining, and low density. It will include a shoulder that fits into the bearing inner race. The shaft is mounted to the spline on the servo, and an M3 screw is placed inside to shaft, axially fastening it to the servo, that comes standard with a tapped hole. Several screws are used to securely fasten the servo to the supporting parts, all of which are shown in Figure \ref{fig:shaftAssembly}.
  
   \begin{figure}[H]
  	\centering
@@ -200,7 +193,7 @@ The propeller motor is mounted on a machined aluminium propeller mounting bracke
 	\label{fig:mountAssembly}
 \end{figure}
 
- Figure \ref{fig:propAssembly} shows how the propeller and related parts will be mounted. The propeller is mounted to the motor using a standard interference fit, given that these are both off-the-shelf parts. The propeller and motor are protected by a lightweight plastic encasement, cut from a sheet of transparent PETG (Polyethylene Terephthlate Glycol-Modified) plastic. The strip is put into a loop and a hole is added, when it is then mounted to the shaft by squeezing the plastic between a shoulder on the shaft and washer/nut combination. All washers and nuts on the Nylon shaft are also made of nylon. The encasement provides shielding of the propeller motor during forward flight conditions.
+ Figure \ref{fig:propAssembly} shows how the propeller and related parts will be mounted. The propeller is mounted to the motor using a standard interference fit, given that these are both off-the-shelf parts. The propeller and motor are protected by a lightweight plastic encasement, cut from a sheet of transparent PETG (Polyethylene Terephthlate Glycol-Modified) plastic. The strip is formed to a loop and a hole is added, it is then mounted to the shaft by squeezing the plastic between a shoulder on the shaft and washer/nut combination. All washers and nuts on the Nylon shaft are also made of nylon. The encasement provides shielding of the propeller motor during forward flight conditions.
 
 \begin{figure}[H]
 	\centering
@@ -219,7 +212,7 @@ Wiring for the airship is relatively straight forward as each motor assembly has
 	\label{fig:gondolaWiring}
 \end{figure}
 
-Components shown are rough dimensions taken from the specifications for each part, and include the start of the tails of the wires, meaning that the size of the components in the figures are larger than the actual components will be. As a result, the figures look overcrowded for wiring, but the models are specifically oversized to account for room for wiring. Waterproofing is provided by cable glands for surfaces perpendicular to the fall of rain (see Appendix \ref{CableGland}). Surfaces parallel to the fall of rain do not have waterproofing as these are not exposed to much water. The wires routed between the gondola will be provided with slack so the gondola can fold up to 10$^{\circ}$. Holes between the two gondolas allow for the wires to be routed between them. A schematic of the gondola wiring can be seen in Figure \ref{fig:gondolaWiringSchematic}.
+Components shown are rough dimensions taken from the specifications for each part, and include the start of the tails of the wires, the size of the components in the figures are larger than the actual size of components. The figures look overcrowded for wiring, but the models are specifically oversized to account for room for wiring. Waterproofing is provided by cable glands for surfaces perpendicular to the fall of rain (see Appendix \ref{CableGland}). Surfaces parallel to the fall of rain do not have waterproofing as these are not exposed to much water. The wires routed between sections of the gondola will be provided with slack so the gondola can fold up to 10$^{\circ}$. Holes between the two gondola sections allow for the wires to be routed between them. A schematic of the gondola wiring can be seen in Figure \ref{fig:gondolaWiringSchematic}.
 
 \begin{figure}[H]
 	\centering
@@ -237,7 +230,7 @@ The thruster assembly is wired similarly to the gondola, with wires coming out o
 	\label{fig:thrusterWiring}
 \end{figure}
 
- Waterproofing cannot be completed for the propeller motor as it must be exposed to the air to work effectively. Although the propeller motor is not waterproofed, it is cover by falling rain from the propeller encasement in forward flight operations. A schematic of the wiring for the thruster assembly is shown in Figure \ref{fig:thrusterWiringSchematic}.
+ Waterproofing cannot be completed for the propeller motor as it must be exposed to the air to work and cool effectively. Although the propeller motor is not waterproofed, it is covered by falling rain by the propeller encasement in forward flight operations. A schematic of the wiring for the thruster assembly is shown in Figure \ref{fig:thrusterWiringSchematic}.
 
 \begin{figure}[H]
 	\centering
