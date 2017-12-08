@@ -51,7 +51,7 @@ The distance from the point the force is being applied to the neutral axis $c$ i
 
  \begin{equation}
  \label{eqn:centroid}
- c = r_{overhang} - \frac{4r_{Snap}}{3}\left(\frac{\sin^3\left(\frac{\theta}{2}\right)} {\theta-\sin(\theta)}\right)
+ c = r_{snap} - \frac{4r_{Snap}}{3}\left(\frac{\sin^3\left(\frac{\theta}{2}\right)} {\theta-\sin(\theta)}\right)
  \end{equation}
 
 Once the analysis has been performed and the required snapfit cut depth has been determined, Equation \ref{eqn:snapangle} is used to calculate the bevel angle so that when the snap fit is in full deflection, there is no interference from the upper overhanging section. 
@@ -61,7 +61,33 @@ Once the analysis has been performed and the required snapfit cut depth has been
 \theta_{snap} = \frac{F_{Snafit}L_{Snapfit}^2}{2EI_{Snap}}  
 \end{equation}
 
-This safety factor is slightly lower than other analysis with high failure likelihood which can be found in in table \ref{allComponents}. This is due to the fact that the installation will only be performed once. Maximum stress under normal loading conditions will be a direct result of the normal force applied on the bearing by the keel.
+This safety factor is slightly lower than other analysis with high failure likelihood which can be found in in table \ref{allComponents}. This is due to the fact that the installation will only be performed once. Maximum stress under normal loading conditions will be a direct result of the normal force applied on the bearing by the keel.\\
 
+With the G.U.I inputs specified in the System Modeling section \ref{sampleCals} Sample Calculation Conditions, the calculated required snapfit cut depth $L_Snapfit$ is equal to 0.0125[m]. The following are sample calculation for that value. 
+
+\begin{equation*}
+\theta = \sin^{-1}\left(\frac{r_{snap}\delta}{r_{snap}}\right) = \sin^{-1}\left(\frac{0.0032[m]-0.001[m]}{0.0032[m]}\right) = 0.8161[rads]
+\end{equation*}
+
+\begin{align*}
+I &= \left(\frac{r_{Snap}^4}{8}\right)  \left(\theta -\sin(\theta)+2\sin(\theta)(\sin^2\left(\frac{\theta}{2}\right))\right)\\ = \left(\frac{(0.0032[m])^4}{8}\right)&  \left(0.8161[rads] -\sin(0.8161[rads])+2\sin(0.8161[rads])(\sin^2\left(\frac{0.8161[rads]}{2}\right))\right) \\
+&= 4.027\cdot 10^{-12} [m^4]
+\end{align*}
+
+ \begin{equation*}
+c = r_{snap} - \frac{4r_{Snap}}{3}\left(\frac{\sin^3\left(\frac{\theta}{2}\right)} {\theta-\sin(\theta)}\right) = 0.0032[m] -  \frac{4(0.0032[m])}{3}\left(\frac{\sin^3\left(\frac{0.8161[rads]}{2}\right)} {0.8161[rads]-\sin(0.8161[rads])}\right) = 0.0012[m]
+\end{equation*}
+
+\begin{equation*}
+F_{Snapfit} = \frac{3 \delta E I}{L_{snapfit}^3} = \frac{3 (0.001[m]) (1.138\cdot 10^9 [pa]) (4.027\cdot 10^{-12}[m^4])}{(0.0125[m])^3} = 7.04[N]
+\end{equation*}
+
+\begin{equation*}
+\sigma_{Snapfit} = \frac{F_{Snapfit} L_{snapfit} c}{I} = \frac{(7.04[N]) (0.0125[m]) (0.0012[m])}{4.027\cdot 10^{-12}[m^4]} = 25.2[Mpa]
+\end{equation*}
+
+\begin{equation*}
+\theta_{snap} = \frac{F_{Snafit}L_{Snapfit}^2}{2EI_{Snap}} = \frac{(7.04[N])(0.0125[m])^2}{2(1.138\cdot 10^9 [pa]) (4.027\cdot 10^{-12}[m^4])}   
+\end{equation*}
 
 \end{document}
