@@ -33,7 +33,7 @@ The aircraft dimensions shown in Table \ref{tbl:airshipTableCont} are results of
 
 It can be deduced from the table that the Prandtl Shape coefficient encompasses both skin and form drag. When the fineness ratio is higher, skin friction drag will have a larger effect than form drag, so when the airspeed is increased (from 20mph to 60mph), $C_D$ will decrease. The opposite is true with small fineness ratios, where the form drag plays a larger role, therefore the $C_D$ increases as airspeed is increased. \\
 
-As a example, assuming the blimp designed has a fineness ratio of 3.5, the comparable blimp would be the Elliptical series E 4. To be conservative, the highest $C_D$ from the E 4 is $C_D = 0.0167$. The calculation is shown below, for a windspeed of $20m/s$:
+Assuming the blimp design has a fineness ratio of 3.5, the comparable blimp would be the Elliptical Series E 4. To be conservative, the highest $C_D$ from the E 4 is $C_D = 0.0167$. The calculation is shown below, for a windspeed of $20m/s$:
 
 \begin{equation*} \label{exDrag}
 D = C_D\rho (vol)^{2/3}v^{1.86}=0.0167*(0.00237 slugs/ft^3)*(122.644 ft^3)^{2/3}(65.616 ft/s) ^{1.86} = 2.342 lbf = 10.417735N 
@@ -52,7 +52,7 @@ D[N] = 2.420293983*(C_D)*(\rho[kg/m^3])*(vol [m^3])^{2/3}*(v [m/s])^{1.86}
 	\label{tbl:contributionsTable}
 \end{table}
 
-These estimates are meant to be extremely conservative, due to the fact that the construction of the blimp will not be perfect, and any modelling situation will not be able to capture all of the imperfections in the build.\\
+These estimates are meant to be conservative, due to the fact that the construction of the blimp will not be perfect, and any modelling situation will not be able to capture all of the imperfections in the build.\\
 
 The value of $C_D$ will change based on the fineness ratio. In the GUI of the MATLAB program, the user will input the dimensions of the airship, and the program will calculate $C_D$ based on the fineness ratio ($fr$). The GUI will only allow the user to input dimensions which result in fineness ratios of between 3.0 and 4.0. This is due to the fact that these fineness ratios most accurately reflect the shape of the pre-existing keel. The relationship is found by curve-fitting the data in Table \ref{tbl:finenessCoefficient}, which were obtained from values in Table \ref{tbl:airshipTableCont}.
 
