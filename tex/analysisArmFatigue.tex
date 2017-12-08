@@ -17,15 +17,20 @@ The S-N curve shown in Figure \ref{fig:snCurve} was used to determine the maximu
 
 Assuming that the loading frequency is not higher than around 3hz, no appreciable heat is generated and thus the loading frequency should not affect the cycles to failure. Assuming SLS nylon, the maximum nominal stress for infinite life ($10^6$ cycles) is $17MPa$ Any higher and the part will fail after enough loading cycles.\\
 
-To find the nominal stress, the amount of stress fluctuation which the gondola arm will sustain needs to be computed. For this, the lowest stress will be when the gondola is not moving, and is only loaded by the weight of the gondola itself. The highest stress will be when the gondola motor is on at full force, at the worst case scenario \textbf{DESCRIBED HERE} bending the gondola arm. These both conditions are computed using \textbf{ISAAKS SHIT HERE}, and two values of $F_{NB}$ are found. The difference between the two is the fluctuation of stress.
+To find the nominal stress, the amount of stress fluctuation which the gondola arm will sustain needs to be computed. For this, the lowest stress will be when the gondola is not moving, and is only loaded by the weight of the gondola itself. The highest stress will be when the gondola motor is on at full force, at the worst case scenario described in Section \ref{loadingScenarios}, Maximum Arm Forces. These conditions are computed using the code is Section \ref{code:gondola} and \ref{code:gondolaforce}. Two values of $F_{NB}$ are found. The difference between the two is the fluctuation of stress.
+
 \begin{equation}
 	\sigma_{worst}= \underbrace{\left[\left(\dfrac{F_{NB_{z}}}{A}\right)\hat{k} + \left(\dfrac{F_{NB_{y}}l_{arm}c}{I}  + \dfrac{M_{NB}c}{I} \right) \hat{j}\right]}_\text{Worst Case $F_{NB}$}, \sigma_{best} = \underbrace{\left[\left(\dfrac{F_{NB_{z}}}{A}\right)\hat{k} + \left(\dfrac{F_{NB_{y}}l_{arm}c}{I}  + \dfrac{M_{NB}c}{I} \right) \hat{j}\right]}_\text{Best Case $F_{NB}$}
 \end{equation}
 
 The principle stress for each case $\sigma _a$ is found, and the difference is computed to get the nominal strength, which must be less than $17MPa$. Therefore the optimized equation is:
 
-\begin{equation}
-	17Mpa \geq \left|\sigma _{a_{best}}-\sigma _{a_{worst}}\right|
-\end{equation} 
+\begin{multline}
+	17Mpa \geq \left|\sigma _{a_{best}}-\sigma _{a_{worst}}\right| = \Bigg| cauchy\left[\left(\dfrac{26.6082N}{2.874*10^{-5}m^2}\right)\hat{k} + \left(\dfrac{-26.6082N*0.036m*0.003m}{7.0686*10^{-6}m^4}  + \dfrac{2.2823Nm*0.003m}{7.0686*10^{-6}m^4} \right) \hat{j}\right]- \\ 
+	cauchy\left[\left(\dfrac{16.9302N}{2.874*10^{-5}m^2}\right)\hat{k} + \left(\dfrac{-16.9302N}{7.0686*10^{-6}m^4} + \dfrac{1.5117Nm*0.036m}{7.0686*10^{-6}m^4} \right) \hat{j}\right]\Bigg|\\
+	 = |6.055 MPa - 3.8426 MPa| = 2.212 Mpa
+\end{multline} 
+
+Because this value is so much lower than the limit, it can be said that fatigue is a non-issue and the gondola arms should have infinite-life.
 
 \end{document}
