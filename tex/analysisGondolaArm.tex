@@ -63,4 +63,9 @@ Since $\sigma _a > \sigma _b > 0$,
 	\eta = \dfrac{S_{ut}}{\sigma _a} \Rightarrow 5 \geq \dfrac{S_{ut}}{\sigma _a}
 \end{equation}
 
+With the G.U.I inputs specified in the System Modeling section \ref{sampleCals} Sample Calculation Conditions, this analsis calculated that an arm radius of 0.003[m] would be suitable to meet the safety factor. The stress is computed using the following equation and the cauchy code explained in Appendix \ref{appendix:cauchy}.
+\begin{multline}
+\sigma _{Gondola Arm}  = \left(\dfrac{F_{NB_{z}}}{A}\right)\hat{k} + \left(\dfrac{F_{NB_{y}}l_{arm}c}{I}  + \dfrac{M_{NB}c}{I} \right) \hat{j} = \\ cauchy\left[\left(\dfrac{26.6082N}{2.874*10^{-5}m^2}\right)\hat{k} + \left(\dfrac{-26.6082N*0.036m*0.003m}{7.0686*10^{-6}m^4}  + \dfrac{2.2823Nm*0.003m}{7.0686*10^{-6}m^4} \right) \hat{j}\right] = 6.055 [MPa] 
+\end{multline} 
+
 \end{document}
