@@ -23,7 +23,7 @@ The scenario for the analysis is described in Section \ref{loadingScenarios}, sh
 	\label{fig:thrusterArmFBD}
 \end{figure}
 
-The forces on Figure \ref{fig:thrusterArmFBD} are the thrust force ($F_T$), weight of thruster components ($W_T$), weight of the arm ($W_{Arm}$), and the reaction forces at the connector ($R_A$ and $M_A$). Once again, in the actual optimization summation of forces is not used, instead forceSolver (Appendix \ref{code:forceSolver}) is used to resolve forces. For analysis done by hand, the summation of forces can still be used to obtain reaction forces and thus find the relevant stresses.
+The forces on Figure \ref{fig:thrusterArmFBD} are the thrust force ($F_T$), weight of thruster components ($W_T$), weight of the arm ($W_{Arm}$), and the reaction forces at the connector ($R_A$ and $M_A$). Once again, in the actual optimization summation of forces is not used, instead \textit{forceSolver} (Appendix \ref{code:forceSolver}) is used to resolve forces. For analysis done by hand, the summation of forces can still be used to obtain reaction forces and thus find the relevant stresses.
 
 \begin{equation} \label{eqn:armFx}
 \upplus \Sigma F_x = 0 = R_A - W_{Arm} - F_T - W_T
@@ -38,7 +38,7 @@ To get $W_{Arm}$ and $L_{Arm}$, the centre of mass of the arm has to be calculat
 W_{Arm} = \rho g\frac{0.03\pi(r_o^2 - r_i^2)}{4}, \quad L_{Arm} =\frac{4(r_o^3 - r_i^3)}{3\pi(r_o^2 - r_i^2)}
 \end{equation}
 
-Once the centre of mass is found the code uses forceSolver to find the reaction forces at the bottom of the arm. These reactions are used to calculate the stresses acting on the centre of the inner radius surface shown in FIG ??. In initial design of the component all possible stresses were considered. These were used to find the worst case loading scenario and the location to take the stresses. The maximum stress occurs of the middle of the top of the cross section when the blimp is angled at $90°$. Subsequently this results in Equation \ref{eqn:armystress} being zero and having no effect on the safety factor. For analysis the planar stress in $y$ is calculated using the equation \ref{eqn:armystress} shown below. 
+Once the centre of mass is found the code uses forceSolver to find the reaction forces at the bottom of the arm. These reactions are used to calculate the stresses acting on the centre of the inner radius surface shown in FIG ??. In the initial design of the component, all possible stresses were considered. These were used to find the worst case loading scenarios and the location to take the stresses. The maximum stress occurs of the middle of the top of the cross section when the airship is angled at $90°$. Subsequently this results in Equation \ref{eqn:armystress} being zero and having no effect on the safety factor. For analysis, the planar stress in $y$ is calculated using the equation \ref{eqn:armystress} shown below. 
 
 \begin{equation}
 \label{eqn:armstress}
