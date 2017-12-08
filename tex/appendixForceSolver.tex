@@ -3,6 +3,16 @@
 \graphicspath {{../}}
 
 \begin{document}
-\label{forceSolver}
-test
+\section{Force Solver}\label{forceSolver}
+This section will explain the forceSolver.m function, the code for which can be found in Section \ref{code:forceSolver}. This function is called many times throughout the code since it is used to solve for reaction forces without needing to code in the summation of forces for that part. The basic principle behind the code is that for every summation of forces there is six equations which can be used to solve a static system. They are:
+
+\begin{equation}
+\Sigma F_x = 0, \quad \Sigma F_y = 0, \quad \Sigma F_z = 0, \quad \Sigma M_x = 0, \quad \Sigma M_y = 0, \quad \Sigma M_z = 0
+\end{equation}
+
+The force solver uses these equations to make a system of equations of the reaction forces to solve and the input forces. For moments it takes a moment about one of the reactions and refers any forces to that. Once the system of equations is made it reduces the array to get the reaction forces and returns them. This works well for simply loaded systems and the results can be easily confirmed.
+
+\paragraph{Indeterminate Systems}
+For systems which have more than six unknown reactions or more than four for 2-D problems, the system of equations will be unsolvable. To solve these assumptions need to be made in order to simplify the problem and solve it. To do this in the code, there are relations which allow for two reaction forces to be equal. This changes the system of equations to only have one of the reactions in the equations making it solvable. The resultant force or moment is split between the two after solving the system. The other assumptions made were hard-coded relations between forces to simplify the system. This is used by the gondola analysis since some of the forces are related to their angle. The added equations give enough equations to solve all the unknowns.
+
 \end{document}
