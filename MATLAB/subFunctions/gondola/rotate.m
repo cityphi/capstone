@@ -1,10 +1,17 @@
 function [rotated] = rotate(in, xz, yz, scenario, n)
-%rotate will rotate positions and forces from one coordinate systemn to
-%another based on the angles provided between current and desired
-%coordinates systems in xz and yz planes
-%scenario1 just positions, scenario2 just forces and moments,scenario3 all 
-%scenario4 just positions on second gondola
-%scenario5 just forces and moments on second gondola
+%rotate will rotate loactions,forces and moments based on angles inputed
+%   inputs:
+%       -in - force array with rows formated as specified below 
+%       -xz  - angle of rotation about y
+%       -yz - angle of rotation about x
+%       -scenario - rotation case as specified below 
+%       -n - number of forces (row) 
+%scenario1 just locations rotated
+%scenario2 just forces and moments rotated
+%scenario3 rotate entire row 
+%scenario4 just locations of second gondola rotated
+%scenario5 just forces and moments of second gondola rotated
+
 temp = in;
 rotated = temp;
 i=1;
