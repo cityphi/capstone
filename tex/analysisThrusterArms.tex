@@ -12,7 +12,7 @@
 	\label{fig:thrusterArmsParametrization}
 \end{figure}
 
-The thruster arm analysis is performed to determine the required arm thickness to meet the specified safety factor. The analysis will calculate the weight and centre of mass then output the total mass of the arms and the thruster assembly it supports. In order to run the analysis several inputs are required including the maximum thrust force, thruster assembly weight, the airship radius, and the material properties of the carbon fibre that the arms will be fabricated from. In order to minimize stress concentrations and increase ease of manufacturing the width of the arms is held constant and 30mm. This width enables the arms to remain the same width as the section where the keel connector is inserted as seen in Figures \ref{fig:thrusterArmConnectorCrossSection} and \ref{fig:thrusterArmConnectorPiece}. \\
+The thruster arm analysis is performed to determine the required arm thickness to meet the specified safety factor. The analysis will calculate the weight and centre of mass then output the total mass of the arms and the thruster assembly it supports. In order to run the analysis several inputs are required including the maximum thrust force, thruster assembly weight, the airship radius, and the material properties of the carbon fibre that the arms will be fabricated from. In order to minimize stress concentrations and increase ease of manufacturing the width of the arms is held constant and 30mm. This width enables the arms to remain the same width as the section where the keel connector is inserted as seen in Figures \ref{fig:thrusterArmConnectorCrossSection} and \ref{fig:thrusterArmConnectorPiece}.\\
 
 The scenario for the analysis is described in Section \ref{loadingScenarios}, shown specifically in Figure \ref{fig:scenario1}. In this scenario, all forces are in $x$. The analysis begins by computing the reaction forces and moments at the point at the centre of the inner radius of the arms as seen in Figure \ref{fig:thrusterArmFBD}. These are calculated by solving the summation of forces from the Figure \ref{fig:thrusterArmFBD}.
 
@@ -38,7 +38,14 @@ To get $W_{Arm}$ and $L_{Arm}$, the centre of mass of the arm has to be calculat
 W_{Arm} = \rho g\frac{0.03\pi(r_o^2 - r_i^2)}{4}, \quad L_{Arm} =\frac{4(r_o^3 - r_i^3)}{3\pi(r_o^2 - r_i^2)}
 \end{equation}
 
-Once the centre of mass is found the code uses forceSolver to find the reaction forces at the bottom of the arm. These reactions are used to calculate the stresses acting on the centre of the inner radius surface shown in FIG ??. In the initial design of the component, all possible stresses were considered. These were used to find the worst case loading scenarios and the location to take the stresses. The maximum stress occurs of the middle of the top of the cross section when the airship is angled at $90°$. Subsequently this results in Equation \ref{eqn:armystress} being zero and having no effect on the safety factor. For analysis, the planar stress in $y$ is calculated using the equation \ref{eqn:armystress} shown below. 
+Once the centre of mass is found the code uses forceSolver to find the reaction forces at the bottom of the arm. These reactions are used to calculate the stresses acting on the centre of the inner radius surface shown in Figure \ref{fig:thrusterArmLoc}. In the initial design of the component, all possible stresses were considered. These were used to find the worst case loading scenarios and the location to take the stresses. The maximum stress occurs of the middle of the top of the cross section when the airship is angled at $90°$. Subsequently this results in Equation \ref{eqn:armstress} being zero and having no effect on the safety factor. For analysis, the planar stress in $y$ is calculated using the Equation \ref{eqn:armstress}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.5\linewidth]{img/analysis/arm/armLocation.pdf}
+	\caption{Location of Analysis for Arms}
+	\label{fig:thrusterArmLoc}
+\end{figure}
 
 \begin{equation}
 \label{eqn:armstress}
@@ -50,6 +57,7 @@ Where $A$ is the area, width $w$ times height $h$, $\bar{r}$ is the centre radiu
 \begin{equation} \label{eqn:armNeutralAxis}
 \bar{r} = r_i + \frac{h}{2} \hspace{20mm}  r = \frac{h}{ln(r_o/r_i)}
 \end{equation}
+
 As mentioned above the primary stress acting on the arm is torsional shear. This is calculated using equation \ref{eqn:armtorsionShear} from {(Shigley's Machine Design \cite[102]{shigley})}. $M_y$ is the reaction moment at A, $w$ is the width of the arm, $h$ is the thickness of the arm.
 
 \begin{equation} \label{eqn:armtorsionShear}
