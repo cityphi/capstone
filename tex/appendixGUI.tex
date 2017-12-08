@@ -64,8 +64,84 @@ This section of the GUI is the inputs for the main parameters of the program. Th
 \end{enumerate}
 
 \section{Warnings and Errors} \label{gui:error}
-???
+To try to prevent errors occurring in the code and in the SolidWorks, warnings and errors are added to the code. These use message boxes and text on the GUI to display this information. The first type of warning are the ones displayed on the GUI these can be seen in Figure \ref{fig:warningDimensions}. None of these warning will prevent the user from running the program.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{img/gui/dimensionWarnings.pdf}
+	\caption{Dimension Warnings on the GUI}
+	\label{fig:warningDimensions}
+\end{figure}
+
+\begin{enumerate}
+	\item \textbf{Large Section Length} is caused by the section length of the blimp being larger than the specified maximum length. The code should still optimize the dimensions, however it wasn't particularly tested past this value and some unexpected results may occur.
+	\begin{itemize}
+		\item Fix: Reduce the Length and/or the Fineness Ratio.
+	\end{itemize}
+	\item \textbf{Small Section Length} is caused by the section length of the blimp being less than $1m$ this will cause issues with the SolidWorks since the thruster will try to be places on the cone section and fail. In general the airship is fairly small and will likely be unable to carry the components.
+	\begin{itemize}
+		\item Fix: Increase the Length and/or the Fineness Ratio.
+	\end{itemize} 
+	\item \textbf{Fineness Ratio} this is caused by a fineness ratio being outside the set range. The range was set for general look of the airship as well as the drag data being based on data points in this range. As long as the code is run close to to this range, there shouldn't be any problems.
+	\begin{itemize}
+		\item Fix: Change the Length and/or Diameter. Alternatively set the fineness ratio to a value in the range.
+	\end{itemize} 
+\end{enumerate}
+
+The other types of warnings are from a message box, which pops up at the end of the program. They are there to warn the user if the program could not meet the specifications based on the inputs. The possible ones can be seen in Figure \ref{fig:popupWarnings}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{img/gui/warnings.pdf}
+	\caption{End Warnings Pop-Ups on the GUI}
+	\label{fig:popupWarnings}
+\end{figure}
+
+\begin{enumerate}
+	\item \textbf{Required Speed} occurs if the required speed is not met. This is unlikely to occur since the slider is roughly set to the maximum speed it can achieve
+	\begin{itemize}
+		\item Fix: Reduce the speed or reduce the size of the airship to lower the drag.
+	\end{itemize}
+	\item \textbf{Flight Time} occurs if the flight time is not met. This is also unlikely to occur since the slider is capped at the largest battery.
+	\begin{itemize}
+		\item Fix: Reduce the flight time
+	\end{itemize} 
+	\item \textbf{Minimum Carrying Capacity} occurs when the parameters input result in the blimp having a carrying capacity lower than the required.
+	\begin{itemize}
+		\item Fix: Increase the volume of the airship.
+	\end{itemize} 
+	\item \textbf{Required Weight} occurs when the carrying capacity could not be met.
+	\begin{itemize}
+		\item Fix: Increase the volume of the airship.
+	\end{itemize} 
+\end{enumerate}
+
+The last set of warnings are the errors, which is major issues with the input parameters. These will need to be fixed and if they occur before the program is run, it will not allow it to run. The possible ones are shown in Figure \ref{fig:errors}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{img/gui/errors.pdf}
+	\caption{End Warnings Pop-Ups on the GUI}
+	\label{fig:errors}
+\end{figure}
+\begin{enumerate}
+	\item \textbf{Invalid Dimensions} occurs if the dimensions cause the cone at the back to intersect itself.
+	\begin{itemize}
+		\item Fix: Reduce the fineness ratio of the airship.
+	\end{itemize}
+	\item \textbf{Carrying Capacity} occurs if the net weight of the airship is negative.
+	\begin{itemize}
+		\item Fix: Increase the volume of the airship.
+	\end{itemize} 
+	\item \textbf{Enter Two Dimensions} occurs when there is less than two of the input parameters.
+	\begin{itemize}
+		\item Fix: Enter two of the three dimensions
+	\end{itemize} 
+	\item \textbf{Negative Dimension} occurs when a negative value is input.
+	\begin{itemize}
+		\item Fix: Only input positive values
+	\end{itemize} 
+\end{enumerate}
 
 \pagebreak
 \end{document}
