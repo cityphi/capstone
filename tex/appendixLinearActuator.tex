@@ -45,9 +45,8 @@ F_{brake} = \mu_{braking surface} F_{LA}
 The value for $\mu_{braking surface}$ is based on the coefficient of friction between rubber and polyurethane which is 0.65 \cite{Friction}. Once the required linear actuator force is calculated it is compared with the Actuonix linear actuator datasheet can be found in Appendix \ref{LinAct} in order to make sure that the force is achievable.\\
 
 As explained above the analysis first solves for the acceleration of the gondola, while the motors are not driving, with the inputs specified in the System Modelling section \ref{sampleCalcs} Sample Calculation Conditions, the acceleration was 5.35[$\dfrac{m}{s^2}$]. Therefore the required holding force is simply the acceleration multiplied by the mass of the airship, which is 11.68[N]. The required linear actuator force to hold the gondola is calculated in the following equation:
-\begin{equation}
-\label{eqn:brake}
+\begin{equation*}
 F_{LA} = \frac{F_{brake}}{\mu_{braking surface} } = \frac{11.68[N]}{0.65} = 17.96
-\end{equation}
+\end{equation*}
 The linear actuator datasheet from Actuonix in Appendix \ref{LinAct} with 22N holding force was chosen. 
 \end{document}
